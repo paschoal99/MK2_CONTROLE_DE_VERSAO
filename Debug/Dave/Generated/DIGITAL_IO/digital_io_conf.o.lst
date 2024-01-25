@@ -1,0 +1,187 @@
+   1              	 .cpu cortex-m0
+   2              	 .fpu softvfp
+   3              	 .eabi_attribute 20,1
+   4              	 .eabi_attribute 21,1
+   5              	 .eabi_attribute 23,3
+   6              	 .eabi_attribute 24,1
+   7              	 .eabi_attribute 25,1
+   8              	 .eabi_attribute 26,1
+   9              	 .eabi_attribute 30,6
+  10              	 .eabi_attribute 34,0
+  11              	 .eabi_attribute 18,4
+  12              	 .code 16
+  13              	 .file "digital_io_conf.c"
+  14              	 .text
+  15              	.Ltext0:
+  16              	 .cfi_sections .debug_frame
+  17              	 .global LED1
+  18              	 .section .rodata.LED1,"a",%progbits
+  19              	 .align 2
+  22              	LED1:
+  23 0000 00010440 	 .word 1074004224
+  24 0004 80       	 .byte -128
+  25 0005 000000   	 .space 3
+  26 0008 00000100 	 .word 65536
+  27 000c 02       	 .byte 2
+  28 000d 00       	 .byte 0
+  29 000e 0000     	 .space 2
+  30              	 .global LED2
+  31              	 .section .rodata.LED2,"a",%progbits
+  32              	 .align 2
+  35              	LED2:
+  36 0000 00010440 	 .word 1074004224
+  37 0004 80       	 .byte -128
+  38 0005 000000   	 .space 3
+  39 0008 00000100 	 .word 65536
+  40 000c 03       	 .byte 3
+  41 000d 00       	 .byte 0
+  42 000e 0000     	 .space 2
+  43              	 .global PARTIDA
+  44              	 .section .rodata.PARTIDA,"a",%progbits
+  45              	 .align 2
+  48              	PARTIDA:
+  49 0000 00010440 	 .word 1074004224
+  50 0004 80       	 .byte -128
+  51 0005 000000   	 .space 3
+  52 0008 00000100 	 .word 65536
+  53 000c 00       	 .byte 0
+  54 000d 00       	 .byte 0
+  55 000e 0000     	 .space 2
+  56              	 .global REVERSAO
+  57              	 .section .rodata.REVERSAO,"a",%progbits
+  58              	 .align 2
+  61              	REVERSAO:
+  62 0000 00010440 	 .word 1074004224
+  63 0004 80       	 .byte -128
+  64 0005 000000   	 .space 3
+  65 0008 00000100 	 .word 65536
+  66 000c 01       	 .byte 1
+  67 000d 00       	 .byte 0
+  68 000e 0000     	 .space 2
+  69              	 .global LED_CONF_10
+  70              	 .section .rodata.LED_CONF_10,"a",%progbits
+  71              	 .align 2
+  74              	LED_CONF_10:
+  75 0000 00040440 	 .word 1074004992
+  76 0004 80       	 .byte -128
+  77 0005 000000   	 .space 3
+  78 0008 00000100 	 .word 65536
+  79 000c 07       	 .byte 7
+  80 000d 00       	 .byte 0
+  81 000e 0000     	 .space 2
+  82              	 .global LED_CONF_5
+  83              	 .section .rodata.LED_CONF_5,"a",%progbits
+  84              	 .align 2
+  87              	LED_CONF_5:
+  88 0000 00040440 	 .word 1074004992
+  89 0004 80       	 .byte -128
+  90 0005 000000   	 .space 3
+  91 0008 00000100 	 .word 65536
+  92 000c 08       	 .byte 8
+  93 000d 00       	 .byte 0
+  94 000e 0000     	 .space 2
+  95              	 .global LED_CONF_15
+  96              	 .section .rodata.LED_CONF_15,"a",%progbits
+  97              	 .align 2
+ 100              	LED_CONF_15:
+ 101 0000 00040440 	 .word 1074004992
+ 102 0004 80       	 .byte -128
+ 103 0005 000000   	 .space 3
+ 104 0008 00000100 	 .word 65536
+ 105 000c 06       	 .byte 6
+ 106 000d 00       	 .byte 0
+ 107 000e 0000     	 .space 2
+ 108              	 .global LED_CONF_MIN_0
+ 109              	 .section .rodata.LED_CONF_MIN_0,"a",%progbits
+ 110              	 .align 2
+ 113              	LED_CONF_MIN_0:
+ 114 0000 00040440 	 .word 1074004992
+ 115 0004 80       	 .byte -128
+ 116 0005 000000   	 .space 3
+ 117 0008 00000100 	 .word 65536
+ 118 000c 09       	 .byte 9
+ 119 000d 00       	 .byte 0
+ 120 000e 0000     	 .space 2
+ 121              	 .global LED_CONF_MIN_5
+ 122              	 .section .rodata.LED_CONF_MIN_5,"a",%progbits
+ 123              	 .align 2
+ 126              	LED_CONF_MIN_5:
+ 127 0000 00040440 	 .word 1074004992
+ 128 0004 80       	 .byte -128
+ 129 0005 000000   	 .space 3
+ 130 0008 00000100 	 .word 65536
+ 131 000c 0A       	 .byte 10
+ 132 000d 00       	 .byte 0
+ 133 000e 0000     	 .space 2
+ 134              	 .global BOT_AUTO
+ 135              	 .section .rodata.BOT_AUTO,"a",%progbits
+ 136              	 .align 2
+ 139              	BOT_AUTO:
+ 140 0000 00020440 	 .word 1074004480
+ 141 0004 00       	 .byte 0
+ 142 0005 00       	 .byte 0
+ 143 0006 00000000 	 .space 6
+ 143      0000
+ 144 000c 02       	 .byte 2
+ 145 000d 00       	 .byte 0
+ 146 000e 0000     	 .space 2
+ 147              	 .global BOT_MANUAL
+ 148              	 .section .rodata.BOT_MANUAL,"a",%progbits
+ 149              	 .align 2
+ 152              	BOT_MANUAL:
+ 153 0000 00040440 	 .word 1074004992
+ 154 0004 00       	 .byte 0
+ 155 0005 00       	 .byte 0
+ 156 0006 00000000 	 .space 6
+ 156      0000
+ 157 000c 0B       	 .byte 11
+ 158 000d 00       	 .byte 0
+ 159 000e 0000     	 .space 2
+ 160              	 .global BOT_MIN
+ 161              	 .section .rodata.BOT_MIN,"a",%progbits
+ 162              	 .align 2
+ 165              	BOT_MIN:
+ 166 0000 00020440 	 .word 1074004480
+ 167 0004 00       	 .byte 0
+ 168 0005 00       	 .byte 0
+ 169 0006 00000000 	 .space 6
+ 169      0000
+ 170 000c 01       	 .byte 1
+ 171 000d 00       	 .byte 0
+ 172 000e 0000     	 .space 2
+ 173              	 .text
+ 174              	.Letext0:
+ 175              	 .file 1 "c:\\users\\victor.paschoal\\documents\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 176              	 .file 2 "c:\\users\\victor.paschoal\\documents\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 177              	 .file 3 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc/xmc_gpio.h"
+ 178              	 .file 4 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc/xmc1_gpio.h"
+ 179              	 .file 5 "../Dave/Generated/DIGITAL_IO/digital_io.h"
+ 180              	 .file 6 "../Dave/Generated/DIGITAL_IO/digital_io_conf.c"
+DEFINED SYMBOLS
+                            *ABS*:00000000 digital_io_conf.c
+    {standard input}:22     .rodata.LED1:00000000 LED1
+    {standard input}:19     .rodata.LED1:00000000 $d
+    {standard input}:35     .rodata.LED2:00000000 LED2
+    {standard input}:32     .rodata.LED2:00000000 $d
+    {standard input}:48     .rodata.PARTIDA:00000000 PARTIDA
+    {standard input}:45     .rodata.PARTIDA:00000000 $d
+    {standard input}:61     .rodata.REVERSAO:00000000 REVERSAO
+    {standard input}:58     .rodata.REVERSAO:00000000 $d
+    {standard input}:74     .rodata.LED_CONF_10:00000000 LED_CONF_10
+    {standard input}:71     .rodata.LED_CONF_10:00000000 $d
+    {standard input}:87     .rodata.LED_CONF_5:00000000 LED_CONF_5
+    {standard input}:84     .rodata.LED_CONF_5:00000000 $d
+    {standard input}:100    .rodata.LED_CONF_15:00000000 LED_CONF_15
+    {standard input}:97     .rodata.LED_CONF_15:00000000 $d
+    {standard input}:113    .rodata.LED_CONF_MIN_0:00000000 LED_CONF_MIN_0
+    {standard input}:110    .rodata.LED_CONF_MIN_0:00000000 $d
+    {standard input}:126    .rodata.LED_CONF_MIN_5:00000000 LED_CONF_MIN_5
+    {standard input}:123    .rodata.LED_CONF_MIN_5:00000000 $d
+    {standard input}:139    .rodata.BOT_AUTO:00000000 BOT_AUTO
+    {standard input}:136    .rodata.BOT_AUTO:00000000 $d
+    {standard input}:152    .rodata.BOT_MANUAL:00000000 BOT_MANUAL
+    {standard input}:149    .rodata.BOT_MANUAL:00000000 $d
+    {standard input}:165    .rodata.BOT_MIN:00000000 BOT_MIN
+    {standard input}:162    .rodata.BOT_MIN:00000000 $d
+
+NO UNDEFINED SYMBOLS

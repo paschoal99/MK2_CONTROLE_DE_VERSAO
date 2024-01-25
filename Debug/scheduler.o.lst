@@ -1,0 +1,414 @@
+   1              	 .cpu cortex-m0
+   2              	 .fpu softvfp
+   3              	 .eabi_attribute 20,1
+   4              	 .eabi_attribute 21,1
+   5              	 .eabi_attribute 23,3
+   6              	 .eabi_attribute 24,1
+   7              	 .eabi_attribute 25,1
+   8              	 .eabi_attribute 26,1
+   9              	 .eabi_attribute 30,6
+  10              	 .eabi_attribute 34,0
+  11              	 .eabi_attribute 18,4
+  12              	 .code 16
+  13              	 .file "scheduler.c"
+  14              	 .text
+  15              	.Ltext0:
+  16              	 .cfi_sections .debug_frame
+  17              	 .comm tasksTimer,20,4
+  18              	 .global func
+  19              	 .section .data.func,"aw",%progbits
+  20              	 .align 2
+  23              	func:
+  24 0000 00000000 	 .word ReadAxis1Task
+  25 0004 00000000 	 .word TransmitAngleTask
+  26 0008 00000000 	 .word ActionTask
+  27 000c 00000000 	 .word ConfTask
+  28 0010 00000000 	 .word DebauceTask
+  29              	 .section .text.scheduler,"ax",%progbits
+  30              	 .align 2
+  31              	 .global scheduler
+  32              	 .code 16
+  33              	 .thumb_func
+  35              	scheduler:
+  36              	.LFB299:
+  37              	 .file 1 "../scheduler.c"
+   1:../scheduler.c **** /*
+   2:../scheduler.c ****  * scheduler.c
+   3:../scheduler.c ****  *
+   4:../scheduler.c ****  *  Created on: Sep 29, 2021
+   5:../scheduler.c ****  *      Author: diego.marinho
+   6:../scheduler.c ****  */
+   7:../scheduler.c **** 
+   8:../scheduler.c **** #include <scheduler.h>
+   9:../scheduler.c **** #include <Action.h>
+  10:../scheduler.c **** #include <Conf.h>
+  11:../scheduler.c **** #include <ReadAxis1.h>
+  12:../scheduler.c **** #include <Debauce.h>
+  13:../scheduler.c **** 
+  14:../scheduler.c **** 
+  15:../scheduler.c **** //*************************************************************************************************
+  16:../scheduler.c **** //***********************************************************== VARIABLES ==***********************
+  17:../scheduler.c **** //*************************************************************************************************
+  18:../scheduler.c **** 
+  19:../scheduler.c **** volatile int32_t tasksTimer[N_OF_TASKS];
+  20:../scheduler.c **** 
+  21:../scheduler.c **** void(*func[N_OF_TASKS])(void) =
+  22:../scheduler.c **** {
+  23:../scheduler.c **** 	&ReadAxis1Task,
+  24:../scheduler.c **** 	&TransmitAngleTask,
+  25:../scheduler.c **** 	&ActionTask,
+  26:../scheduler.c **** 	&ConfTask,
+  27:../scheduler.c **** 	&DebauceTask
+  28:../scheduler.c **** };
+  29:../scheduler.c **** 
+  30:../scheduler.c **** 
+  31:../scheduler.c **** 
+  32:../scheduler.c **** 
+  33:../scheduler.c **** //*************************************************************************************************
+  34:../scheduler.c **** //***********************************************************== SCHEDULER ==***********************
+  35:../scheduler.c **** //*************************************************************************************************
+  36:../scheduler.c **** void scheduler(void)
+  37:../scheduler.c **** {
+  38              	 .loc 1 37 0
+  39              	 .cfi_startproc
+  40 0000 80B5     	 push {r7,lr}
+  41              	.LCFI0:
+  42              	 .cfi_def_cfa_offset 8
+  43              	 .cfi_offset 7,-8
+  44              	 .cfi_offset 14,-4
+  45 0002 82B0     	 sub sp,sp,#8
+  46              	.LCFI1:
+  47              	 .cfi_def_cfa_offset 16
+  48 0004 00AF     	 add r7,sp,#0
+  49              	.LCFI2:
+  50              	 .cfi_def_cfa_register 7
+  38:../scheduler.c ****     unsigned char i = 0;
+  51              	 .loc 1 38 0
+  52 0006 FB1D     	 add r3,r7,#7
+  53 0008 0022     	 mov r2,#0
+  54 000a 1A70     	 strb r2,[r3]
+  39:../scheduler.c **** 
+  40:../scheduler.c ****     for(i = 0; i < N_OF_TASKS; i++)     // Run all the tasks
+  55              	 .loc 1 40 0
+  56 000c FB1D     	 add r3,r7,#7
+  57 000e 0022     	 mov r2,#0
+  58 0010 1A70     	 strb r2,[r3]
+  59 0012 11E0     	 b .L2
+  60              	.L4:
+  41:../scheduler.c ****     {
+  42:../scheduler.c ****         if(!tasksTimer[i])             	// If GO STATE
+  61              	 .loc 1 42 0
+  62 0014 FB1D     	 add r3,r7,#7
+  63 0016 1A78     	 ldrb r2,[r3]
+  64 0018 0B4B     	 ldr r3,.L6
+  65 001a 9200     	 lsl r2,r2,#2
+  66 001c D358     	 ldr r3,[r2,r3]
+  67 001e 002B     	 cmp r3,#0
+  68 0020 05D1     	 bne .L3
+  43:../scheduler.c ****         {
+  44:../scheduler.c ****             func[i]();                  // Execute
+  69              	 .loc 1 44 0
+  70 0022 FB1D     	 add r3,r7,#7
+  71 0024 1A78     	 ldrb r2,[r3]
+  72 0026 094B     	 ldr r3,.L6+4
+  73 0028 9200     	 lsl r2,r2,#2
+  74 002a D358     	 ldr r3,[r2,r3]
+  75 002c 9847     	 blx r3
+  76              	.L3:
+  40:../scheduler.c ****     {
+  77              	 .loc 1 40 0 discriminator 2
+  78 002e FB1D     	 add r3,r7,#7
+  79 0030 1A78     	 ldrb r2,[r3]
+  80 0032 FB1D     	 add r3,r7,#7
+  81 0034 0132     	 add r2,r2,#1
+  82 0036 1A70     	 strb r2,[r3]
+  83              	.L2:
+  40:../scheduler.c ****     {
+  84              	 .loc 1 40 0 is_stmt 0 discriminator 1
+  85 0038 FB1D     	 add r3,r7,#7
+  86 003a 1B78     	 ldrb r3,[r3]
+  87 003c 042B     	 cmp r3,#4
+  88 003e E9D9     	 bls .L4
+  45:../scheduler.c ****         }
+  46:../scheduler.c ****     }
+  47:../scheduler.c ****     return;
+  89              	 .loc 1 47 0 is_stmt 1
+  90 0040 C046     	 mov r8,r8
+  48:../scheduler.c **** }
+  91              	 .loc 1 48 0
+  92 0042 BD46     	 mov sp,r7
+  93 0044 02B0     	 add sp,sp,#8
+  94              	 
+  95 0046 80BD     	 pop {r7,pc}
+  96              	.L7:
+  97              	 .align 2
+  98              	.L6:
+  99 0048 00000000 	 .word tasksTimer
+ 100 004c 00000000 	 .word func
+ 101              	 .cfi_endproc
+ 102              	.LFE299:
+ 104              	 .section .text.IRQ7_Handler,"ax",%progbits
+ 105              	 .align 2
+ 106              	 .global IRQ7_Handler
+ 107              	 .code 16
+ 108              	 .thumb_func
+ 110              	IRQ7_Handler:
+ 111              	.LFB300:
+  49:../scheduler.c **** 
+  50:../scheduler.c **** 
+  51:../scheduler.c **** 
+  52:../scheduler.c **** //*************************************************************************************************
+  53:../scheduler.c **** //***********************************************************== TIMER 1MS IRQ ==*******************
+  54:../scheduler.c **** //*************************************************************************************************
+  55:../scheduler.c **** 
+  56:../scheduler.c **** void Timer1msIRQHandler(void){
+ 112              	 .loc 1 56 0
+ 113              	 .cfi_startproc
+ 114 0000 80B5     	 push {r7,lr}
+ 115              	.LCFI3:
+ 116              	 .cfi_def_cfa_offset 8
+ 117              	 .cfi_offset 7,-8
+ 118              	 .cfi_offset 14,-4
+ 119 0002 82B0     	 sub sp,sp,#8
+ 120              	.LCFI4:
+ 121              	 .cfi_def_cfa_offset 16
+ 122 0004 00AF     	 add r7,sp,#0
+ 123              	.LCFI5:
+ 124              	 .cfi_def_cfa_register 7
+ 125              	.LBB2:
+  57:../scheduler.c **** 
+  58:../scheduler.c **** 	for(uint8_t i = 0; i < N_OF_TASKS; i++)     	// Timer for managing all the tasks
+ 126              	 .loc 1 58 0
+ 127 0006 FB1D     	 add r3,r7,#7
+ 128 0008 0022     	 mov r2,#0
+ 129 000a 1A70     	 strb r2,[r3]
+ 130 000c 14E0     	 b .L9
+ 131              	.L11:
+  59:../scheduler.c ****     {
+  60:../scheduler.c ****         if(tasksTimer[i] > 0)
+ 132              	 .loc 1 60 0
+ 133 000e FB1D     	 add r3,r7,#7
+ 134 0010 1A78     	 ldrb r2,[r3]
+ 135 0012 154B     	 ldr r3,.L13
+ 136 0014 9200     	 lsl r2,r2,#2
+ 137 0016 D358     	 ldr r3,[r2,r3]
+ 138 0018 002B     	 cmp r3,#0
+ 139 001a 08DD     	 ble .L10
+  61:../scheduler.c ****         {
+  62:../scheduler.c ****         	tasksTimer[i]--;
+ 140              	 .loc 1 62 0
+ 141 001c FB1D     	 add r3,r7,#7
+ 142 001e 1B78     	 ldrb r3,[r3]
+ 143 0020 114A     	 ldr r2,.L13
+ 144 0022 9900     	 lsl r1,r3,#2
+ 145 0024 8A58     	 ldr r2,[r1,r2]
+ 146 0026 511E     	 sub r1,r2,#1
+ 147 0028 0F4A     	 ldr r2,.L13
+ 148 002a 9B00     	 lsl r3,r3,#2
+ 149 002c 9950     	 str r1,[r3,r2]
+ 150              	.L10:
+  58:../scheduler.c ****     {
+ 151              	 .loc 1 58 0 discriminator 2
+ 152 002e FB1D     	 add r3,r7,#7
+ 153 0030 1A78     	 ldrb r2,[r3]
+ 154 0032 FB1D     	 add r3,r7,#7
+ 155 0034 0132     	 add r2,r2,#1
+ 156 0036 1A70     	 strb r2,[r3]
+ 157              	.L9:
+  58:../scheduler.c ****     {
+ 158              	 .loc 1 58 0 is_stmt 0 discriminator 1
+ 159 0038 FB1D     	 add r3,r7,#7
+ 160 003a 1B78     	 ldrb r3,[r3]
+ 161 003c 042B     	 cmp r3,#4
+ 162 003e E6D9     	 bls .L11
+ 163              	.LBE2:
+  63:../scheduler.c ****         }
+  64:../scheduler.c ****     }
+  65:../scheduler.c **** 
+  66:../scheduler.c **** 	ReadAxis1.CountWork++;
+ 164              	 .loc 1 66 0 is_stmt 1
+ 165 0040 0A4B     	 ldr r3,.L13+4
+ 166 0042 B122     	 mov r2,#177
+ 167 0044 9B5C     	 ldrb r3,[r3,r2]
+ 168 0046 0133     	 add r3,r3,#1
+ 169 0048 D9B2     	 uxtb r1,r3
+ 170 004a 084B     	 ldr r3,.L13+4
+ 171 004c B122     	 mov r2,#177
+ 172 004e 9954     	 strb r1,[r3,r2]
+  67:../scheduler.c **** 	if(ReadAxis1.CountWork == 200){
+ 173              	 .loc 1 67 0
+ 174 0050 064B     	 ldr r3,.L13+4
+ 175 0052 B122     	 mov r2,#177
+ 176 0054 9B5C     	 ldrb r3,[r3,r2]
+ 177 0056 C82B     	 cmp r3,#200
+ 178 0058 03D1     	 bne .L8
+  68:../scheduler.c **** 		ReadAxis1.CountWork = 0;
+ 179              	 .loc 1 68 0
+ 180 005a 044B     	 ldr r3,.L13+4
+ 181 005c B122     	 mov r2,#177
+ 182 005e 0021     	 mov r1,#0
+ 183 0060 9954     	 strb r1,[r3,r2]
+ 184              	.L8:
+  69:../scheduler.c **** 		//DIGITAL_IO_ToggleOutput(&LED2);
+  70:../scheduler.c **** 	}
+  71:../scheduler.c **** 
+  72:../scheduler.c **** 
+  73:../scheduler.c **** }
+ 185              	 .loc 1 73 0
+ 186 0062 BD46     	 mov sp,r7
+ 187 0064 02B0     	 add sp,sp,#8
+ 188              	 
+ 189 0066 80BD     	 pop {r7,pc}
+ 190              	.L14:
+ 191              	 .align 2
+ 192              	.L13:
+ 193 0068 00000000 	 .word tasksTimer
+ 194 006c 00000000 	 .word ReadAxis1
+ 195              	 .cfi_endproc
+ 196              	.LFE300:
+ 198              	 .section .text.taskSetState,"ax",%progbits
+ 199              	 .align 2
+ 200              	 .global taskSetState
+ 201              	 .code 16
+ 202              	 .thumb_func
+ 204              	taskSetState:
+ 205              	.LFB301:
+  74:../scheduler.c **** 
+  75:../scheduler.c **** //*************************************************************************************************
+  76:../scheduler.c **** //***********************************************************== TASK SET STATE ==******************
+  77:../scheduler.c **** //*************************************************************************************************
+  78:../scheduler.c **** void taskSetState(uint8_t task, int32_t state)
+  79:../scheduler.c **** {
+ 206              	 .loc 1 79 0
+ 207              	 .cfi_startproc
+ 208 0000 80B5     	 push {r7,lr}
+ 209              	.LCFI6:
+ 210              	 .cfi_def_cfa_offset 8
+ 211              	 .cfi_offset 7,-8
+ 212              	 .cfi_offset 14,-4
+ 213 0002 82B0     	 sub sp,sp,#8
+ 214              	.LCFI7:
+ 215              	 .cfi_def_cfa_offset 16
+ 216 0004 00AF     	 add r7,sp,#0
+ 217              	.LCFI8:
+ 218              	 .cfi_def_cfa_register 7
+ 219 0006 021C     	 mov r2,r0
+ 220 0008 3960     	 str r1,[r7]
+ 221 000a FB1D     	 add r3,r7,#7
+ 222 000c 1A70     	 strb r2,[r3]
+  80:../scheduler.c ****     if(task < N_OF_TASKS)
+ 223              	 .loc 1 80 0
+ 224 000e FB1D     	 add r3,r7,#7
+ 225 0010 1B78     	 ldrb r3,[r3]
+ 226 0012 042B     	 cmp r3,#4
+ 227 0014 05D8     	 bhi .L16
+  81:../scheduler.c ****     {
+  82:../scheduler.c ****         tasksTimer[task] = state;
+ 228              	 .loc 1 82 0
+ 229 0016 FB1D     	 add r3,r7,#7
+ 230 0018 1A78     	 ldrb r2,[r3]
+ 231 001a 044B     	 ldr r3,.L18
+ 232 001c 9200     	 lsl r2,r2,#2
+ 233 001e 3968     	 ldr r1,[r7]
+ 234 0020 D150     	 str r1,[r2,r3]
+ 235              	.L16:
+  83:../scheduler.c ****     }
+  84:../scheduler.c ****     return;
+ 236              	 .loc 1 84 0
+ 237 0022 C046     	 mov r8,r8
+  85:../scheduler.c **** }
+ 238              	 .loc 1 85 0
+ 239 0024 BD46     	 mov sp,r7
+ 240 0026 02B0     	 add sp,sp,#8
+ 241              	 
+ 242 0028 80BD     	 pop {r7,pc}
+ 243              	.L19:
+ 244 002a C046     	 .align 2
+ 245              	.L18:
+ 246 002c 00000000 	 .word tasksTimer
+ 247              	 .cfi_endproc
+ 248              	.LFE301:
+ 250              	 .section .text.taskGetState,"ax",%progbits
+ 251              	 .align 2
+ 252              	 .global taskGetState
+ 253              	 .code 16
+ 254              	 .thumb_func
+ 256              	taskGetState:
+ 257              	.LFB302:
+  86:../scheduler.c **** 
+  87:../scheduler.c **** 
+  88:../scheduler.c **** //*************************************************************************************************
+  89:../scheduler.c **** //***********************************************************== TASK GET STATE ==******************
+  90:../scheduler.c **** //*************************************************************************************************
+  91:../scheduler.c **** int32_t taskGetState(uint8_t task)
+  92:../scheduler.c **** {
+ 258              	 .loc 1 92 0
+ 259              	 .cfi_startproc
+ 260 0000 80B5     	 push {r7,lr}
+ 261              	.LCFI9:
+ 262              	 .cfi_def_cfa_offset 8
+ 263              	 .cfi_offset 7,-8
+ 264              	 .cfi_offset 14,-4
+ 265 0002 82B0     	 sub sp,sp,#8
+ 266              	.LCFI10:
+ 267              	 .cfi_def_cfa_offset 16
+ 268 0004 00AF     	 add r7,sp,#0
+ 269              	.LCFI11:
+ 270              	 .cfi_def_cfa_register 7
+ 271 0006 021C     	 mov r2,r0
+ 272 0008 FB1D     	 add r3,r7,#7
+ 273 000a 1A70     	 strb r2,[r3]
+  93:../scheduler.c ****     return(tasksTimer[task]);
+ 274              	 .loc 1 93 0
+ 275 000c FB1D     	 add r3,r7,#7
+ 276 000e 1A78     	 ldrb r2,[r3]
+ 277 0010 034B     	 ldr r3,.L22
+ 278 0012 9200     	 lsl r2,r2,#2
+ 279 0014 D358     	 ldr r3,[r2,r3]
+  94:../scheduler.c **** }
+ 280              	 .loc 1 94 0
+ 281 0016 181C     	 mov r0,r3
+ 282 0018 BD46     	 mov sp,r7
+ 283 001a 02B0     	 add sp,sp,#8
+ 284              	 
+ 285 001c 80BD     	 pop {r7,pc}
+ 286              	.L23:
+ 287 001e C046     	 .align 2
+ 288              	.L22:
+ 289 0020 00000000 	 .word tasksTimer
+ 290              	 .cfi_endproc
+ 291              	.LFE302:
+ 293              	 .text
+ 294              	.Letext0:
+ 295              	 .file 2 "c:\\users\\victor.paschoal\\documents\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 296              	 .file 3 "c:\\users\\victor.paschoal\\documents\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 297              	 .file 4 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc/xmc_usic.h"
+ 298              	 .file 5 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/I2C_MASTER/i2c_master.h"
+ 299              	 .file 6 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/ReadAxis1.h"
+ 300              	 .file 7 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Infineon/XMC1400_series/Include/system_XMC1400.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 scheduler.c
+                            *COM*:00000014 tasksTimer
+    {standard input}:23     .data.func:00000000 func
+    {standard input}:20     .data.func:00000000 $d
+    {standard input}:30     .text.scheduler:00000000 $t
+    {standard input}:35     .text.scheduler:00000000 scheduler
+    {standard input}:99     .text.scheduler:00000048 $d
+    {standard input}:105    .text.IRQ7_Handler:00000000 $t
+    {standard input}:110    .text.IRQ7_Handler:00000000 IRQ7_Handler
+    {standard input}:193    .text.IRQ7_Handler:00000068 $d
+    {standard input}:199    .text.taskSetState:00000000 $t
+    {standard input}:204    .text.taskSetState:00000000 taskSetState
+    {standard input}:246    .text.taskSetState:0000002c $d
+    {standard input}:251    .text.taskGetState:00000000 $t
+    {standard input}:256    .text.taskGetState:00000000 taskGetState
+    {standard input}:289    .text.taskGetState:00000020 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+ReadAxis1Task
+TransmitAngleTask
+ActionTask
+ConfTask
+DebauceTask
+ReadAxis1

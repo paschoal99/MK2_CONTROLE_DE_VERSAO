@@ -1,0 +1,2256 @@
+   1              	 .cpu cortex-m0
+   2              	 .fpu softvfp
+   3              	 .eabi_attribute 20,1
+   4              	 .eabi_attribute 21,1
+   5              	 .eabi_attribute 23,3
+   6              	 .eabi_attribute 24,1
+   7              	 .eabi_attribute 25,1
+   8              	 .eabi_attribute 26,1
+   9              	 .eabi_attribute 30,6
+  10              	 .eabi_attribute 34,0
+  11              	 .eabi_attribute 18,4
+  12              	 .code 16
+  13              	 .file "Conf.c"
+  14              	 .text
+  15              	.Ltext0:
+  16              	 .cfi_sections .debug_frame
+  17              	 .section .text.XMC_GPIO_SetOutputHigh,"ax",%progbits
+  18              	 .align 2
+  19              	 .code 16
+  20              	 .thumb_func
+  22              	XMC_GPIO_SetOutputHigh:
+  23              	.LFB63:
+  24              	 .file 1 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc/xmc_gpio.h"
+   1:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+   2:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @file xmc_gpio.h
+   3:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @date 2015-06-20
+   4:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+   5:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @cond
+   6:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+   7:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * XMClib v2.1.18 - XMC Peripheral Driver Library 
+   8:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+   9:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Copyright (c) 2015-2018, Infineon Technologies AG
+  10:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * All rights reserved.                        
+  11:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *                                             
+  12:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  13:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * following conditions are met:   
+  14:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *                                                                              
+  15:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Redistributions of source code must retain the above copyright notice, this list of conditions a
+  16:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * disclaimer.                        
+  17:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * 
+  18:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Redistributions in binary form must reproduce the above copyright notice, this list of condition
+  19:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * disclaimer in the documentation and/or other materials provided with the distribution.          
+  20:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * 
+  21:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Neither the name of the copyright holders nor the names of its contributors may be used to endor
+  22:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * products derived from this software without specific prior written permission.                  
+  23:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *                                                                              
+  24:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  25:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  26:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  27:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  28:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  29:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  30:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                            
+  31:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *                                                                              
+  32:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  33:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Infineon Technologies AG dave@infineon.com).                                                    
+  34:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+  35:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  36:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Change History
+  37:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * --------------
+  38:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  39:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * 2015-02-20:
+  40:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *     - Initial draft<br>
+  41:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *     - Documentation improved <br>
+  42:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *      
+  43:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * 2015-06-20:
+  44:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *     - Removed version macros and declaration of GetDriverVersion API
+  45:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  46:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @endcond
+  47:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  48:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+  49:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  50:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** #ifndef XMC_GPIO_H
+  51:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** #define XMC_GPIO_H
+  52:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  53:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+  54:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * HEADER FILES
+  55:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+  56:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  57:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** #include "xmc_common.h"
+  58:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  59:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+  60:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @addtogroup XMClib XMC Peripheral Library
+  61:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @{
+  62:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+  63:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  64:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+  65:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @addtogroup GPIO
+  66:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @brief General Purpose Input Output (GPIO) driver for the XMC microcontroller family.
+  67:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  68:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * GPIO driver provide a generic and very flexible software interface for all standard digital I/O 
+  69:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Each port slice has individual interfaces for the operation as General Purpose I/O and it furthe
+  70:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * connectivity to the on-chip periphery and the control for the pad characteristics. 
+  71:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  72:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * The driver is divided into Input and Output mode.
+  73:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  74:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Input mode features:
+  75:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Configuration structure XMC_GPIO_CONFIG_t and initialization function XMC_GPIO_Init()
+  76:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of weak pull-up or pull-down device. Configuration structure XMC_GPIO_MO
+  77:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \if XMC1
+  78:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of input hysteresis. XMC_GPIO_SetInputHysteresis()
+  79:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \endif
+  80:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  81:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * 
+  82:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Output mode features:
+  83:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of push pull/open drain and Alternate output. Configuration structure XM
+  84:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \if XMC4
+  85:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of pad driver strength. Configuration structure XMC_GPIO_OUTPUT_STRENGTH
+  86:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \endif
+  87:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  88:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of initial output level. Configuration structure XMC_GPIO_OUTPUT_LEVEL_t
+  89:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  90:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *@{
+  91:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+  92:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  
+  93:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+  94:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * MACROS
+  95:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+  96:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  97:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** #define PORT_IOCR_PC_Pos PORT0_IOCR0_PC0_Pos
+  98:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** #define PORT_IOCR_PC_Msk PORT0_IOCR0_PC0_Msk
+  99:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 100:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** #define PORT_IOCR_PC_Size 				(8U)
+ 101:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 											
+ 102:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 103:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** #define XMC_GPIO_CHECK_OUTPUT_LEVEL(level) ((level == XMC_GPIO_OUTPUT_LEVEL_LOW) || \
+ 104:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****                                             (level == XMC_GPIO_OUTPUT_LEVEL_HIGH))
+ 105:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****                                             
+ 106:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** #define XMC_GPIO_CHECK_HWCTRL(hwctrl) ((hwctrl == XMC_GPIO_HWCTRL_DISABLED) || \
+ 107:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****                                        (hwctrl == XMC_GPIO_HWCTRL_PERIPHERAL1) || \
+ 108:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****                                        (hwctrl == XMC_GPIO_HWCTRL_PERIPHERAL2))                    
+ 109:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****                                             
+ 110:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+ 111:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * ENUMS
+ 112:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+ 113:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 114:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 115:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 116:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Defines output level of a pin. Use type \a XMC_GPIO_OUTPUT_LEVEL_t for this enum.
+ 117:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 118:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** typedef enum XMC_GPIO_OUTPUT_LEVEL
+ 119:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 120:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_OUTPUT_LEVEL_LOW  = 0x10000U, /**<  Reset bit */
+ 121:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_OUTPUT_LEVEL_HIGH = 0x1U, 	/**< Set bit  */
+ 122:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** } XMC_GPIO_OUTPUT_LEVEL_t;
+ 123:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 124:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 125:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Defines direct hardware control characteristics of the pin . Use type \a XMC_GPIO_HWCTRL_t for t
+ 126:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 127:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** typedef enum XMC_GPIO_HWCTRL
+ 128:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 129:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_HWCTRL_DISABLED     = 0x0U, /**<  Software control only */
+ 130:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_HWCTRL_PERIPHERAL1  = 0x1U, /**<  HWI0/HWO0 control path can override the software confi
+ 131:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_HWCTRL_PERIPHERAL2  = 0x2U  /**<  HWI1/HWO1 control path can override the software confi
+ 132:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** } XMC_GPIO_HWCTRL_t;
+ 133:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 134:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+ 135:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * DEVICE FAMILY EXTENSIONS
+ 136:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+ 137:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 138:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  #if UC_FAMILY == XMC1
+ 139:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** #include "xmc1_gpio.h"
+ 140:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** #elif UC_FAMILY == XMC4
+ 141:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** #include "xmc4_gpio.h"
+ 142:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** #else
+ 143:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** #error "xmc_gpio.h: family device not supported"
+ 144:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** #endif
+ 145:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 146:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+ 147:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * API PROTOTYPES
+ 148:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+ 149:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 150:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** #ifdef __cplusplus
+ 151:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** extern "C" {
+ 152:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** #endif
+ 153:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 154:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 155:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 156:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port	  Constant pointer pointing to GPIO port, to access port registers like Pn_OUT,Pn_O
+ 157:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	  Port pin number.
+ 158:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  config GPIO configuration data structure. Refer data structure @ref XMC_GPIO_CONFIG_t fo
+ 159:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 160:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 161:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 162:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 163:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \if XMC1
+ 164:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Initializes input / output mode settings like, pull up / pull down devices,hysteresis, push pull
+ 165:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Also configures alternate function outputs and clears hardware port control for a selected \a po
+ 166:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \a config provides selected I/O settings. It configures hardware registers Pn_IOCR,Pn_OUT, Pn_OM
+ 167:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \endif
+ 168:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \if XMC4
+ 169:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Initializes input / output mode settings like, pull up / pull down devices,push pull /open drain
+ 170:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Also configures alternate function outputs and clears hardware port control for selected \a port
+ 171:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * It configures hardware registers Pn_IOCR,Pn_OUT,Pn_OMR,Pn_PDISC and Pn_PDR.\n
+ 172:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \endif
+ 173:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 174:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 175:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *  None
+ 176:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 177:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Note:</b><br>
+ 178:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * This API is called in definition of DAVE_init by code generation and therefore should not be exp
+ 179:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * for the normal operation. Use other APIs only after DAVE_init is called successfully (returns DA
+ 180:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 181:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 182:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 183:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 184:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  
+ 185:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** void XMC_GPIO_Init(XMC_GPIO_PORT_t *const port, const uint8_t pin, const XMC_GPIO_CONFIG_t *const c
+ 186:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  
+ 187:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 188:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 189:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port	Constant pointer pointing to GPIO port, to access hardware register Pn_IOCR.
+ 190:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	Port pin number.
+ 191:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  mode input / output functionality selection. Refer @ref XMC_GPIO_MODE_t for valid values
+ 192:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 193:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 194:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 195:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 196:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Sets digital input and output driver functionality and characteristics of a GPIO port pin. It co
+ 197:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * registers Pn_IOCR. \a mode is initially configured during initialization in XMC_GPIO_Init(). Cal
+ 198:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * the port direction functionality as needed later in the program.
+ 199:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 200:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 201:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *  None
+ 202:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 203:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 204:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 205:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** void XMC_GPIO_SetMode(XMC_GPIO_PORT_t *const port, const uint8_t pin, const XMC_GPIO_MODE_t mode);
+ 206:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 207:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 208:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 209:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 210:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port	 Constant pointer pointing to GPIO port, to access hardware register Pn_OMR.
+ 211:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	 Port pin number.
+ 212:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  level output level selection. Refer @ref XMC_GPIO_OUTPUT_LEVEL_t for valid values.
+ 213:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 214:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 215:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 216:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 217:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Set port pin output level to high or low.It configures hardware registers Pn_OMR.\a level is ini
+ 218:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * configured during initialization in XMC_GPIO_Init(). Call this API to alter output level as need
+ 219:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 220:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 221:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *  XMC_GPIO_SetOutputHigh(), XMC_GPIO_SetOutputLow().
+ 222:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 223:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Note:</b><br>
+ 224:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Prior to this api, user has to configure port pin to output mode using XMC_GPIO_SetMode().
+ 225:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 226:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 227:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 228:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 229:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_SetOutputLevel(XMC_GPIO_PORT_t *const port, const uint8_t pin, const 
+ 230:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 231:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputLevel: Invalid port", XMC_GPIO_CHECK_OUTPUT_PORT(port));
+ 232:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputLevel: Invalid output level", XMC_GPIO_CHECK_OUTPUT_LEVEL(level));
+ 233:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****   
+ 234:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****   port->OMR = (uint32_t)level << pin;
+ 235:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** }
+ 236:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 237:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 238:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 239:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port constant pointer pointing to GPIO port, to access hardware register Pn_OMR.
+ 240:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	Port pin number.
+ 241:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 242:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 243:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 244:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 245:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *  Sets port pin output to high. It configures hardware registers Pn_OMR.
+ 246:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 247:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *  \par<b>Related APIs:</b><BR>
+ 248:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *  XMC_GPIO_SetOutputLow()
+ 249:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 250:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Note:</b><br>
+ 251:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Prior to this api, user has to configure port pin to output mode using XMC_GPIO_SetMode().\n
+ 252:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Register Pn_OMR is virtual and does not contain any flip-flop. A read action delivers the value 
+ 253:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 254:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 255:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 256:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_SetOutputHigh(XMC_GPIO_PORT_t *const port, const uint8_t pin)
+ 257:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** {
+  25              	 .loc 1 257 0
+  26              	 .cfi_startproc
+  27 0000 80B5     	 push {r7,lr}
+  28              	.LCFI0:
+  29              	 .cfi_def_cfa_offset 8
+  30              	 .cfi_offset 7,-8
+  31              	 .cfi_offset 14,-4
+  32 0002 82B0     	 sub sp,sp,#8
+  33              	.LCFI1:
+  34              	 .cfi_def_cfa_offset 16
+  35 0004 00AF     	 add r7,sp,#0
+  36              	.LCFI2:
+  37              	 .cfi_def_cfa_register 7
+  38 0006 7860     	 str r0,[r7,#4]
+  39 0008 0A1C     	 mov r2,r1
+  40 000a FB1C     	 add r3,r7,#3
+  41 000c 1A70     	 strb r2,[r3]
+ 258:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputHigh: Invalid port", XMC_GPIO_CHECK_OUTPUT_PORT(port));
+ 259:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 260:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****   port->OMR = (uint32_t)0x1U << pin;
+  42              	 .loc 1 260 0
+  43 000e FB1C     	 add r3,r7,#3
+  44 0010 1B78     	 ldrb r3,[r3]
+  45 0012 0122     	 mov r2,#1
+  46 0014 9A40     	 lsl r2,r2,r3
+  47 0016 7B68     	 ldr r3,[r7,#4]
+  48 0018 5A60     	 str r2,[r3,#4]
+ 261:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** }
+  49              	 .loc 1 261 0
+  50 001a BD46     	 mov sp,r7
+  51 001c 02B0     	 add sp,sp,#8
+  52              	 
+  53 001e 80BD     	 pop {r7,pc}
+  54              	 .cfi_endproc
+  55              	.LFE63:
+  57              	 .section .text.XMC_GPIO_SetOutputLow,"ax",%progbits
+  58              	 .align 2
+  59              	 .code 16
+  60              	 .thumb_func
+  62              	XMC_GPIO_SetOutputLow:
+  63              	.LFB64:
+ 262:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 263:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 264:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 265:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port	constant pointer pointing to GPIO port, to access hardware register Pn_OMR.
+ 266:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	port pin number.
+ 267:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 268:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return  None
+ 269:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 270:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *\par<b>Description:</b><br>
+ 271:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Sets port pin output to low. It configures hardware registers Pn_OMR.\n
+ 272:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 273:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>>
+ 274:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * XMC_GPIO_SetOutputHigh()
+ 275:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 276:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *\par<b>Note:</b><br>
+ 277:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Prior to this api, user has to configure port pin to output mode using XMC_GPIO_SetMode().
+ 278:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Register Pn_OMR is virtual and does not contain any flip-flop. A read action delivers the value 
+ 279:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 280:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 281:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 282:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_SetOutputLow(XMC_GPIO_PORT_t *const port, const uint8_t pin)
+ 283:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** {
+  64              	 .loc 1 283 0
+  65              	 .cfi_startproc
+  66 0000 80B5     	 push {r7,lr}
+  67              	.LCFI3:
+  68              	 .cfi_def_cfa_offset 8
+  69              	 .cfi_offset 7,-8
+  70              	 .cfi_offset 14,-4
+  71 0002 82B0     	 sub sp,sp,#8
+  72              	.LCFI4:
+  73              	 .cfi_def_cfa_offset 16
+  74 0004 00AF     	 add r7,sp,#0
+  75              	.LCFI5:
+  76              	 .cfi_def_cfa_register 7
+  77 0006 7860     	 str r0,[r7,#4]
+  78 0008 0A1C     	 mov r2,r1
+  79 000a FB1C     	 add r3,r7,#3
+  80 000c 1A70     	 strb r2,[r3]
+ 284:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputLow: Invalid port", XMC_GPIO_CHECK_OUTPUT_PORT(port));
+ 285:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 286:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****   port->OMR = 0x10000U << pin;
+  81              	 .loc 1 286 0
+  82 000e FB1C     	 add r3,r7,#3
+  83 0010 1B78     	 ldrb r3,[r3]
+  84 0012 8022     	 mov r2,#128
+  85 0014 5202     	 lsl r2,r2,#9
+  86 0016 9A40     	 lsl r2,r2,r3
+  87 0018 7B68     	 ldr r3,[r7,#4]
+  88 001a 5A60     	 str r2,[r3,#4]
+ 287:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** }
+  89              	 .loc 1 287 0
+  90 001c BD46     	 mov sp,r7
+  91 001e 02B0     	 add sp,sp,#8
+  92              	 
+  93 0020 80BD     	 pop {r7,pc}
+  94              	 .cfi_endproc
+  95              	.LFE64:
+  97 0022 C046     	 .section .text.XMC_GPIO_GetInput,"ax",%progbits
+  98              	 .align 2
+  99              	 .code 16
+ 100              	 .thumb_func
+ 102              	XMC_GPIO_GetInput:
+ 103              	.LFB66:
+ 288:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 289:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 290:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 291:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param port constant pointer pointing to GPIO port, to access hardware register Pn_OMR.
+ 292:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param pin  port pin number.
+ 293:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 294:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 295:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 296:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 297:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Configures port pin output to Toggle. It configures hardware registers Pn_OMR.
+ 298:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 299:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 300:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * XMC_GPIO_SetOutputHigh(), XMC_GPIO_SetOutputLow().
+ 301:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 302:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Note:</b><br>
+ 303:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Prior to this api, user has to configure port pin to output mode using XMC_GPIO_SetMode(). Regis
+ 304:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * and does not contain any flip-flop. A read action delivers the value of 0.
+ 305:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 306:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 307:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 308:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_ToggleOutput(XMC_GPIO_PORT_t *const port, const uint8_t pin)
+ 309:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 310:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_ToggleOutput: Invalid port", XMC_GPIO_CHECK_OUTPUT_PORT(port));
+ 311:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 312:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****   port->OMR = 0x10001U << pin;
+ 313:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** }
+ 314:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 315:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 316:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 317:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param port constant pointer pointing to GPIO port, to access hardware register Pn_IN.
+ 318:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param pin  Port pin number.
+ 319:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 320:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return uint32_t pin logic level status.
+ 321:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 322:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *\par<b>Description:</b><br>
+ 323:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Reads the Pn_IN register and returns the current logical value at the GPIO pin.
+ 324:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 325:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 326:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * None
+ 327:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 328:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Note:</b><br>
+ 329:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Prior to this api, user has to configure port pin to input mode using XMC_GPIO_SetMode().
+ 330:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 331:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 332:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 333:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE uint32_t XMC_GPIO_GetInput(XMC_GPIO_PORT_t *const port, const uint8_t pin)
+ 334:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 104              	 .loc 1 334 0
+ 105              	 .cfi_startproc
+ 106 0000 80B5     	 push {r7,lr}
+ 107              	.LCFI6:
+ 108              	 .cfi_def_cfa_offset 8
+ 109              	 .cfi_offset 7,-8
+ 110              	 .cfi_offset 14,-4
+ 111 0002 82B0     	 sub sp,sp,#8
+ 112              	.LCFI7:
+ 113              	 .cfi_def_cfa_offset 16
+ 114 0004 00AF     	 add r7,sp,#0
+ 115              	.LCFI8:
+ 116              	 .cfi_def_cfa_register 7
+ 117 0006 7860     	 str r0,[r7,#4]
+ 118 0008 0A1C     	 mov r2,r1
+ 119 000a FB1C     	 add r3,r7,#3
+ 120 000c 1A70     	 strb r2,[r3]
+ 335:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_GetInput: Invalid port", XMC_GPIO_CHECK_PORT(port));
+ 336:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 337:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h ****   return (((port->IN) >> pin) & 0x1U);
+ 121              	 .loc 1 337 0
+ 122 000e 7B68     	 ldr r3,[r7,#4]
+ 123 0010 5A6A     	 ldr r2,[r3,#36]
+ 124 0012 FB1C     	 add r3,r7,#3
+ 125 0014 1B78     	 ldrb r3,[r3]
+ 126 0016 DA40     	 lsr r2,r2,r3
+ 127 0018 131C     	 mov r3,r2
+ 128 001a 0122     	 mov r2,#1
+ 129 001c 1340     	 and r3,r2
+ 338:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc\xmc_gpio.h **** }
+ 130              	 .loc 1 338 0
+ 131 001e 181C     	 mov r0,r3
+ 132 0020 BD46     	 mov sp,r7
+ 133 0022 02B0     	 add sp,sp,#8
+ 134              	 
+ 135 0024 80BD     	 pop {r7,pc}
+ 136              	 .cfi_endproc
+ 137              	.LFE66:
+ 139 0026 C046     	 .section .text.DIGITAL_IO_SetOutputHigh,"ax",%progbits
+ 140              	 .align 2
+ 141              	 .code 16
+ 142              	 .thumb_func
+ 144              	DIGITAL_IO_SetOutputHigh:
+ 145              	.LFB170:
+ 146              	 .file 2 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO/digital_io.h"
+   1:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** /*
+   2:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+   3:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * @file digital_io.h
+   4:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * @date 2016-07-08
+   5:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+   6:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * NOTE:
+   7:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * This file is generated by DAVE. Any manual modification done to this file will be lost when the 
+   8:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+   9:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * @cond
+  10:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+  11:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * DIGITAL_IO v4.0.16 - The DIGITAL_IO APP is used to configure a port pin as digital Input/Output.
+  12:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  13:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * Copyright (c) 2015-2016, Infineon Technologies AG
+  14:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * All rights reserved.
+  15:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  16:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  17:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * following conditions are met:
+  18:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  19:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   Redistributions of source code must retain the above copyright notice, this list of conditions
+  20:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   disclaimer.
+  21:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  22:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   Redistributions in binary form must reproduce the above copyright notice, this list of conditi
+  23:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   following disclaimer in the documentation and/or other materials provided with the distributio
+  24:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  25:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   Neither the name of the copyright holders nor the names of its contributors may be used to end
+  26:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   products derived from this software without specific prior written permission.
+  27:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  28:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  29:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  30:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  31:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  32:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  33:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  34:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  35:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  36:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  37:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * with Infineon Technologies AG (dave@infineon.com).
+  38:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+  39:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  40:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * Change History
+  41:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * --------------
+  42:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  43:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2015-02-16
+  44:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - Initial version
+  45:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  46:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2015-04-22
+  47:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - XMC_ASSERT is added in static inline functions.<br>
+  48:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  49:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2015-06-20
+  50:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - Version check added for XMCLib dependency.<br>
+  51:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  52:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2015-12-22
+  53:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - Added hardware controlled IO feature.
+  54:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2016-07-08:
+  55:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - Fixed incorrect case for an included header.<br>
+  56:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  57:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * @endcond
+  58:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  59:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  */
+  60:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  61:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**************************************************************************************************
+  62:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * HEADER FILES
+  63:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+  64:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  65:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** #ifndef DIGITAL_IO_H
+  66:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** #define DIGITAL_IO_H
+  67:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  68:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** #include <xmc_gpio.h>
+  69:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** #include <DAVE_Common.h>
+  70:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** #include "digital_io_conf.h"
+  71:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  72:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**************************************************************************************************
+  73:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * MACROS
+  74:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+  75:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** #if (!((XMC_LIB_MAJOR_VERSION == 2U) && \
+  76:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****        (XMC_LIB_MINOR_VERSION >= 0U) && \
+  77:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****        (XMC_LIB_PATCH_VERSION >= 0U)))
+  78:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** #error "DIGITAL_IO requires XMC Peripheral Library v2.0.0 or higher"
+  79:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** #endif
+  80:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  81:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  /*************************************************************************************************
+  82:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * ENUMS
+  83:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+  84:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  85:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+  86:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @ingroup DIGITAL_IO_enumerations
+  87:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @{
+  88:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+  89:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  90:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+  91:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Initialization status of DIGITAL_IO APP.
+  92:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+  93:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** typedef enum DIGITAL_IO_STATUS
+  94:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** {
+  95:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****   DIGITAL_IO_STATUS_OK = 0U,/**< 0=Status OK */
+  96:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****   DIGITAL_IO_STATUS_FAILURE = 1U/**< 1=Status Failed */
+  97:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** } DIGITAL_IO_STATUS_t;
+  98:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  99:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 100:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @}
+ 101:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 102:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 103:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**************************************************************************************************
+ 104:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * DATA STRUCTURES
+ 105:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+ 106:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 107:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @ingroup DIGITAL_IO_datastructures
+ 108:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @{
+ 109:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 110:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 111:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 112:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Initialization data structure of DIGITAL_IO APP
+ 113:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 114:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** typedef struct DIGITAL_IO
+ 115:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** {
+ 116:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_GPIO_PORT_t *const gpio_port;             /**< port number */
+ 117:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****   const XMC_GPIO_CONFIG_t gpio_config;          /**< mode, initial output level and pad driver stre
+ 118:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****   const uint8_t gpio_pin;                       /**< pin number */
+ 119:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****   const XMC_GPIO_HWCTRL_t hwctrl;               /**< Hardware port control */
+ 120:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** } DIGITAL_IO_t;
+ 121:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 122:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 123:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 124:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @}
+ 125:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 126:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 127:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 128:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**************************************************************************************************
+ 129:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * API Prototypes
+ 130:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+ 131:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 132:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 133:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** #ifdef __cplusplus
+ 134:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** extern "C" {
+ 135:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** #endif
+ 136:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 137:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 138:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @ingroup DIGITAL_IO_apidoc
+ 139:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @{
+ 140:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 141:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 142:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 143:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 144:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 145:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Get DIGITAL_IO APP version
+ 146:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @return DAVE_APP_VERSION_t APP version information (major, minor and patch number)
+ 147:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 148:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Description: </b><br>
+ 149:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * The function can be used to check application software compatibility with a
+ 150:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * specific version of the APP.
+ 151:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 152:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * Example Usage:
+ 153:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 154:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @code
+ 155:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * #include <DAVE.h>
+ 156:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 157:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * int main(void)
+ 158:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * {
+ 159:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DAVE_STATUS_t init_status;
+ 160:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DAVE_APP_VERSION_t version;
+ 161:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 162:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   // Initialize DIGITAL_IO APP:
+ 163:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   // DIGITAL_IO_Init() is called from within DAVE_Init().
+ 164:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   init_status = DAVE_Init();
+ 165:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   if(init_status == DAVE_STATUS_SUCCESS)
+ 166:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 167:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     version = DIGITAL_IO_GetAppVersion();
+ 168:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     if (version.major != 4U) {
+ 169:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     // Probably, not the right version.
+ 170:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     }
+ 171:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 172:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 173:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     // More code here
+ 174:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     while(1) {
+ 175:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 176:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     }
+ 177:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     return (1);
+ 178:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  }
+ 179:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @endcode<BR>
+ 180:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 181:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 182:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** DAVE_APP_VERSION_t DIGITAL_IO_GetAppVersion(void);
+ 183:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 184:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 185:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 186:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Function to initialize the port pin as per UI settings.
+ 187:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @param handler Pointer pointing to APP data structure. Refer @ref DIGITAL_IO_t for details.
+ 188:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @return DIGITAL_IO_STATUS_t DIGITAL_IO APP status. Refer @ref DIGITAL_IO_STATUS_t structure for d
+ 189:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 190:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Description:</b><br>
+ 191:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * This function initializes GPIO port registers IOCR,PDISC,OMR,PDR/PHCR to configure pin direction,
+ 192:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * and pad driver strength/hysteresis.
+ 193:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 194:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Related APIs:</b><BR>
+ 195:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * None
+ 196:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 197:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * Example Usage:
+ 198:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @code
+ 199:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * #include <DAVE.h>//Declarations from DAVE Code Generation (includes SFR declaration)
+ 200:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * int main(void)
+ 201:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * {
+ 202:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DAVE_STATUS_t status;
+ 203:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   status = DAVE_Init();  //(DAVE_STATUS_t)DIGITAL_IO_Init(&DIGITAL_IO_0) is called within DAVE_In
+ 204:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   if(status == DAVE_STATUS_SUCCESS)
+ 205:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 206:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     XMC_DEBUG("DAVE Apps initialization success\n");
+ 207:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 208:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   else
+ 209:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 210:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     XMC_DEBUG(("DAVE Apps initialization failed with status %d\n", status));
+ 211:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     while(1U)
+ 212:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     {
+ 213:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     }
+ 214:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 215:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   //Placeholder for user application code. The while loop below can be replaced with user applica
+ 216:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   while(1U)
+ 217:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 218:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 219:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   return 1U;
+ 220:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  }
+ 221:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  @endcode
+ 222:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 223:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 224:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** DIGITAL_IO_STATUS_t DIGITAL_IO_Init(const DIGITAL_IO_t *const handler);
+ 225:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 226:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 227:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 228:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Function to set port pin high.
+ 229:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @param handler Pointer pointing to APP data structure. Refer @ref DIGITAL_IO_t for details.
+ 230:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @return None
+ 231:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 232:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Description:</b><br>
+ 233:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * This function configures port output modification register Pn_OMR, to make port pin to high level
+ 234:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 235:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Related APIs:</b><BR>
+ 236:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  DIGITAL_IO_SetOutputLow()
+ 237:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 238:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * Example Usage:
+ 239:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @code
+ 240:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * #include <DAVE.h>//Declarations from DAVE Code Generation (includes SFR declaration)
+ 241:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * int main(void)
+ 242:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * {
+ 243:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DAVE_STATUS_t status;
+ 244:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   status = DAVE_Init();  //(DAVE_STATUS_t)DIGITAL_IO_Init(&DIGITAL_IO_0) is called within DAVE_In
+ 245:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   if(status == DAVE_STATUS_SUCCESS)
+ 246:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 247:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     XMC_DEBUG("DAVE Apps initialization success\n");
+ 248:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 249:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   else
+ 250:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 251:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     XMC_DEBUG(("DAVE Apps initialization failed with status %d\n", status));
+ 252:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     while(1U)
+ 253:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     {
+ 254:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     }
+ 255:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 256:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   //Placeholder for user application code. The while loop below can be replaced with user applica
+ 257:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DIGITAL_IO_SetOutputHigh(&DIGITAL_IO_0);
+ 258:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   while(1U)
+ 259:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 260:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     // Add application code here
+ 261:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 262:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 263:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   return (1);
+ 264:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * }
+ 265:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  @endcode
+ 266:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 267:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 268:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** __STATIC_INLINE void DIGITAL_IO_SetOutputHigh(const DIGITAL_IO_t *const handler)
+ 269:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** {
+ 147              	 .loc 2 269 0
+ 148              	 .cfi_startproc
+ 149 0000 80B5     	 push {r7,lr}
+ 150              	.LCFI9:
+ 151              	 .cfi_def_cfa_offset 8
+ 152              	 .cfi_offset 7,-8
+ 153              	 .cfi_offset 14,-4
+ 154 0002 82B0     	 sub sp,sp,#8
+ 155              	.LCFI10:
+ 156              	 .cfi_def_cfa_offset 16
+ 157 0004 00AF     	 add r7,sp,#0
+ 158              	.LCFI11:
+ 159              	 .cfi_def_cfa_register 7
+ 160 0006 7860     	 str r0,[r7,#4]
+ 270:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_ASSERT("DIGITAL_IO_SetOutputHigh: handler null pointer", handler != NULL);
+ 271:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_GPIO_SetOutputHigh(handler->gpio_port, handler->gpio_pin);
+ 161              	 .loc 2 271 0
+ 162 0008 7B68     	 ldr r3,[r7,#4]
+ 163 000a 1A68     	 ldr r2,[r3]
+ 164 000c 7B68     	 ldr r3,[r7,#4]
+ 165 000e 1B7B     	 ldrb r3,[r3,#12]
+ 166 0010 101C     	 mov r0,r2
+ 167 0012 191C     	 mov r1,r3
+ 168 0014 FFF7FEFF 	 bl XMC_GPIO_SetOutputHigh
+ 272:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** }
+ 169              	 .loc 2 272 0
+ 170 0018 BD46     	 mov sp,r7
+ 171 001a 02B0     	 add sp,sp,#8
+ 172              	 
+ 173 001c 80BD     	 pop {r7,pc}
+ 174              	 .cfi_endproc
+ 175              	.LFE170:
+ 177 001e C046     	 .section .text.DIGITAL_IO_SetOutputLow,"ax",%progbits
+ 178              	 .align 2
+ 179              	 .code 16
+ 180              	 .thumb_func
+ 182              	DIGITAL_IO_SetOutputLow:
+ 183              	.LFB171:
+ 273:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 274:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 275:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Function to reset port pin.
+ 276:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @param handler Pointer pointing to APP data structure. Refer @ref DIGITAL_IO_t for details.
+ 277:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @return None
+ 278:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 279:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Description:</b><br>
+ 280:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * This function configures port output modification register Pn_OMR, to make port pin to low level.
+ 281:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 282:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Related APIs:</b><BR>
+ 283:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * DIGITAL_IO_SetOutputHigh()
+ 284:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 285:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * Example Usage:
+ 286:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @code
+ 287:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  #include <DAVE.h>//Declarations from DAVE Code Generation (includes SFR declaration)
+ 288:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  int main(void)
+ 289:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  {
+ 290:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    DAVE_STATUS_t status;
+ 291:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    status = DAVE_Init();  //(DAVE_STATUS_t)DIGITAL_IO_Init(&DIGITAL_IO_0) is called within DAVE_I
+ 292:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    if(status == DAVE_STATUS_SUCCESS)
+ 293:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    {
+ 294:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      XMC_DEBUG("DAVE Apps initialization success\n");
+ 295:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    }
+ 296:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    else
+ 297:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    {
+ 298:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      XMC_DEBUG(("DAVE Apps initialization failed with status %d\n", status));
+ 299:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      while(1U)
+ 300:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      {
+ 301:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      }
+ 302:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    }
+ 303:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    //Placeholder for user application code. The while loop below can be replaced with user applic
+ 304:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    DIGITAL_IO_SetOutputLow(&DIGITAL_IO_0);
+ 305:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    while(1U)
+ 306:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    {
+ 307:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      // Add application code here
+ 308:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    }
+ 309:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 310:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   return (1);
+ 311:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * }
+ 312:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  @endcode
+ 313:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 314:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 315:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** __STATIC_INLINE void DIGITAL_IO_SetOutputLow(const DIGITAL_IO_t *const handler)
+ 316:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** {
+ 184              	 .loc 2 316 0
+ 185              	 .cfi_startproc
+ 186 0000 80B5     	 push {r7,lr}
+ 187              	.LCFI12:
+ 188              	 .cfi_def_cfa_offset 8
+ 189              	 .cfi_offset 7,-8
+ 190              	 .cfi_offset 14,-4
+ 191 0002 82B0     	 sub sp,sp,#8
+ 192              	.LCFI13:
+ 193              	 .cfi_def_cfa_offset 16
+ 194 0004 00AF     	 add r7,sp,#0
+ 195              	.LCFI14:
+ 196              	 .cfi_def_cfa_register 7
+ 197 0006 7860     	 str r0,[r7,#4]
+ 317:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_ASSERT("DIGITAL_IO_SetOutputLow: handler null pointer", handler != NULL);
+ 318:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_GPIO_SetOutputLow(handler->gpio_port,handler->gpio_pin);
+ 198              	 .loc 2 318 0
+ 199 0008 7B68     	 ldr r3,[r7,#4]
+ 200 000a 1A68     	 ldr r2,[r3]
+ 201 000c 7B68     	 ldr r3,[r7,#4]
+ 202 000e 1B7B     	 ldrb r3,[r3,#12]
+ 203 0010 101C     	 mov r0,r2
+ 204 0012 191C     	 mov r1,r3
+ 205 0014 FFF7FEFF 	 bl XMC_GPIO_SetOutputLow
+ 319:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** }
+ 206              	 .loc 2 319 0
+ 207 0018 BD46     	 mov sp,r7
+ 208 001a 02B0     	 add sp,sp,#8
+ 209              	 
+ 210 001c 80BD     	 pop {r7,pc}
+ 211              	 .cfi_endproc
+ 212              	.LFE171:
+ 214 001e C046     	 .section .text.DIGITAL_IO_GetInput,"ax",%progbits
+ 215              	 .align 2
+ 216              	 .code 16
+ 217              	 .thumb_func
+ 219              	DIGITAL_IO_GetInput:
+ 220              	.LFB173:
+ 320:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 321:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 322:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Function to Toggle port pin.
+ 323:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @param handler Pointer pointing to APP data structure. Refer @ref DIGITAL_IO_t for details.
+ 324:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @return None
+ 325:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 326:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Description:</b><br>
+ 327:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * This function configures port output modification register Pn_OMR, to toggle port pin.
+ 328:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 329:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Related APIs:</b><BR>
+ 330:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * DIGITAL_IO_SetOutputLow(), DIGITAL_IO_SetOutputHigh()
+ 331:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 332:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * Example Usage:
+ 333:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 334:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @code
+ 335:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * #include <DAVE.h>//Declarations from DAVE Code Generation (includes SFR declaration)
+ 336:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * int main(void)
+ 337:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * {
+ 338:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DAVE_STATUS_t status;
+ 339:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   uint32_t delay_count;;
+ 340:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   status = DAVE_Init();  //(DAVE_STATUS_t)DIGITAL_IO_Init(&DIGITAL_IO_0) is called within DAVE_In
+ 341:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   if(status == DAVE_STATUS_SUCCESS)
+ 342:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 343:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     XMC_DEBUG("DAVE Apps initialization success\n");
+ 344:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 345:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   else
+ 346:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 347:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      XMC_DEBUG(("DAVE Apps initialization failed with status %d\n", status));
+ 348:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      while(1U)
+ 349:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      {
+ 350:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      }
+ 351:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 352:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   //Placeholder for user application code. The while loop below can be replaced with user applica
+ 353:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   while(1U)
+ 354:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 355:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      DIGITAL_IO_ToggleOutput(&DIGITAL_IO_0); //toggles : 1 -> 0 (if initial output level is logic
+ 356:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      //Add application code here
+ 357:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      for(delay_count = 0;delay_count<0xfffff;delay_count++);
+ 358:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      DIGITAL_IO_ToggleOutput(&DIGITAL_IO_0); //toggles : 0 -> 1
+ 359:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      //Add application code here
+ 360:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      for(delay_count = 0;delay_count<0xfffff;delay_count++);
+ 361:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 362:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   return (1);
+ 363:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * }
+ 364:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  @endcode
+ 365:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 366:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 367:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** __STATIC_INLINE void DIGITAL_IO_ToggleOutput(const DIGITAL_IO_t *const handler)
+ 368:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** {
+ 369:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_ASSERT("DIGITAL_IO_ToggleOutput: handler null pointer", handler != NULL);
+ 370:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_GPIO_ToggleOutput(handler->gpio_port, handler->gpio_pin);
+ 371:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** }
+ 372:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 373:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 374:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Function to read input level of port pin.
+ 375:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @param handler Pointer pointing to APP data structure. Refer @ref DIGITAL_IO_t for details.
+ 376:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @return uint32_t input logic level. Range:0-1
+ 377:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 378:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Description:</b><br>
+ 379:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * This function reads the Pn_IN register and returns the current logical value at the GPIO pin.
+ 380:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 381:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Related APIs:</b><BR>
+ 382:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  None
+ 383:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 384:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * Example Usage:
+ 385:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @code
+ 386:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * #include <DAVE.h>//Declarations from DAVE Code Generation (includes SFR declaration)
+ 387:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * int main(void)
+ 388:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * {
+ 389:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DAVE_STATUS_t status;
+ 390:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   uint32_t pin_status;
+ 391:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   status = DAVE_Init();   // (DAVE_STATUS_t)DIGITAL_IO_Init(&DIGITAL_IO_0) is called within DAVE_
+ 392:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   if(status == DAVE_STATUS_SUCCESS)
+ 393:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 394:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     XMC_DEBUG("DAVE Apps initialization success\n");
+ 395:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 396:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   else
+ 397:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 398:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     XMC_DEBUG(("DAVE Apps initialization failed with status %d\n", status));
+ 399:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     while(1U)
+ 400:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     {
+ 401:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     }
+ 402:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 403:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   //Placeholder for user application code. The while loop below can be replaced with user applica
+ 404:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   while(1U)
+ 405:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 406:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     pin_status = DIGITAL_IO_GetInput(&DIGITAL_IO_0);
+ 407:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     if(pin_status == 1)
+ 408:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     {
+ 409:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *       // Add application code here
+ 410:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     }
+ 411:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     else
+ 412:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     {
+ 413:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *       // Add application code here
+ 414:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     }
+ 415:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 416:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   return (1);
+ 417:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** * }
+ 418:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  @endcode
+ 419:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 420:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 421:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** __STATIC_INLINE uint32_t DIGITAL_IO_GetInput(const DIGITAL_IO_t *const handler)
+ 422:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** {
+ 221              	 .loc 2 422 0
+ 222              	 .cfi_startproc
+ 223 0000 80B5     	 push {r7,lr}
+ 224              	.LCFI15:
+ 225              	 .cfi_def_cfa_offset 8
+ 226              	 .cfi_offset 7,-8
+ 227              	 .cfi_offset 14,-4
+ 228 0002 82B0     	 sub sp,sp,#8
+ 229              	.LCFI16:
+ 230              	 .cfi_def_cfa_offset 16
+ 231 0004 00AF     	 add r7,sp,#0
+ 232              	.LCFI17:
+ 233              	 .cfi_def_cfa_register 7
+ 234 0006 7860     	 str r0,[r7,#4]
+ 423:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_ASSERT("DIGITAL_IO_GetInput: handler null pointer", handler != NULL);
+ 424:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h ****   return XMC_GPIO_GetInput(handler->gpio_port, handler->gpio_pin);
+ 235              	 .loc 2 424 0
+ 236 0008 7B68     	 ldr r3,[r7,#4]
+ 237 000a 1A68     	 ldr r2,[r3]
+ 238 000c 7B68     	 ldr r3,[r7,#4]
+ 239 000e 1B7B     	 ldrb r3,[r3,#12]
+ 240 0010 101C     	 mov r0,r2
+ 241 0012 191C     	 mov r1,r3
+ 242 0014 FFF7FEFF 	 bl XMC_GPIO_GetInput
+ 243 0018 031C     	 mov r3,r0
+ 425:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO\digital_io.h **** }
+ 244              	 .loc 2 425 0
+ 245 001a 181C     	 mov r0,r3
+ 246 001c BD46     	 mov sp,r7
+ 247 001e 02B0     	 add sp,sp,#8
+ 248              	 
+ 249 0020 80BD     	 pop {r7,pc}
+ 250              	 .cfi_endproc
+ 251              	.LFE173:
+ 253              	 .comm CONF,232,4
+ 254 0022 C046     	 .section .text.ConfInit,"ax",%progbits
+ 255              	 .align 2
+ 256              	 .global ConfInit
+ 257              	 .code 16
+ 258              	 .thumb_func
+ 260              	ConfInit:
+ 261              	.LFB299:
+ 262              	 .file 3 "../Conf.c"
+   1:../Conf.c     **** /*
+   2:../Conf.c     ****  * Conf.c
+   3:../Conf.c     ****  *
+   4:../Conf.c     ****  *  Created on: Jun 13, 2023
+   5:../Conf.c     ****  *      Author: victor.paschoal
+   6:../Conf.c     ****  */
+   7:../Conf.c     **** /** @mainpage CONTROLE DE ÂNGULO MOVIMENTO DE FLEXO DISTRAÇÃO
+   8:../Conf.c     ****  *
+   9:../Conf.c     ****  * @date 05/07/2023
+  10:../Conf.c     ****  *
+  11:../Conf.c     ****  * @version 1.0
+  12:../Conf.c     ****  *
+  13:../Conf.c     ****  */
+  14:../Conf.c     **** 
+  15:../Conf.c     **** #include <ReadAxis1.h>
+  16:../Conf.c     **** #include <Action.h>
+  17:../Conf.c     **** #include <Conf.h>
+  18:../Conf.c     **** #include <scheduler.h>
+  19:../Conf.c     **** #include <math.h>
+  20:../Conf.c     **** #include <stdlib.h>
+  21:../Conf.c     **** #include <Debauce.h>
+  22:../Conf.c     **** 
+  23:../Conf.c     **** CONF_t		CONF;
+  24:../Conf.c     **** 
+  25:../Conf.c     **** //*************************************************************************************************
+  26:../Conf.c     **** //***********************************************************== CONF INIT ==***********************
+  27:../Conf.c     **** //*************************************************************************************************
+  28:../Conf.c     **** 
+  29:../Conf.c     **** void ConfInit(void){
+ 263              	 .loc 3 29 0
+ 264              	 .cfi_startproc
+ 265 0000 80B5     	 push {r7,lr}
+ 266              	.LCFI18:
+ 267              	 .cfi_def_cfa_offset 8
+ 268              	 .cfi_offset 7,-8
+ 269              	 .cfi_offset 14,-4
+ 270 0002 00AF     	 add r7,sp,#0
+ 271              	.LCFI19:
+ 272              	 .cfi_def_cfa_register 7
+  30:../Conf.c     **** 
+  31:../Conf.c     **** //	E_EEPROM_XMC1_Read(SENSE_MOTOR, 0, &ACTION.Status_Sense_motor[0], 1);
+  32:../Conf.c     **** //
+  33:../Conf.c     **** //
+  34:../Conf.c     **** //	if(ACTION.Status_Sense_motor[0] == 1){
+  35:../Conf.c     **** //		ACTION.Status_Sense_motor[0] = 0;
+  36:../Conf.c     **** //	}
+  37:../Conf.c     **** //
+  38:../Conf.c     **** //	else if(ACTION.Status_Sense_motor[0] == 0){
+  39:../Conf.c     **** //		ACTION.Status_Sense_motor[0] = 1;
+  40:../Conf.c     **** //	}
+  41:../Conf.c     **** 
+  42:../Conf.c     **** 	E_EEPROM_XMC1_Read(CONF_ANG_HIGH, 0, &CONF.STATUS_CONF_ANG_HIGH[0], 2);
+ 273              	 .loc 3 42 0
+ 274 0004 454B     	 ldr r3,.L15
+ 275 0006 0420     	 mov r0,#4
+ 276 0008 0021     	 mov r1,#0
+ 277 000a 1A1C     	 mov r2,r3
+ 278 000c 0223     	 mov r3,#2
+ 279 000e FFF7FEFF 	 bl E_EEPROM_XMC1_Read
+  43:../Conf.c     **** 	E_EEPROM_XMC1_Read(CONF_ANG_LOW, 0, &CONF.STATUS_CONF_ANG_LOW[0], 2);
+ 280              	 .loc 3 43 0
+ 281 0012 434B     	 ldr r3,.L15+4
+ 282 0014 0520     	 mov r0,#5
+ 283 0016 0021     	 mov r1,#0
+ 284 0018 1A1C     	 mov r2,r3
+ 285 001a 0223     	 mov r3,#2
+ 286 001c FFF7FEFF 	 bl E_EEPROM_XMC1_Read
+  44:../Conf.c     **** 
+  45:../Conf.c     **** 	if(CONF.STATUS_CONF_ANG_HIGH[0] == 1){
+ 287              	 .loc 3 45 0
+ 288 0020 404B     	 ldr r3,.L15+8
+ 289 0022 DA22     	 mov r2,#218
+ 290 0024 9B5C     	 ldrb r3,[r3,r2]
+ 291 0026 012B     	 cmp r3,#1
+ 292 0028 14D1     	 bne .L10
+  46:../Conf.c     **** 		ACTION.Ang_max = 3;						//valor teste prototipo
+ 293              	 .loc 3 46 0
+ 294 002a 3F4B     	 ldr r3,.L15+12
+ 295 002c BF22     	 mov r2,#191
+ 296 002e 0321     	 mov r1,#3
+ 297 0030 9954     	 strb r1,[r3,r2]
+  47:../Conf.c     **** 		CONF.Bot_Ang = CONF_ANG_2;
+ 298              	 .loc 3 47 0
+ 299 0032 3C4B     	 ldr r3,.L15+8
+ 300 0034 C122     	 mov r2,#193
+ 301 0036 0121     	 mov r1,#1
+ 302 0038 9954     	 strb r1,[r3,r2]
+  48:../Conf.c     **** 		DIGITAL_IO_SetOutputHigh(&LED_CONF_5);
+ 303              	 .loc 3 48 0
+ 304 003a 3C4B     	 ldr r3,.L15+16
+ 305 003c 181C     	 mov r0,r3
+ 306 003e FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+  49:../Conf.c     **** 		DIGITAL_IO_SetOutputLow(&LED_CONF_10);
+ 307              	 .loc 3 49 0
+ 308 0042 3B4B     	 ldr r3,.L15+20
+ 309 0044 181C     	 mov r0,r3
+ 310 0046 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+  50:../Conf.c     **** 		DIGITAL_IO_SetOutputLow(&LED_CONF_15);
+ 311              	 .loc 3 50 0
+ 312 004a 3A4B     	 ldr r3,.L15+24
+ 313 004c 181C     	 mov r0,r3
+ 314 004e FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 315 0052 32E0     	 b .L11
+ 316              	.L10:
+  51:../Conf.c     **** 	}
+  52:../Conf.c     **** 
+  53:../Conf.c     **** 	else if(CONF.STATUS_CONF_ANG_HIGH[0] == 2){
+ 317              	 .loc 3 53 0
+ 318 0054 334B     	 ldr r3,.L15+8
+ 319 0056 DA22     	 mov r2,#218
+ 320 0058 9B5C     	 ldrb r3,[r3,r2]
+ 321 005a 022B     	 cmp r3,#2
+ 322 005c 14D1     	 bne .L12
+  54:../Conf.c     **** 		ACTION.Ang_max = 5;						//valor teste prototipo
+ 323              	 .loc 3 54 0
+ 324 005e 324B     	 ldr r3,.L15+12
+ 325 0060 BF22     	 mov r2,#191
+ 326 0062 0521     	 mov r1,#5
+ 327 0064 9954     	 strb r1,[r3,r2]
+  55:../Conf.c     **** 		CONF.Bot_Ang = CONF_ANG_3;
+ 328              	 .loc 3 55 0
+ 329 0066 2F4B     	 ldr r3,.L15+8
+ 330 0068 C122     	 mov r2,#193
+ 331 006a 0221     	 mov r1,#2
+ 332 006c 9954     	 strb r1,[r3,r2]
+  56:../Conf.c     **** 		DIGITAL_IO_SetOutputLow(&LED_CONF_5);
+ 333              	 .loc 3 56 0
+ 334 006e 2F4B     	 ldr r3,.L15+16
+ 335 0070 181C     	 mov r0,r3
+ 336 0072 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+  57:../Conf.c     **** 		DIGITAL_IO_SetOutputHigh(&LED_CONF_10);
+ 337              	 .loc 3 57 0
+ 338 0076 2E4B     	 ldr r3,.L15+20
+ 339 0078 181C     	 mov r0,r3
+ 340 007a FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+  58:../Conf.c     **** 		DIGITAL_IO_SetOutputLow(&LED_CONF_15);
+ 341              	 .loc 3 58 0
+ 342 007e 2D4B     	 ldr r3,.L15+24
+ 343 0080 181C     	 mov r0,r3
+ 344 0082 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 345 0086 18E0     	 b .L11
+ 346              	.L12:
+  59:../Conf.c     **** 	}
+  60:../Conf.c     **** 
+  61:../Conf.c     **** 	else if(CONF.STATUS_CONF_ANG_HIGH[0] == 3){
+ 347              	 .loc 3 61 0
+ 348 0088 264B     	 ldr r3,.L15+8
+ 349 008a DA22     	 mov r2,#218
+ 350 008c 9B5C     	 ldrb r3,[r3,r2]
+ 351 008e 032B     	 cmp r3,#3
+ 352 0090 13D1     	 bne .L11
+  62:../Conf.c     **** 		ACTION.Ang_max = 9;						//valor teste prototipo
+ 353              	 .loc 3 62 0
+ 354 0092 254B     	 ldr r3,.L15+12
+ 355 0094 BF22     	 mov r2,#191
+ 356 0096 0921     	 mov r1,#9
+ 357 0098 9954     	 strb r1,[r3,r2]
+  63:../Conf.c     **** 		CONF.Bot_Ang = CONF_ANG_1;
+ 358              	 .loc 3 63 0
+ 359 009a 224B     	 ldr r3,.L15+8
+ 360 009c C122     	 mov r2,#193
+ 361 009e 0021     	 mov r1,#0
+ 362 00a0 9954     	 strb r1,[r3,r2]
+  64:../Conf.c     **** 		DIGITAL_IO_SetOutputLow(&LED_CONF_5);
+ 363              	 .loc 3 64 0
+ 364 00a2 224B     	 ldr r3,.L15+16
+ 365 00a4 181C     	 mov r0,r3
+ 366 00a6 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+  65:../Conf.c     **** 		DIGITAL_IO_SetOutputLow(&LED_CONF_10);
+ 367              	 .loc 3 65 0
+ 368 00aa 214B     	 ldr r3,.L15+20
+ 369 00ac 181C     	 mov r0,r3
+ 370 00ae FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+  66:../Conf.c     **** 		DIGITAL_IO_SetOutputHigh(&LED_CONF_15);
+ 371              	 .loc 3 66 0
+ 372 00b2 204B     	 ldr r3,.L15+24
+ 373 00b4 181C     	 mov r0,r3
+ 374 00b6 FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+ 375              	.L11:
+  67:../Conf.c     **** 	}
+  68:../Conf.c     **** 
+  69:../Conf.c     **** 	if(CONF.STATUS_CONF_ANG_LOW[0] == 1){
+ 376              	 .loc 3 69 0
+ 377 00ba 1A4B     	 ldr r3,.L15+8
+ 378 00bc DC22     	 mov r2,#220
+ 379 00be 9B5C     	 ldrb r3,[r3,r2]
+ 380 00c0 012B     	 cmp r3,#1
+ 381 00c2 0CD1     	 bne .L13
+  70:../Conf.c     **** 		ACTION.Ang_min = 0;
+ 382              	 .loc 3 70 0
+ 383 00c4 184B     	 ldr r3,.L15+12
+ 384 00c6 C022     	 mov r2,#192
+ 385 00c8 0021     	 mov r1,#0
+ 386 00ca 9950     	 str r1,[r3,r2]
+  71:../Conf.c     **** 		//	CONF.Maq_Ang_Min = BOT_MIN_DPRESS;
+  72:../Conf.c     **** 		DIGITAL_IO_SetOutputHigh(&LED_CONF_MIN_0);
+ 387              	 .loc 3 72 0
+ 388 00cc 1A4B     	 ldr r3,.L15+28
+ 389 00ce 181C     	 mov r0,r3
+ 390 00d0 FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+  73:../Conf.c     **** 		DIGITAL_IO_SetOutputLow (&LED_CONF_MIN_5);
+ 391              	 .loc 3 73 0
+ 392 00d4 194B     	 ldr r3,.L15+32
+ 393 00d6 181C     	 mov r0,r3
+ 394 00d8 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 395 00dc 10E0     	 b .L14
+ 396              	.L13:
+  74:../Conf.c     **** 	}
+  75:../Conf.c     **** 
+  76:../Conf.c     **** 	else if(CONF.STATUS_CONF_ANG_LOW[0] == 2){
+ 397              	 .loc 3 76 0
+ 398 00de 114B     	 ldr r3,.L15+8
+ 399 00e0 DC22     	 mov r2,#220
+ 400 00e2 9B5C     	 ldrb r3,[r3,r2]
+ 401 00e4 022B     	 cmp r3,#2
+ 402 00e6 0BD1     	 bne .L14
+  77:../Conf.c     **** 		ACTION.Ang_min = -5;
+ 403              	 .loc 3 77 0
+ 404 00e8 0F4B     	 ldr r3,.L15+12
+ 405 00ea C022     	 mov r2,#192
+ 406 00ec 1449     	 ldr r1,.L15+36
+ 407 00ee 9950     	 str r1,[r3,r2]
+  78:../Conf.c     **** 		//	CONF.Maq_Ang_Min = BOT_MIN_DPRESS;
+  79:../Conf.c     **** 		DIGITAL_IO_SetOutputLow(&LED_CONF_MIN_0);
+ 408              	 .loc 3 79 0
+ 409 00f0 114B     	 ldr r3,.L15+28
+ 410 00f2 181C     	 mov r0,r3
+ 411 00f4 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+  80:../Conf.c     **** 		DIGITAL_IO_SetOutputHigh (&LED_CONF_MIN_5);
+ 412              	 .loc 3 80 0
+ 413 00f8 104B     	 ldr r3,.L15+32
+ 414 00fa 181C     	 mov r0,r3
+ 415 00fc FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+ 416              	.L14:
+  81:../Conf.c     **** 	}
+  82:../Conf.c     **** 
+  83:../Conf.c     **** 	CONF.STATUS_BOT_AUTO = false;
+ 417              	 .loc 3 83 0
+ 418 0100 084B     	 ldr r3,.L15+8
+ 419 0102 E022     	 mov r2,#224
+ 420 0104 0021     	 mov r1,#0
+ 421 0106 9954     	 strb r1,[r3,r2]
+  84:../Conf.c     **** 	CONF.STATUS_ANG_ZERO = false;
+ 422              	 .loc 3 84 0
+ 423 0108 064B     	 ldr r3,.L15+8
+ 424 010a E322     	 mov r2,#227
+ 425 010c 0021     	 mov r1,#0
+ 426 010e 9954     	 strb r1,[r3,r2]
+  85:../Conf.c     **** 
+  86:../Conf.c     **** 	taskSetState(TASK_CONF, TASK_GO);
+ 427              	 .loc 3 86 0
+ 428 0110 0320     	 mov r0,#3
+ 429 0112 0121     	 mov r1,#1
+ 430 0114 FFF7FEFF 	 bl taskSetState
+  87:../Conf.c     **** 
+  88:../Conf.c     **** }
+ 431              	 .loc 3 88 0
+ 432 0118 BD46     	 mov sp,r7
+ 433              	 
+ 434 011a 80BD     	 pop {r7,pc}
+ 435              	.L16:
+ 436              	 .align 2
+ 437              	.L15:
+ 438 011c DA000000 	 .word CONF+218
+ 439 0120 DC000000 	 .word CONF+220
+ 440 0124 00000000 	 .word CONF
+ 441 0128 00000000 	 .word ACTION
+ 442 012c 00000000 	 .word LED_CONF_5
+ 443 0130 00000000 	 .word LED_CONF_10
+ 444 0134 00000000 	 .word LED_CONF_15
+ 445 0138 00000000 	 .word LED_CONF_MIN_0
+ 446 013c 00000000 	 .word LED_CONF_MIN_5
+ 447 0140 0000A0C0 	 .word -1063256064
+ 448              	 .cfi_endproc
+ 449              	.LFE299:
+ 451              	 .section .text.ConfTask,"ax",%progbits
+ 452              	 .align 2
+ 453              	 .global ConfTask
+ 454              	 .code 16
+ 455              	 .thumb_func
+ 457              	ConfTask:
+ 458              	.LFB300:
+  89:../Conf.c     **** 
+  90:../Conf.c     **** //*************************************************************************************************
+  91:../Conf.c     **** //***********************************************************== CONF TASK ==***********************
+  92:../Conf.c     **** //*************************************************************************************************
+  93:../Conf.c     **** 
+  94:../Conf.c     **** void ConfTask(void){
+ 459              	 .loc 3 94 0
+ 460              	 .cfi_startproc
+ 461 0000 80B5     	 push {r7,lr}
+ 462              	.LCFI20:
+ 463              	 .cfi_def_cfa_offset 8
+ 464              	 .cfi_offset 7,-8
+ 465              	 .cfi_offset 14,-4
+ 466 0002 00AF     	 add r7,sp,#0
+ 467              	.LCFI21:
+ 468              	 .cfi_def_cfa_register 7
+  95:../Conf.c     **** 
+  96:../Conf.c     **** 	CONF.BOT_ZERO = DIGITAL_IO_GetInput(&BOT_MIN);
+ 469              	 .loc 3 96 0
+ 470 0004 D84B     	 ldr r3,.L43
+ 471 0006 181C     	 mov r0,r3
+ 472 0008 FFF7FEFF 	 bl DIGITAL_IO_GetInput
+ 473 000c 031C     	 mov r3,r0
+ 474 000e D9B2     	 uxtb r1,r3
+ 475 0010 D64B     	 ldr r3,.L43+4
+ 476 0012 C922     	 mov r2,#201
+ 477 0014 9954     	 strb r1,[r3,r2]
+  97:../Conf.c     **** 	if(CONF.BOT_ZERO == false){
+ 478              	 .loc 3 97 0
+ 479 0016 D54B     	 ldr r3,.L43+4
+ 480 0018 C922     	 mov r2,#201
+ 481 001a 9B5C     	 ldrb r3,[r3,r2]
+ 482 001c 002B     	 cmp r3,#0
+ 483 001e 00D0     	 beq .LCB402
+ 484 0020 8EE0     	 b .L18
+ 485              	.LCB402:
+  98:../Conf.c     **** 		//		CONF.BOT_ZERO = false;
+  99:../Conf.c     **** 
+ 100:../Conf.c     **** 
+ 101:../Conf.c     **** 		switch(CONF.Maq_Ang_Min)
+ 486              	 .loc 3 101 0
+ 487 0022 D24B     	 ldr r3,.L43+4
+ 488 0024 C322     	 mov r2,#195
+ 489 0026 9B5C     	 ldrb r3,[r3,r2]
+ 490 0028 002B     	 cmp r3,#0
+ 491 002a 02D0     	 beq .L19
+ 492 002c 012B     	 cmp r3,#1
+ 493 002e 45D0     	 beq .L20
+ 494 0030 86E0     	 b .L18
+ 495              	.L19:
+ 102:../Conf.c     **** 		{
+ 103:../Conf.c     **** 		case BOT_MIN_PRESS:
+ 104:../Conf.c     **** 		{
+ 105:../Conf.c     **** 
+ 106:../Conf.c     **** 			if(/*(CONF.AUTOMATICO == true && CONF.STATUS_BOT_AUTO == false) ||*/ (CONF.BOT_ZERO == false && 
+ 496              	 .loc 3 106 0
+ 497 0032 CE4B     	 ldr r3,.L43+4
+ 498 0034 C922     	 mov r2,#201
+ 499 0036 9B5C     	 ldrb r3,[r3,r2]
+ 500 0038 002B     	 cmp r3,#0
+ 501 003a 3ED1     	 bne .L21
+ 502              	 .loc 3 106 0 is_stmt 0 discriminator 1
+ 503 003c CB4B     	 ldr r3,.L43+4
+ 504 003e E322     	 mov r2,#227
+ 505 0040 9B5C     	 ldrb r3,[r3,r2]
+ 506 0042 0122     	 mov r2,#1
+ 507 0044 5340     	 eor r3,r2
+ 508 0046 DBB2     	 uxtb r3,r3
+ 509 0048 002B     	 cmp r3,#0
+ 510 004a 36D0     	 beq .L21
+ 511              	 .loc 3 106 0 discriminator 2
+ 512 004c C84B     	 ldr r3,.L43+8
+ 513 004e DE22     	 mov r2,#222
+ 514 0050 9B5C     	 ldrb r3,[r3,r2]
+ 515 0052 002B     	 cmp r3,#0
+ 516 0054 31D0     	 beq .L21
+ 107:../Conf.c     **** 				CONF.ANG_MAX_SUP = false;
+ 517              	 .loc 3 107 0 is_stmt 1
+ 518 0056 C54B     	 ldr r3,.L43+4
+ 519 0058 E522     	 mov r2,#229
+ 520 005a 0021     	 mov r1,#0
+ 521 005c 9954     	 strb r1,[r3,r2]
+ 108:../Conf.c     **** 				DIGITAL_IO_SetOutputHigh(&LED_CONF_MIN_0);
+ 522              	 .loc 3 108 0
+ 523 005e C54B     	 ldr r3,.L43+12
+ 524 0060 181C     	 mov r0,r3
+ 525 0062 FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+ 109:../Conf.c     **** 				DIGITAL_IO_SetOutputLow (&LED_CONF_MIN_5);
+ 526              	 .loc 3 109 0
+ 527 0066 C44B     	 ldr r3,.L43+16
+ 528 0068 181C     	 mov r0,r3
+ 529 006a FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 110:../Conf.c     **** 				ACTION.Erro_Ang_Min_0 = 4;
+ 530              	 .loc 3 110 0
+ 531 006e C34B     	 ldr r3,.L43+20
+ 532 0070 D122     	 mov r2,#209
+ 533 0072 0421     	 mov r1,#4
+ 534 0074 9954     	 strb r1,[r3,r2]
+ 111:../Conf.c     **** 				ACTION.Ang_min = 0;
+ 535              	 .loc 3 111 0
+ 536 0076 C14B     	 ldr r3,.L43+20
+ 537 0078 C022     	 mov r2,#192
+ 538 007a 0021     	 mov r1,#0
+ 539 007c 9950     	 str r1,[r3,r2]
+ 112:../Conf.c     **** 				CONF.BOT_ZERO = 1;
+ 540              	 .loc 3 112 0
+ 541 007e BB4B     	 ldr r3,.L43+4
+ 542 0080 C922     	 mov r2,#201
+ 543 0082 0121     	 mov r1,#1
+ 544 0084 9954     	 strb r1,[r3,r2]
+ 113:../Conf.c     **** 				CONF.STATUS_ANG_ZERO = true;
+ 545              	 .loc 3 113 0
+ 546 0086 B94B     	 ldr r3,.L43+4
+ 547 0088 E322     	 mov r2,#227
+ 548 008a 0121     	 mov r1,#1
+ 549 008c 9954     	 strb r1,[r3,r2]
+ 114:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE = false;
+ 550              	 .loc 3 114 0
+ 551 008e B84B     	 ldr r3,.L43+8
+ 552 0090 DE22     	 mov r2,#222
+ 553 0092 0021     	 mov r1,#0
+ 554 0094 9954     	 strb r1,[r3,r2]
+ 115:../Conf.c     **** 				CONF.Maq_Ang_Min = BOT_MIN_DPRESS;
+ 555              	 .loc 3 115 0
+ 556 0096 B54B     	 ldr r3,.L43+4
+ 557 0098 C322     	 mov r2,#195
+ 558 009a 0121     	 mov r1,#1
+ 559 009c 9954     	 strb r1,[r3,r2]
+ 116:../Conf.c     **** 				CONF.STATUS_CONF_ANG_LOW[0] = 1;
+ 560              	 .loc 3 116 0
+ 561 009e B34B     	 ldr r3,.L43+4
+ 562 00a0 DC22     	 mov r2,#220
+ 563 00a2 0121     	 mov r1,#1
+ 564 00a4 9954     	 strb r1,[r3,r2]
+ 117:../Conf.c     **** 				E_EEPROM_XMC1_Write(CONF_ANG_LOW, &CONF.STATUS_CONF_ANG_LOW[0]);
+ 565              	 .loc 3 117 0
+ 566 00a6 B64B     	 ldr r3,.L43+24
+ 567 00a8 0520     	 mov r0,#5
+ 568 00aa 191C     	 mov r1,r3
+ 569 00ac FFF7FEFF 	 bl E_EEPROM_XMC1_Write
+ 118:../Conf.c     **** 				taskSetState(TASK_DEBAUCE, TASK_GO);
+ 570              	 .loc 3 118 0
+ 571 00b0 0420     	 mov r0,#4
+ 572 00b2 0121     	 mov r1,#1
+ 573 00b4 FFF7FEFF 	 bl taskSetState
+ 119:../Conf.c     **** 			}
+ 120:../Conf.c     **** 		}
+ 121:../Conf.c     **** 		break;
+ 574              	 .loc 3 121 0
+ 575 00b8 42E0     	 b .L18
+ 576              	.L21:
+ 577 00ba 41E0     	 b .L18
+ 578              	.L20:
+ 122:../Conf.c     **** 
+ 123:../Conf.c     **** 		case BOT_MIN_DPRESS:
+ 124:../Conf.c     **** 		{
+ 125:../Conf.c     **** 			if(/*(CONF.AUTOMATICO == true && CONF.STATUS_BOT_AUTO == true) ||*/ (CONF.BOT_ZERO == false && C
+ 579              	 .loc 3 125 0
+ 580 00bc AB4B     	 ldr r3,.L43+4
+ 581 00be C922     	 mov r2,#201
+ 582 00c0 9B5C     	 ldrb r3,[r3,r2]
+ 583 00c2 002B     	 cmp r3,#0
+ 584 00c4 3BD1     	 bne .L22
+ 585              	 .loc 3 125 0 is_stmt 0 discriminator 1
+ 586 00c6 A94B     	 ldr r3,.L43+4
+ 587 00c8 E322     	 mov r2,#227
+ 588 00ca 9B5C     	 ldrb r3,[r3,r2]
+ 589 00cc 002B     	 cmp r3,#0
+ 590 00ce 36D0     	 beq .L22
+ 591              	 .loc 3 125 0 discriminator 2
+ 592 00d0 A74B     	 ldr r3,.L43+8
+ 593 00d2 DE22     	 mov r2,#222
+ 594 00d4 9B5C     	 ldrb r3,[r3,r2]
+ 595 00d6 002B     	 cmp r3,#0
+ 596 00d8 31D0     	 beq .L22
+ 126:../Conf.c     **** 				CONF.ANG_MAX_SUP = true;
+ 597              	 .loc 3 126 0 is_stmt 1
+ 598 00da A44B     	 ldr r3,.L43+4
+ 599 00dc E522     	 mov r2,#229
+ 600 00de 0121     	 mov r1,#1
+ 601 00e0 9954     	 strb r1,[r3,r2]
+ 127:../Conf.c     **** 				DIGITAL_IO_SetOutputLow (&LED_CONF_MIN_0);
+ 602              	 .loc 3 127 0
+ 603 00e2 A44B     	 ldr r3,.L43+12
+ 604 00e4 181C     	 mov r0,r3
+ 605 00e6 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 128:../Conf.c     **** 				DIGITAL_IO_SetOutputHigh(&LED_CONF_MIN_5);
+ 606              	 .loc 3 128 0
+ 607 00ea A34B     	 ldr r3,.L43+16
+ 608 00ec 181C     	 mov r0,r3
+ 609 00ee FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+ 129:../Conf.c     **** 				ACTION.Erro_Ang_Min_5 = 4;
+ 610              	 .loc 3 129 0
+ 611 00f2 A24B     	 ldr r3,.L43+20
+ 612 00f4 D022     	 mov r2,#208
+ 613 00f6 0421     	 mov r1,#4
+ 614 00f8 9954     	 strb r1,[r3,r2]
+ 130:../Conf.c     **** 				ACTION.Ang_min = -5;
+ 615              	 .loc 3 130 0
+ 616 00fa A04B     	 ldr r3,.L43+20
+ 617 00fc C022     	 mov r2,#192
+ 618 00fe A149     	 ldr r1,.L43+28
+ 619 0100 9950     	 str r1,[r3,r2]
+ 131:../Conf.c     **** 				CONF.Maq_Ang_Min = BOT_MIN_PRESS;
+ 620              	 .loc 3 131 0
+ 621 0102 9A4B     	 ldr r3,.L43+4
+ 622 0104 C322     	 mov r2,#195
+ 623 0106 0021     	 mov r1,#0
+ 624 0108 9954     	 strb r1,[r3,r2]
+ 132:../Conf.c     **** 				CONF.Cont_AUT = 0;
+ 625              	 .loc 3 132 0
+ 626 010a 984B     	 ldr r3,.L43+4
+ 627 010c D222     	 mov r2,#210
+ 628 010e 0021     	 mov r1,#0
+ 629 0110 9952     	 strh r1,[r3,r2]
+ 133:../Conf.c     **** 				CONF.STATUS_ANG_ZERO = false;
+ 630              	 .loc 3 133 0
+ 631 0112 964B     	 ldr r3,.L43+4
+ 632 0114 E322     	 mov r2,#227
+ 633 0116 0021     	 mov r1,#0
+ 634 0118 9954     	 strb r1,[r3,r2]
+ 134:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE = false;
+ 635              	 .loc 3 134 0
+ 636 011a 954B     	 ldr r3,.L43+8
+ 637 011c DE22     	 mov r2,#222
+ 638 011e 0021     	 mov r1,#0
+ 639 0120 9954     	 strb r1,[r3,r2]
+ 135:../Conf.c     **** 				CONF.STATUS_CONF_ANG_LOW[0] = 2;
+ 640              	 .loc 3 135 0
+ 641 0122 924B     	 ldr r3,.L43+4
+ 642 0124 DC22     	 mov r2,#220
+ 643 0126 0221     	 mov r1,#2
+ 644 0128 9954     	 strb r1,[r3,r2]
+ 136:../Conf.c     **** 				E_EEPROM_XMC1_Write(CONF_ANG_LOW, &CONF.STATUS_CONF_ANG_LOW[0]);
+ 645              	 .loc 3 136 0
+ 646 012a 954B     	 ldr r3,.L43+24
+ 647 012c 0520     	 mov r0,#5
+ 648 012e 191C     	 mov r1,r3
+ 649 0130 FFF7FEFF 	 bl E_EEPROM_XMC1_Write
+ 137:../Conf.c     **** 				taskSetState(TASK_DEBAUCE, TASK_GO);
+ 650              	 .loc 3 137 0
+ 651 0134 0420     	 mov r0,#4
+ 652 0136 0121     	 mov r1,#1
+ 653 0138 FFF7FEFF 	 bl taskSetState
+ 138:../Conf.c     **** 
+ 139:../Conf.c     **** 			}
+ 140:../Conf.c     **** 		}
+ 141:../Conf.c     **** 		break;
+ 654              	 .loc 3 141 0
+ 655 013c FFE7     	 b .L41
+ 656              	.L22:
+ 657              	.L41:
+ 658 013e C046     	 mov r8,r8
+ 659              	.L18:
+ 142:../Conf.c     **** 		}
+ 143:../Conf.c     **** 	}
+ 144:../Conf.c     **** 
+ 145:../Conf.c     **** 
+ 146:../Conf.c     **** 	CONF.BOT_AUTO = DIGITAL_IO_GetInput(&BOT_AUTO);
+ 660              	 .loc 3 146 0
+ 661 0140 914B     	 ldr r3,.L43+32
+ 662 0142 181C     	 mov r0,r3
+ 663 0144 FFF7FEFF 	 bl DIGITAL_IO_GetInput
+ 664 0148 031C     	 mov r3,r0
+ 665 014a D9B2     	 uxtb r1,r3
+ 666 014c 874B     	 ldr r3,.L43+4
+ 667 014e CB22     	 mov r2,#203
+ 668 0150 9954     	 strb r1,[r3,r2]
+ 147:../Conf.c     **** 	if(CONF.BOT_AUTO == false){
+ 669              	 .loc 3 147 0
+ 670 0152 864B     	 ldr r3,.L43+4
+ 671 0154 CB22     	 mov r2,#203
+ 672 0156 9B5C     	 ldrb r3,[r3,r2]
+ 673 0158 002B     	 cmp r3,#0
+ 674 015a 00D0     	 beq .LCB566
+ 675 015c 89E0     	 b .L23
+ 676              	.LCB566:
+ 148:../Conf.c     **** 		//		CONF.BOT_AUTO = true;
+ 149:../Conf.c     **** 
+ 150:../Conf.c     **** 		switch(CONF.Maq_Auto)
+ 677              	 .loc 3 150 0
+ 678 015e 834B     	 ldr r3,.L43+4
+ 679 0160 C222     	 mov r2,#194
+ 680 0162 9B5C     	 ldrb r3,[r3,r2]
+ 681 0164 002B     	 cmp r3,#0
+ 682 0166 02D0     	 beq .L24
+ 683 0168 012B     	 cmp r3,#1
+ 684 016a 3DD0     	 beq .L25
+ 685 016c 81E0     	 b .L23
+ 686              	.L24:
+ 151:../Conf.c     **** 		{
+ 152:../Conf.c     **** 		case BOT_AUTO_PRESS:
+ 153:../Conf.c     **** 		{
+ 154:../Conf.c     **** 			if((CONF.AUTOMATICO == true && CONF.STATUS_BOT_AUTO == false) || (CONF.BOT_AUTO == false && CONF
+ 687              	 .loc 3 154 0
+ 688 016e 7F4B     	 ldr r3,.L43+4
+ 689 0170 CA22     	 mov r2,#202
+ 690 0172 9B5C     	 ldrb r3,[r3,r2]
+ 691 0174 002B     	 cmp r3,#0
+ 692 0176 07D0     	 beq .L26
+ 693              	 .loc 3 154 0 is_stmt 0 discriminator 1
+ 694 0178 7C4B     	 ldr r3,.L43+4
+ 695 017a E022     	 mov r2,#224
+ 696 017c 9B5C     	 ldrb r3,[r3,r2]
+ 697 017e 0122     	 mov r2,#1
+ 698 0180 5340     	 eor r3,r2
+ 699 0182 DBB2     	 uxtb r3,r3
+ 700 0184 002B     	 cmp r3,#0
+ 701 0186 11D1     	 bne .L27
+ 702              	.L26:
+ 703              	 .loc 3 154 0 discriminator 3
+ 704 0188 784B     	 ldr r3,.L43+4
+ 705 018a CB22     	 mov r2,#203
+ 706 018c 9B5C     	 ldrb r3,[r3,r2]
+ 707 018e 002B     	 cmp r3,#0
+ 708 0190 29D1     	 bne .L28
+ 709              	 .loc 3 154 0 discriminator 4
+ 710 0192 764B     	 ldr r3,.L43+4
+ 711 0194 E022     	 mov r2,#224
+ 712 0196 9B5C     	 ldrb r3,[r3,r2]
+ 713 0198 0122     	 mov r2,#1
+ 714 019a 5340     	 eor r3,r2
+ 715 019c DBB2     	 uxtb r3,r3
+ 716 019e 002B     	 cmp r3,#0
+ 717 01a0 21D0     	 beq .L28
+ 718              	 .loc 3 154 0 discriminator 5
+ 719 01a2 734B     	 ldr r3,.L43+8
+ 720 01a4 DE22     	 mov r2,#222
+ 721 01a6 9B5C     	 ldrb r3,[r3,r2]
+ 722 01a8 002B     	 cmp r3,#0
+ 723 01aa 1CD0     	 beq .L28
+ 724              	.L27:
+ 155:../Conf.c     **** 				CONF.Maq_Auto = BOT_AUTO_DPRESS;
+ 725              	 .loc 3 155 0 is_stmt 1
+ 726 01ac 6F4B     	 ldr r3,.L43+4
+ 727 01ae C222     	 mov r2,#194
+ 728 01b0 0121     	 mov r1,#1
+ 729 01b2 9954     	 strb r1,[r3,r2]
+ 156:../Conf.c     **** 				CONF.STATUS_BOT_AUTO = true;
+ 730              	 .loc 3 156 0
+ 731 01b4 6D4B     	 ldr r3,.L43+4
+ 732 01b6 E022     	 mov r2,#224
+ 733 01b8 0121     	 mov r1,#1
+ 734 01ba 9954     	 strb r1,[r3,r2]
+ 157:../Conf.c     **** 				CONF.STATUS_AUTOMATICO = true;
+ 735              	 .loc 3 157 0
+ 736 01bc 6B4B     	 ldr r3,.L43+4
+ 737 01be DE22     	 mov r2,#222
+ 738 01c0 0121     	 mov r1,#1
+ 739 01c2 9954     	 strb r1,[r3,r2]
+ 158:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE = false;
+ 740              	 .loc 3 158 0
+ 741 01c4 6A4B     	 ldr r3,.L43+8
+ 742 01c6 DE22     	 mov r2,#222
+ 743 01c8 0021     	 mov r1,#0
+ 744 01ca 9954     	 strb r1,[r3,r2]
+ 159:../Conf.c     **** 				CONF.BOT_AUTO = 1;
+ 745              	 .loc 3 159 0
+ 746 01cc 674B     	 ldr r3,.L43+4
+ 747 01ce CB22     	 mov r2,#203
+ 748 01d0 0121     	 mov r1,#1
+ 749 01d2 9954     	 strb r1,[r3,r2]
+ 160:../Conf.c     **** 				taskSetState(TASK_DEBAUCE, TASK_GO);
+ 750              	 .loc 3 160 0
+ 751 01d4 0420     	 mov r0,#4
+ 752 01d6 0121     	 mov r1,#1
+ 753 01d8 FFF7FEFF 	 bl taskSetState
+ 161:../Conf.c     **** 				taskSetState(TASK_ACTION, TASK_GO);
+ 754              	 .loc 3 161 0
+ 755 01dc 0220     	 mov r0,#2
+ 756 01de 0121     	 mov r1,#1
+ 757 01e0 FFF7FEFF 	 bl taskSetState
+ 162:../Conf.c     **** 			}
+ 163:../Conf.c     **** 		}
+ 164:../Conf.c     **** 		break;
+ 758              	 .loc 3 164 0
+ 759 01e4 45E0     	 b .L23
+ 760              	.L28:
+ 761 01e6 44E0     	 b .L23
+ 762              	.L25:
+ 165:../Conf.c     **** 
+ 166:../Conf.c     **** 		case BOT_AUTO_DPRESS:
+ 167:../Conf.c     **** 		{
+ 168:../Conf.c     **** 			if((CONF.AUTOMATICO == true && CONF.STATUS_BOT_AUTO == true) || (CONF.BOT_AUTO == false && CONF.
+ 763              	 .loc 3 168 0
+ 764 01e8 604B     	 ldr r3,.L43+4
+ 765 01ea CA22     	 mov r2,#202
+ 766 01ec 9B5C     	 ldrb r3,[r3,r2]
+ 767 01ee 002B     	 cmp r3,#0
+ 768 01f0 04D0     	 beq .L29
+ 769              	 .loc 3 168 0 is_stmt 0 discriminator 1
+ 770 01f2 5E4B     	 ldr r3,.L43+4
+ 771 01f4 E022     	 mov r2,#224
+ 772 01f6 9B5C     	 ldrb r3,[r3,r2]
+ 773 01f8 002B     	 cmp r3,#0
+ 774 01fa 0ED1     	 bne .L30
+ 775              	.L29:
+ 776              	 .loc 3 168 0 discriminator 3
+ 777 01fc 5B4B     	 ldr r3,.L43+4
+ 778 01fe CB22     	 mov r2,#203
+ 779 0200 9B5C     	 ldrb r3,[r3,r2]
+ 780 0202 002B     	 cmp r3,#0
+ 781 0204 34D1     	 bne .L31
+ 782              	 .loc 3 168 0 discriminator 4
+ 783 0206 594B     	 ldr r3,.L43+4
+ 784 0208 E022     	 mov r2,#224
+ 785 020a 9B5C     	 ldrb r3,[r3,r2]
+ 786 020c 002B     	 cmp r3,#0
+ 787 020e 2FD0     	 beq .L31
+ 788              	 .loc 3 168 0 discriminator 5
+ 789 0210 574B     	 ldr r3,.L43+8
+ 790 0212 DE22     	 mov r2,#222
+ 791 0214 9B5C     	 ldrb r3,[r3,r2]
+ 792 0216 002B     	 cmp r3,#0
+ 793 0218 2AD0     	 beq .L31
+ 794              	.L30:
+ 169:../Conf.c     **** 				CONF.Maq_Auto = BOT_AUTO_PRESS;
+ 795              	 .loc 3 169 0 is_stmt 1
+ 796 021a 544B     	 ldr r3,.L43+4
+ 797 021c C222     	 mov r2,#194
+ 798 021e 0021     	 mov r1,#0
+ 799 0220 9954     	 strb r1,[r3,r2]
+ 170:../Conf.c     **** 				CONF.Cont_AUT = 0;
+ 800              	 .loc 3 170 0
+ 801 0222 524B     	 ldr r3,.L43+4
+ 802 0224 D222     	 mov r2,#210
+ 803 0226 0021     	 mov r1,#0
+ 804 0228 9952     	 strh r1,[r3,r2]
+ 171:../Conf.c     **** 				CONF.STATUS_BOT_AUTO = false;
+ 805              	 .loc 3 171 0
+ 806 022a 504B     	 ldr r3,.L43+4
+ 807 022c E022     	 mov r2,#224
+ 808 022e 0021     	 mov r1,#0
+ 809 0230 9954     	 strb r1,[r3,r2]
+ 172:../Conf.c     **** 				CONF.STATUS_AUTOMATICO = false;
+ 810              	 .loc 3 172 0
+ 811 0232 4E4B     	 ldr r3,.L43+4
+ 812 0234 DE22     	 mov r2,#222
+ 813 0236 0021     	 mov r1,#0
+ 814 0238 9954     	 strb r1,[r3,r2]
+ 173:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE = false;
+ 815              	 .loc 3 173 0
+ 816 023a 4D4B     	 ldr r3,.L43+8
+ 817 023c DE22     	 mov r2,#222
+ 818 023e 0021     	 mov r1,#0
+ 819 0240 9954     	 strb r1,[r3,r2]
+ 174:../Conf.c     **** 				CONF.BOT_AUTO = 1;
+ 820              	 .loc 3 174 0
+ 821 0242 4A4B     	 ldr r3,.L43+4
+ 822 0244 CB22     	 mov r2,#203
+ 823 0246 0121     	 mov r1,#1
+ 824 0248 9954     	 strb r1,[r3,r2]
+ 175:../Conf.c     **** 				taskSetState(TASK_DEBAUCE, TASK_GO);
+ 825              	 .loc 3 175 0
+ 826 024a 0420     	 mov r0,#4
+ 827 024c 0121     	 mov r1,#1
+ 828 024e FFF7FEFF 	 bl taskSetState
+ 176:../Conf.c     **** 				DIGITAL_IO_SetOutputLow(&LED1);
+ 829              	 .loc 3 176 0
+ 830 0252 4E4B     	 ldr r3,.L43+36
+ 831 0254 181C     	 mov r0,r3
+ 832 0256 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 177:../Conf.c     **** 				DIGITAL_IO_SetOutputLow(&LED2);
+ 833              	 .loc 3 177 0
+ 834 025a 4D4B     	 ldr r3,.L43+40
+ 835 025c 181C     	 mov r0,r3
+ 836 025e FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 178:../Conf.c     **** 				taskSetState(TASK_ACTION, TASK_STOP);
+ 837              	 .loc 3 178 0
+ 838 0262 0123     	 mov r3,#1
+ 839 0264 5B42     	 neg r3,r3
+ 840 0266 0220     	 mov r0,#2
+ 841 0268 191C     	 mov r1,r3
+ 842 026a FFF7FEFF 	 bl taskSetState
+ 179:../Conf.c     **** 			}
+ 180:../Conf.c     **** 		}
+ 181:../Conf.c     **** 		break;
+ 843              	 .loc 3 181 0
+ 844 026e FFE7     	 b .L42
+ 845              	.L31:
+ 846              	.L42:
+ 847 0270 C046     	 mov r8,r8
+ 848              	.L23:
+ 182:../Conf.c     **** 		}
+ 183:../Conf.c     **** 	}
+ 184:../Conf.c     **** 
+ 185:../Conf.c     **** 
+ 186:../Conf.c     **** 
+ 187:../Conf.c     **** 
+ 188:../Conf.c     **** 
+ 189:../Conf.c     **** 
+ 190:../Conf.c     **** 	CONF.BOT_MANUAL = DIGITAL_IO_GetInput(&BOT_MANUAL);
+ 849              	 .loc 3 190 0
+ 850 0272 484B     	 ldr r3,.L43+44
+ 851 0274 181C     	 mov r0,r3
+ 852 0276 FFF7FEFF 	 bl DIGITAL_IO_GetInput
+ 853 027a 031C     	 mov r3,r0
+ 854 027c D9B2     	 uxtb r1,r3
+ 855 027e 3B4B     	 ldr r3,.L43+4
+ 856 0280 CD22     	 mov r2,#205
+ 857 0282 9954     	 strb r1,[r3,r2]
+ 191:../Conf.c     **** 	if(CONF.MANUAL == true || CONF.BOT_MANUAL == 1){
+ 858              	 .loc 3 191 0
+ 859 0284 394B     	 ldr r3,.L43+4
+ 860 0286 CC22     	 mov r2,#204
+ 861 0288 9B5C     	 ldrb r3,[r3,r2]
+ 862 028a 002B     	 cmp r3,#0
+ 863 028c 04D1     	 bne .L32
+ 864              	 .loc 3 191 0 is_stmt 0 discriminator 1
+ 865 028e 374B     	 ldr r3,.L43+4
+ 866 0290 CD22     	 mov r2,#205
+ 867 0292 9B5C     	 ldrb r3,[r3,r2]
+ 868 0294 012B     	 cmp r3,#1
+ 869 0296 1DD1     	 bne .L33
+ 870              	.L32:
+ 192:../Conf.c     **** 		CONF.Maq_Auto = BOT_AUTO_PRESS;
+ 871              	 .loc 3 192 0 is_stmt 1
+ 872 0298 344B     	 ldr r3,.L43+4
+ 873 029a C222     	 mov r2,#194
+ 874 029c 0021     	 mov r1,#0
+ 875 029e 9954     	 strb r1,[r3,r2]
+ 193:../Conf.c     **** 		CONF.STATUS_BOT_AUTO = false;
+ 876              	 .loc 3 193 0
+ 877 02a0 324B     	 ldr r3,.L43+4
+ 878 02a2 E022     	 mov r2,#224
+ 879 02a4 0021     	 mov r1,#0
+ 880 02a6 9954     	 strb r1,[r3,r2]
+ 194:../Conf.c     **** 		CONF.STATUS_AUTOMATICO = false;
+ 881              	 .loc 3 194 0
+ 882 02a8 304B     	 ldr r3,.L43+4
+ 883 02aa DE22     	 mov r2,#222
+ 884 02ac 0021     	 mov r1,#0
+ 885 02ae 9954     	 strb r1,[r3,r2]
+ 195:../Conf.c     **** 		CONF.STATUS_MANUAL = true;
+ 886              	 .loc 3 195 0
+ 887 02b0 2E4B     	 ldr r3,.L43+4
+ 888 02b2 DF22     	 mov r2,#223
+ 889 02b4 0121     	 mov r1,#1
+ 890 02b6 9954     	 strb r1,[r3,r2]
+ 196:../Conf.c     **** 		CONF.STATUS_BOT_MANUAL = true;
+ 891              	 .loc 3 196 0
+ 892 02b8 2C4B     	 ldr r3,.L43+4
+ 893 02ba E122     	 mov r2,#225
+ 894 02bc 0121     	 mov r1,#1
+ 895 02be 9954     	 strb r1,[r3,r2]
+ 197:../Conf.c     **** 		taskSetState(TASK_ACTION, TASK_GO);
+ 896              	 .loc 3 197 0
+ 897 02c0 0220     	 mov r0,#2
+ 898 02c2 0121     	 mov r1,#1
+ 899 02c4 FFF7FEFF 	 bl taskSetState
+ 198:../Conf.c     **** 		taskSetState(TASK_CONF, TASK_STOP);
+ 900              	 .loc 3 198 0
+ 901 02c8 0123     	 mov r3,#1
+ 902 02ca 5B42     	 neg r3,r3
+ 903 02cc 0320     	 mov r0,#3
+ 904 02ce 191C     	 mov r1,r3
+ 905 02d0 FFF7FEFF 	 bl taskSetState
+ 906              	.L33:
+ 199:../Conf.c     **** 	}
+ 200:../Conf.c     **** 
+ 201:../Conf.c     **** 	if(CONF.ANGLE == true ){
+ 907              	 .loc 3 201 0
+ 908 02d4 254B     	 ldr r3,.L43+4
+ 909 02d6 C622     	 mov r2,#198
+ 910 02d8 9B5C     	 ldrb r3,[r3,r2]
+ 911 02da 002B     	 cmp r3,#0
+ 912 02dc 00D1     	 bne .LCB772
+ 913 02de CAE0     	 b .L17
+ 914              	.LCB772:
+ 202:../Conf.c     **** 		CONF.ANGLE = false;
+ 915              	 .loc 3 202 0
+ 916 02e0 224B     	 ldr r3,.L43+4
+ 917 02e2 C622     	 mov r2,#198
+ 918 02e4 0021     	 mov r1,#0
+ 919 02e6 9954     	 strb r1,[r3,r2]
+ 203:../Conf.c     **** 		switch(CONF.Bot_Ang)
+ 920              	 .loc 3 203 0
+ 921 02e8 204B     	 ldr r3,.L43+4
+ 922 02ea C122     	 mov r2,#193
+ 923 02ec 9B5C     	 ldrb r3,[r3,r2]
+ 924 02ee 012B     	 cmp r3,#1
+ 925 02f0 5AD0     	 beq .L35
+ 926 02f2 022B     	 cmp r3,#2
+ 927 02f4 00D1     	 bne .LCB783
+ 928 02f6 8BE0     	 b .L36
+ 929              	.LCB783:
+ 930 02f8 002B     	 cmp r3,#0
+ 931 02fa 00D0     	 beq .LCB785
+ 932 02fc BBE0     	 b .L17
+ 933              	.LCB785:
+ 204:../Conf.c     **** 		{
+ 205:../Conf.c     **** 		case CONF_ANG_1:
+ 206:../Conf.c     **** 		{
+ 207:../Conf.c     **** 			if(DEBAUCE.STATUS_DEBAUCE == true){
+ 934              	 .loc 3 207 0
+ 935 02fe 1C4B     	 ldr r3,.L43+8
+ 936 0300 DE22     	 mov r2,#222
+ 937 0302 9B5C     	 ldrb r3,[r3,r2]
+ 938 0304 002B     	 cmp r3,#0
+ 939 0306 2DD0     	 beq .L38
+ 208:../Conf.c     **** 				CONF.ANG_MAX_INF = false;
+ 940              	 .loc 3 208 0
+ 941 0308 184B     	 ldr r3,.L43+4
+ 942 030a E422     	 mov r2,#228
+ 943 030c 0021     	 mov r1,#0
+ 944 030e 9954     	 strb r1,[r3,r2]
+ 209:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE = false;
+ 945              	 .loc 3 209 0
+ 946 0310 174B     	 ldr r3,.L43+8
+ 947 0312 DE22     	 mov r2,#222
+ 948 0314 0021     	 mov r1,#0
+ 949 0316 9954     	 strb r1,[r3,r2]
+ 210:../Conf.c     **** 				CONF.STATUS_CONF_ANG_HIGH[0] = 1;
+ 950              	 .loc 3 210 0
+ 951 0318 144B     	 ldr r3,.L43+4
+ 952 031a DA22     	 mov r2,#218
+ 953 031c 0121     	 mov r1,#1
+ 954 031e 9954     	 strb r1,[r3,r2]
+ 211:../Conf.c     **** 				ACTION.Ang_max = 3;						//valor teste prototipo
+ 955              	 .loc 3 211 0
+ 956 0320 164B     	 ldr r3,.L43+20
+ 957 0322 BF22     	 mov r2,#191
+ 958 0324 0321     	 mov r1,#3
+ 959 0326 9954     	 strb r1,[r3,r2]
+ 212:../Conf.c     **** 				ACTION.VAL_Porcent = 95;
+ 960              	 .loc 3 212 0
+ 961 0328 144B     	 ldr r3,.L43+20
+ 962 032a C522     	 mov r2,#197
+ 963 032c 5F21     	 mov r1,#95
+ 964 032e 9954     	 strb r1,[r3,r2]
+ 213:../Conf.c     **** 				CONF.Bot_Ang = CONF_ANG_2;
+ 965              	 .loc 3 213 0
+ 966 0330 0E4B     	 ldr r3,.L43+4
+ 967 0332 C122     	 mov r2,#193
+ 968 0334 0121     	 mov r1,#1
+ 969 0336 9954     	 strb r1,[r3,r2]
+ 214:../Conf.c     **** 				taskSetState(TASK_DEBAUCE, TASK_GO);
+ 970              	 .loc 3 214 0
+ 971 0338 0420     	 mov r0,#4
+ 972 033a 0121     	 mov r1,#1
+ 973 033c FFF7FEFF 	 bl taskSetState
+ 215:../Conf.c     **** 				DIGITAL_IO_SetOutputHigh(&LED_CONF_5);
+ 974              	 .loc 3 215 0
+ 975 0340 154B     	 ldr r3,.L43+48
+ 976 0342 181C     	 mov r0,r3
+ 977 0344 FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+ 216:../Conf.c     **** 				DIGITAL_IO_SetOutputLow(&LED_CONF_10);
+ 978              	 .loc 3 216 0
+ 979 0348 144B     	 ldr r3,.L43+52
+ 980 034a 181C     	 mov r0,r3
+ 981 034c FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 217:../Conf.c     **** 				DIGITAL_IO_SetOutputLow(&LED_CONF_15);
+ 982              	 .loc 3 217 0
+ 983 0350 134B     	 ldr r3,.L43+56
+ 984 0352 181C     	 mov r0,r3
+ 985 0354 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 218:../Conf.c     **** 				E_EEPROM_XMC1_Write(CONF_ANG_HIGH, &CONF.STATUS_CONF_ANG_HIGH[0]);
+ 986              	 .loc 3 218 0
+ 987 0358 124B     	 ldr r3,.L43+60
+ 988 035a 0420     	 mov r0,#4
+ 989 035c 191C     	 mov r1,r3
+ 990 035e FFF7FEFF 	 bl E_EEPROM_XMC1_Write
+ 219:../Conf.c     **** 			}
+ 220:../Conf.c     **** 
+ 221:../Conf.c     **** 		}
+ 222:../Conf.c     **** 		break;
+ 991              	 .loc 3 222 0
+ 992 0362 88E0     	 b .L17
+ 993              	.L38:
+ 994 0364 87E0     	 b .L17
+ 995              	.L44:
+ 996 0366 C046     	 .align 2
+ 997              	.L43:
+ 998 0368 00000000 	 .word BOT_MIN
+ 999 036c 00000000 	 .word CONF
+ 1000 0370 00000000 	 .word DEBAUCE
+ 1001 0374 00000000 	 .word LED_CONF_MIN_0
+ 1002 0378 00000000 	 .word LED_CONF_MIN_5
+ 1003 037c 00000000 	 .word ACTION
+ 1004 0380 DC000000 	 .word CONF+220
+ 1005 0384 0000A0C0 	 .word -1063256064
+ 1006 0388 00000000 	 .word BOT_AUTO
+ 1007 038c 00000000 	 .word LED1
+ 1008 0390 00000000 	 .word LED2
+ 1009 0394 00000000 	 .word BOT_MANUAL
+ 1010 0398 00000000 	 .word LED_CONF_5
+ 1011 039c 00000000 	 .word LED_CONF_10
+ 1012 03a0 00000000 	 .word LED_CONF_15
+ 1013 03a4 DA000000 	 .word CONF+218
+ 1014              	.L35:
+ 223:../Conf.c     **** 
+ 224:../Conf.c     **** 		case CONF_ANG_2:
+ 225:../Conf.c     **** 		{
+ 226:../Conf.c     **** 			if(DEBAUCE.STATUS_DEBAUCE == true){
+ 1015              	 .loc 3 226 0
+ 1016 03a8 344B     	 ldr r3,.L45
+ 1017 03aa DE22     	 mov r2,#222
+ 1018 03ac 9B5C     	 ldrb r3,[r3,r2]
+ 1019 03ae 002B     	 cmp r3,#0
+ 1020 03b0 2DD0     	 beq .L39
+ 227:../Conf.c     **** 				CONF.ANG_MAX_INF = false;
+ 1021              	 .loc 3 227 0
+ 1022 03b2 334B     	 ldr r3,.L45+4
+ 1023 03b4 E422     	 mov r2,#228
+ 1024 03b6 0021     	 mov r1,#0
+ 1025 03b8 9954     	 strb r1,[r3,r2]
+ 228:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE = false;
+ 1026              	 .loc 3 228 0
+ 1027 03ba 304B     	 ldr r3,.L45
+ 1028 03bc DE22     	 mov r2,#222
+ 1029 03be 0021     	 mov r1,#0
+ 1030 03c0 9954     	 strb r1,[r3,r2]
+ 229:../Conf.c     **** 				CONF.STATUS_CONF_ANG_HIGH[0] = 2;
+ 1031              	 .loc 3 229 0
+ 1032 03c2 2F4B     	 ldr r3,.L45+4
+ 1033 03c4 DA22     	 mov r2,#218
+ 1034 03c6 0221     	 mov r1,#2
+ 1035 03c8 9954     	 strb r1,[r3,r2]
+ 230:../Conf.c     **** 				ACTION.Ang_max = 5;						//valor teste prototipo
+ 1036              	 .loc 3 230 0
+ 1037 03ca 2E4B     	 ldr r3,.L45+8
+ 1038 03cc BF22     	 mov r2,#191
+ 1039 03ce 0521     	 mov r1,#5
+ 1040 03d0 9954     	 strb r1,[r3,r2]
+ 231:../Conf.c     **** 				ACTION.VAL_Porcent = 50;
+ 1041              	 .loc 3 231 0
+ 1042 03d2 2C4B     	 ldr r3,.L45+8
+ 1043 03d4 C522     	 mov r2,#197
+ 1044 03d6 3221     	 mov r1,#50
+ 1045 03d8 9954     	 strb r1,[r3,r2]
+ 232:../Conf.c     **** 				CONF.Bot_Ang = CONF_ANG_3;
+ 1046              	 .loc 3 232 0
+ 1047 03da 294B     	 ldr r3,.L45+4
+ 1048 03dc C122     	 mov r2,#193
+ 1049 03de 0221     	 mov r1,#2
+ 1050 03e0 9954     	 strb r1,[r3,r2]
+ 233:../Conf.c     **** 				taskSetState(TASK_DEBAUCE, TASK_GO);
+ 1051              	 .loc 3 233 0
+ 1052 03e2 0420     	 mov r0,#4
+ 1053 03e4 0121     	 mov r1,#1
+ 1054 03e6 FFF7FEFF 	 bl taskSetState
+ 234:../Conf.c     **** 				DIGITAL_IO_SetOutputLow (&LED_CONF_5);
+ 1055              	 .loc 3 234 0
+ 1056 03ea 274B     	 ldr r3,.L45+12
+ 1057 03ec 181C     	 mov r0,r3
+ 1058 03ee FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 235:../Conf.c     **** 				DIGITAL_IO_SetOutputHigh(&LED_CONF_10);
+ 1059              	 .loc 3 235 0
+ 1060 03f2 264B     	 ldr r3,.L45+16
+ 1061 03f4 181C     	 mov r0,r3
+ 1062 03f6 FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+ 236:../Conf.c     **** 				DIGITAL_IO_SetOutputLow (&LED_CONF_15);
+ 1063              	 .loc 3 236 0
+ 1064 03fa 254B     	 ldr r3,.L45+20
+ 1065 03fc 181C     	 mov r0,r3
+ 1066 03fe FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 237:../Conf.c     **** 				E_EEPROM_XMC1_Write(CONF_ANG_HIGH, &CONF.STATUS_CONF_ANG_HIGH[0]);
+ 1067              	 .loc 3 237 0
+ 1068 0402 244B     	 ldr r3,.L45+24
+ 1069 0404 0420     	 mov r0,#4
+ 1070 0406 191C     	 mov r1,r3
+ 1071 0408 FFF7FEFF 	 bl E_EEPROM_XMC1_Write
+ 238:../Conf.c     **** 			}
+ 239:../Conf.c     **** 
+ 240:../Conf.c     **** 		}
+ 241:../Conf.c     **** 		break;
+ 1072              	 .loc 3 241 0
+ 1073 040c 33E0     	 b .L17
+ 1074              	.L39:
+ 1075 040e 32E0     	 b .L17
+ 1076              	.L36:
+ 242:../Conf.c     **** 
+ 243:../Conf.c     **** 		case CONF_ANG_3:
+ 244:../Conf.c     **** 		{
+ 245:../Conf.c     **** 			if(DEBAUCE.STATUS_DEBAUCE == true){
+ 1077              	 .loc 3 245 0
+ 1078 0410 1A4B     	 ldr r3,.L45
+ 1079 0412 DE22     	 mov r2,#222
+ 1080 0414 9B5C     	 ldrb r3,[r3,r2]
+ 1081 0416 002B     	 cmp r3,#0
+ 1082 0418 2CD0     	 beq .L40
+ 246:../Conf.c     **** 				CONF.ANG_MAX_INF = true;
+ 1083              	 .loc 3 246 0
+ 1084 041a 194B     	 ldr r3,.L45+4
+ 1085 041c E422     	 mov r2,#228
+ 1086 041e 0121     	 mov r1,#1
+ 1087 0420 9954     	 strb r1,[r3,r2]
+ 247:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE = false;
+ 1088              	 .loc 3 247 0
+ 1089 0422 164B     	 ldr r3,.L45
+ 1090 0424 DE22     	 mov r2,#222
+ 1091 0426 0021     	 mov r1,#0
+ 1092 0428 9954     	 strb r1,[r3,r2]
+ 248:../Conf.c     **** 				CONF.STATUS_CONF_ANG_HIGH[0] = 3;
+ 1093              	 .loc 3 248 0
+ 1094 042a 154B     	 ldr r3,.L45+4
+ 1095 042c DA22     	 mov r2,#218
+ 1096 042e 0321     	 mov r1,#3
+ 1097 0430 9954     	 strb r1,[r3,r2]
+ 249:../Conf.c     **** 				ACTION.Ang_max = 9;						//valor teste prototipo
+ 1098              	 .loc 3 249 0
+ 1099 0432 144B     	 ldr r3,.L45+8
+ 1100 0434 BF22     	 mov r2,#191
+ 1101 0436 0921     	 mov r1,#9
+ 1102 0438 9954     	 strb r1,[r3,r2]
+ 250:../Conf.c     **** 				ACTION.VAL_Porcent = 10;
+ 1103              	 .loc 3 250 0
+ 1104 043a 124B     	 ldr r3,.L45+8
+ 1105 043c C522     	 mov r2,#197
+ 1106 043e 0A21     	 mov r1,#10
+ 1107 0440 9954     	 strb r1,[r3,r2]
+ 251:../Conf.c     **** 				CONF.Bot_Ang = CONF_ANG_1;
+ 1108              	 .loc 3 251 0
+ 1109 0442 0F4B     	 ldr r3,.L45+4
+ 1110 0444 C122     	 mov r2,#193
+ 1111 0446 0021     	 mov r1,#0
+ 1112 0448 9954     	 strb r1,[r3,r2]
+ 252:../Conf.c     **** 				taskSetState(TASK_DEBAUCE, TASK_GO);
+ 1113              	 .loc 3 252 0
+ 1114 044a 0420     	 mov r0,#4
+ 1115 044c 0121     	 mov r1,#1
+ 1116 044e FFF7FEFF 	 bl taskSetState
+ 253:../Conf.c     **** 				DIGITAL_IO_SetOutputLow (&LED_CONF_5);
+ 1117              	 .loc 3 253 0
+ 1118 0452 0D4B     	 ldr r3,.L45+12
+ 1119 0454 181C     	 mov r0,r3
+ 1120 0456 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 254:../Conf.c     **** 				DIGITAL_IO_SetOutputLow (&LED_CONF_10);
+ 1121              	 .loc 3 254 0
+ 1122 045a 0C4B     	 ldr r3,.L45+16
+ 1123 045c 181C     	 mov r0,r3
+ 1124 045e FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 255:../Conf.c     **** 				DIGITAL_IO_SetOutputHigh(&LED_CONF_15);
+ 1125              	 .loc 3 255 0
+ 1126 0462 0B4B     	 ldr r3,.L45+20
+ 1127 0464 181C     	 mov r0,r3
+ 1128 0466 FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+ 256:../Conf.c     **** 				E_EEPROM_XMC1_Write(CONF_ANG_HIGH, &CONF.STATUS_CONF_ANG_HIGH[0]);
+ 1129              	 .loc 3 256 0
+ 1130 046a 0A4B     	 ldr r3,.L45+24
+ 1131 046c 0420     	 mov r0,#4
+ 1132 046e 191C     	 mov r1,r3
+ 1133 0470 FFF7FEFF 	 bl E_EEPROM_XMC1_Write
+ 1134              	.L40:
+ 257:../Conf.c     **** 			}
+ 258:../Conf.c     **** 
+ 259:../Conf.c     **** 		}
+ 260:../Conf.c     **** 		break;
+ 1135              	 .loc 3 260 0
+ 1136 0474 C046     	 mov r8,r8
+ 1137              	.L17:
+ 261:../Conf.c     **** 		}
+ 262:../Conf.c     **** 	}
+ 263:../Conf.c     **** }
+ 1138              	 .loc 3 263 0
+ 1139 0476 BD46     	 mov sp,r7
+ 1140              	 
+ 1141 0478 80BD     	 pop {r7,pc}
+ 1142              	.L46:
+ 1143 047a C046     	 .align 2
+ 1144              	.L45:
+ 1145 047c 00000000 	 .word DEBAUCE
+ 1146 0480 00000000 	 .word CONF
+ 1147 0484 00000000 	 .word ACTION
+ 1148 0488 00000000 	 .word LED_CONF_5
+ 1149 048c 00000000 	 .word LED_CONF_10
+ 1150 0490 00000000 	 .word LED_CONF_15
+ 1151 0494 DA000000 	 .word CONF+218
+ 1152              	 .cfi_endproc
+ 1153              	.LFE300:
+ 1155              	 .section .text.IRQ6_Handler,"ax",%progbits
+ 1156              	 .align 2
+ 1157              	 .global IRQ6_Handler
+ 1158              	 .code 16
+ 1159              	 .thumb_func
+ 1161              	IRQ6_Handler:
+ 1162              	.LFB301:
+ 264:../Conf.c     **** 
+ 265:../Conf.c     **** void Handler_BOT_MAX (void){
+ 1163              	 .loc 3 265 0
+ 1164              	 .cfi_startproc
+ 1165 0000 80B5     	 push {r7,lr}
+ 1166              	.LCFI22:
+ 1167              	 .cfi_def_cfa_offset 8
+ 1168              	 .cfi_offset 7,-8
+ 1169              	 .cfi_offset 14,-4
+ 1170 0002 00AF     	 add r7,sp,#0
+ 1171              	.LCFI23:
+ 1172              	 .cfi_def_cfa_register 7
+ 266:../Conf.c     **** 	CONF.ANGLE = true;
+ 1173              	 .loc 3 266 0
+ 1174 0004 024B     	 ldr r3,.L48
+ 1175 0006 C622     	 mov r2,#198
+ 1176 0008 0121     	 mov r1,#1
+ 1177 000a 9954     	 strb r1,[r3,r2]
+ 267:../Conf.c     **** }
+ 1178              	 .loc 3 267 0
+ 1179 000c BD46     	 mov sp,r7
+ 1180              	 
+ 1181 000e 80BD     	 pop {r7,pc}
+ 1182              	.L49:
+ 1183              	 .align 2
+ 1184              	.L48:
+ 1185 0010 00000000 	 .word CONF
+ 1186              	 .cfi_endproc
+ 1187              	.LFE301:
+ 1189              	 .text
+ 1190              	.Letext0:
+ 1191              	 .file 4 "c:\\users\\victor.paschoal\\documents\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 1192              	 .file 5 "c:\\users\\victor.paschoal\\documents\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 1193              	 .file 6 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc/xmc1_gpio.h"
+ 1194              	 .file 7 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc/xmc_usic.h"
+ 1195              	 .file 8 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/I2C_MASTER/i2c_master.h"
+ 1196              	 .file 9 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Action.h"
+ 1197              	 .file 10 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Conf.h"
+ 1198              	 .file 11 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Debauce.h"
+ 1199              	 .file 12 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Infineon/XMC1400_series/Include/system_XMC1400.h"
+ 1200              	 .file 13 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO/digital_io_extern.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Conf.c
+    {standard input}:18     .text.XMC_GPIO_SetOutputHigh:00000000 $t
+    {standard input}:22     .text.XMC_GPIO_SetOutputHigh:00000000 XMC_GPIO_SetOutputHigh
+    {standard input}:58     .text.XMC_GPIO_SetOutputLow:00000000 $t
+    {standard input}:62     .text.XMC_GPIO_SetOutputLow:00000000 XMC_GPIO_SetOutputLow
+    {standard input}:98     .text.XMC_GPIO_GetInput:00000000 $t
+    {standard input}:102    .text.XMC_GPIO_GetInput:00000000 XMC_GPIO_GetInput
+    {standard input}:140    .text.DIGITAL_IO_SetOutputHigh:00000000 $t
+    {standard input}:144    .text.DIGITAL_IO_SetOutputHigh:00000000 DIGITAL_IO_SetOutputHigh
+    {standard input}:178    .text.DIGITAL_IO_SetOutputLow:00000000 $t
+    {standard input}:182    .text.DIGITAL_IO_SetOutputLow:00000000 DIGITAL_IO_SetOutputLow
+    {standard input}:215    .text.DIGITAL_IO_GetInput:00000000 $t
+    {standard input}:219    .text.DIGITAL_IO_GetInput:00000000 DIGITAL_IO_GetInput
+                            *COM*:000000e8 CONF
+    {standard input}:255    .text.ConfInit:00000000 $t
+    {standard input}:260    .text.ConfInit:00000000 ConfInit
+    {standard input}:438    .text.ConfInit:0000011c $d
+    {standard input}:452    .text.ConfTask:00000000 $t
+    {standard input}:457    .text.ConfTask:00000000 ConfTask
+    {standard input}:998    .text.ConfTask:00000368 $d
+    {standard input}:1016   .text.ConfTask:000003a8 $t
+    {standard input}:1145   .text.ConfTask:0000047c $d
+    {standard input}:1156   .text.IRQ6_Handler:00000000 $t
+    {standard input}:1161   .text.IRQ6_Handler:00000000 IRQ6_Handler
+    {standard input}:1185   .text.IRQ6_Handler:00000010 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+E_EEPROM_XMC1_Read
+taskSetState
+ACTION
+LED_CONF_5
+LED_CONF_10
+LED_CONF_15
+LED_CONF_MIN_0
+LED_CONF_MIN_5
+E_EEPROM_XMC1_Write
+BOT_MIN
+DEBAUCE
+BOT_AUTO
+LED1
+LED2
+BOT_MANUAL

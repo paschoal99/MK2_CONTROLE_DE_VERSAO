@@ -1,0 +1,1414 @@
+   1              	 .cpu cortex-m0
+   2              	 .fpu softvfp
+   3              	 .eabi_attribute 20,1
+   4              	 .eabi_attribute 21,1
+   5              	 .eabi_attribute 23,3
+   6              	 .eabi_attribute 24,1
+   7              	 .eabi_attribute 25,1
+   8              	 .eabi_attribute 26,1
+   9              	 .eabi_attribute 30,6
+  10              	 .eabi_attribute 34,0
+  11              	 .eabi_attribute 18,4
+  12              	 .code 16
+  13              	 .file "pin_interrupt.c"
+  14              	 .text
+  15              	.Ltext0:
+  16              	 .cfi_sections .debug_frame
+  17              	 .section .text.__NVIC_EnableIRQ,"ax",%progbits
+  18              	 .align 2
+  19              	 .code 16
+  20              	 .thumb_func
+  22              	__NVIC_EnableIRQ:
+  23              	.LFB23:
+  24              	 .file 1 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include/core_cm0.h"
+   1:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**************************************************************************//**
+   2:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  * @file     core_cm0.h
+   3:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  * @brief    CMSIS Cortex-M0 Core Peripheral Access Layer Header File
+   4:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  * @version  V5.0.2
+   5:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  * @date     19. April 2017
+   6:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  ******************************************************************************/
+   7:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /*
+   8:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  * Copyright (c) 2009-2017 ARM Limited. All rights reserved.
+   9:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  *
+  10:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  * SPDX-License-Identifier: Apache-2.0
+  11:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  *
+  12:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  * Licensed under the Apache License, Version 2.0 (the License); you may
+  13:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  * not use this file except in compliance with the License.
+  14:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  * You may obtain a copy of the License at
+  15:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  *
+  16:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  * www.apache.org/licenses/LICENSE-2.0
+  17:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  *
+  18:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  * Unless required by applicable law or agreed to in writing, software
+  19:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+  20:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  21:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  * See the License for the specific language governing permissions and
+  22:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  * limitations under the License.
+  23:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+  24:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+  25:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #if   defined ( __ICCARM__ )
+  26:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #pragma system_include         /* treat file as system include file for MISRA check */
+  27:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #elif defined (__clang__)
+  28:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #pragma clang system_header   /* treat file as system include file */
+  29:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #endif
+  30:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+  31:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #ifndef __CORE_CM0_H_GENERIC
+  32:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define __CORE_CM0_H_GENERIC
+  33:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+  34:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #include <stdint.h>
+  35:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+  36:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #ifdef __cplusplus
+  37:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  extern "C" {
+  38:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #endif
+  39:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+  40:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+  41:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \page CMSIS_MISRA_Exceptions  MISRA-C:2004 Compliance Exceptions
+  42:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   CMSIS violates the following MISRA-C:2004 rules:
+  43:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+  44:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****    \li Required Rule 8.5, object/function definition in header file.<br>
+  45:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****      Function definitions in header files are used to allow 'inlining'.
+  46:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+  47:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****    \li Required Rule 18.4, declaration of union type or object of union type: '{...}'.<br>
+  48:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****      Unions are used for effective representation of core registers.
+  49:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+  50:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****    \li Advisory Rule 19.7, Function-like macro defined.<br>
+  51:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****      Function-like macros are used to allow more efficient code.
+  52:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+  53:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+  54:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+  55:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /*******************************************************************************
+  56:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  *                 CMSIS definitions
+  57:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  ******************************************************************************/
+  58:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+  59:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \ingroup Cortex_M0
+  60:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   @{
+  61:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+  62:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+  63:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #include "cmsis_version.h"
+  64:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  
+  65:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /*  CMSIS CM0 definitions */
+  66:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define __CM0_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)              /*!< \deprecated [31:16] C
+  67:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define __CM0_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)               /*!< \deprecated [15:0]  C
+  68:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define __CM0_CMSIS_VERSION       ((__CM0_CMSIS_VERSION_MAIN << 16U) | \
+  69:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****                                     __CM0_CMSIS_VERSION_SUB           )  /*!< \deprecated CMSIS HAL
+  70:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+  71:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define __CORTEX_M                (0U)                                   /*!< Cortex-M Core */
+  72:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+  73:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /** __FPU_USED indicates whether an FPU is used or not.
+  74:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     This core does not support an FPU at all
+  75:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** */
+  76:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define __FPU_USED       0U
+  77:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+  78:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #if defined ( __CC_ARM )
+  79:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #if defined __TARGET_FPU_VFP
+  80:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+  81:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+  82:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+  83:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #elif defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+  84:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #if defined __ARM_PCS_VFP
+  85:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+  86:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+  87:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+  88:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #elif defined ( __GNUC__ )
+  89:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #if defined (__VFP_FP__) && !defined(__SOFTFP__)
+  90:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+  91:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+  92:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+  93:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #elif defined ( __ICCARM__ )
+  94:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #if defined __ARMVFP__
+  95:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+  96:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+  97:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+  98:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #elif defined ( __TI_ARM__ )
+  99:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #if defined __TI_VFP_SUPPORT__
+ 100:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+ 101:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+ 102:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 103:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #elif defined ( __TASKING__ )
+ 104:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #if defined __FPU_VFP__
+ 105:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+ 106:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+ 107:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 108:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #elif defined ( __CSMC__ )
+ 109:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #if ( __CSMC__ & 0x400U)
+ 110:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+ 111:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+ 112:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 113:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #endif
+ 114:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 115:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #include "cmsis_compiler.h"               /* CMSIS compiler specific defines */
+ 116:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 117:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 118:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #ifdef __cplusplus
+ 119:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** }
+ 120:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #endif
+ 121:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 122:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #endif /* __CORE_CM0_H_GENERIC */
+ 123:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 124:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #ifndef __CMSIS_GENERIC
+ 125:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 126:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #ifndef __CORE_CM0_H_DEPENDANT
+ 127:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define __CORE_CM0_H_DEPENDANT
+ 128:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 129:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #ifdef __cplusplus
+ 130:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  extern "C" {
+ 131:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #endif
+ 132:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 133:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* check device defines and use defaults */
+ 134:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #if defined __CHECK_DEVICE_DEFINES
+ 135:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #ifndef __CM0_REV
+ 136:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     #define __CM0_REV               0x0000U
+ 137:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     #warning "__CM0_REV not defined in device header file; using default!"
+ 138:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+ 139:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 140:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #ifndef __NVIC_PRIO_BITS
+ 141:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     #define __NVIC_PRIO_BITS          2U
+ 142:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     #warning "__NVIC_PRIO_BITS not defined in device header file; using default!"
+ 143:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+ 144:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 145:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #ifndef __Vendor_SysTickConfig
+ 146:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     #define __Vendor_SysTickConfig    0U
+ 147:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     #warning "__Vendor_SysTickConfig not defined in device header file; using default!"
+ 148:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+ 149:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #endif
+ 150:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 151:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* IO definitions (access restrictions to peripheral registers) */
+ 152:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 153:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     \defgroup CMSIS_glob_defs CMSIS Global Defines
+ 154:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 155:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     <strong>IO Type Qualifiers</strong> are used
+ 156:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     \li to specify the access to peripheral variables.
+ 157:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     \li for automatic generation of peripheral register debug information.
+ 158:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** */
+ 159:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #ifdef __cplusplus
+ 160:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #define   __I     volatile             /*!< Defines 'read only' permissions */
+ 161:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #else
+ 162:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #define   __I     volatile const       /*!< Defines 'read only' permissions */
+ 163:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #endif
+ 164:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define     __O     volatile             /*!< Defines 'write only' permissions */
+ 165:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define     __IO    volatile             /*!< Defines 'read / write' permissions */
+ 166:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 167:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* following defines should be used for structure members */
+ 168:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define     __IM     volatile const      /*! Defines 'read only' structure member permissions */
+ 169:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define     __OM     volatile            /*! Defines 'write only' structure member permissions */
+ 170:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define     __IOM    volatile            /*! Defines 'read / write' structure member permissions */
+ 171:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 172:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /*@} end of group Cortex_M0 */
+ 173:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 174:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 175:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 176:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /*******************************************************************************
+ 177:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  *                 Register Abstraction
+ 178:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   Core Register contain:
+ 179:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   - Core Register
+ 180:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   - Core NVIC Register
+ 181:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   - Core SCB Register
+ 182:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   - Core SysTick Register
+ 183:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  ******************************************************************************/
+ 184:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 185:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \defgroup CMSIS_core_register Defines and Type Definitions
+ 186:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief Type definitions and defines for Cortex-M processor based devices.
+ 187:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** */
+ 188:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 189:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 190:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \ingroup    CMSIS_core_register
+ 191:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \defgroup   CMSIS_CORE  Status and Control Registers
+ 192:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief      Core Register type definitions.
+ 193:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   @{
+ 194:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 195:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 196:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 197:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief  Union type to access the Application Program Status Register (APSR).
+ 198:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 199:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** typedef union
+ 200:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** {
+ 201:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   struct
+ 202:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 203:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t _reserved0:28;              /*!< bit:  0..27  Reserved */
+ 204:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t V:1;                        /*!< bit:     28  Overflow condition code flag */
+ 205:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t C:1;                        /*!< bit:     29  Carry condition code flag */
+ 206:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t Z:1;                        /*!< bit:     30  Zero condition code flag */
+ 207:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t N:1;                        /*!< bit:     31  Negative condition code flag */
+ 208:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   } b;                                   /*!< Structure used for bit  access */
+ 209:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   uint32_t w;                            /*!< Type      used for word access */
+ 210:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** } APSR_Type;
+ 211:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 212:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* APSR Register Definitions */
+ 213:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define APSR_N_Pos                         31U                                            /*!< APSR
+ 214:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define APSR_N_Msk                         (1UL << APSR_N_Pos)                            /*!< APSR
+ 215:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 216:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define APSR_Z_Pos                         30U                                            /*!< APSR
+ 217:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define APSR_Z_Msk                         (1UL << APSR_Z_Pos)                            /*!< APSR
+ 218:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 219:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define APSR_C_Pos                         29U                                            /*!< APSR
+ 220:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define APSR_C_Msk                         (1UL << APSR_C_Pos)                            /*!< APSR
+ 221:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 222:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define APSR_V_Pos                         28U                                            /*!< APSR
+ 223:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define APSR_V_Msk                         (1UL << APSR_V_Pos)                            /*!< APSR
+ 224:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 225:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 226:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 227:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief  Union type to access the Interrupt Program Status Register (IPSR).
+ 228:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 229:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** typedef union
+ 230:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** {
+ 231:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   struct
+ 232:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 233:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t ISR:9;                      /*!< bit:  0.. 8  Exception number */
+ 234:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t _reserved0:23;              /*!< bit:  9..31  Reserved */
+ 235:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   } b;                                   /*!< Structure used for bit  access */
+ 236:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   uint32_t w;                            /*!< Type      used for word access */
+ 237:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** } IPSR_Type;
+ 238:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 239:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* IPSR Register Definitions */
+ 240:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define IPSR_ISR_Pos                        0U                                            /*!< IPSR
+ 241:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define IPSR_ISR_Msk                       (0x1FFUL /*<< IPSR_ISR_Pos*/)                  /*!< IPSR
+ 242:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 243:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 244:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 245:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief  Union type to access the Special-Purpose Program Status Registers (xPSR).
+ 246:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 247:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** typedef union
+ 248:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** {
+ 249:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   struct
+ 250:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 251:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t ISR:9;                      /*!< bit:  0.. 8  Exception number */
+ 252:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t _reserved0:15;              /*!< bit:  9..23  Reserved */
+ 253:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t T:1;                        /*!< bit:     24  Thumb bit        (read 0) */
+ 254:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t _reserved1:3;               /*!< bit: 25..27  Reserved */
+ 255:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t V:1;                        /*!< bit:     28  Overflow condition code flag */
+ 256:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t C:1;                        /*!< bit:     29  Carry condition code flag */
+ 257:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t Z:1;                        /*!< bit:     30  Zero condition code flag */
+ 258:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t N:1;                        /*!< bit:     31  Negative condition code flag */
+ 259:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   } b;                                   /*!< Structure used for bit  access */
+ 260:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   uint32_t w;                            /*!< Type      used for word access */
+ 261:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** } xPSR_Type;
+ 262:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 263:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* xPSR Register Definitions */
+ 264:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_N_Pos                         31U                                            /*!< xPSR
+ 265:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_N_Msk                         (1UL << xPSR_N_Pos)                            /*!< xPSR
+ 266:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 267:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_Z_Pos                         30U                                            /*!< xPSR
+ 268:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_Z_Msk                         (1UL << xPSR_Z_Pos)                            /*!< xPSR
+ 269:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 270:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_C_Pos                         29U                                            /*!< xPSR
+ 271:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_C_Msk                         (1UL << xPSR_C_Pos)                            /*!< xPSR
+ 272:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 273:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_V_Pos                         28U                                            /*!< xPSR
+ 274:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_V_Msk                         (1UL << xPSR_V_Pos)                            /*!< xPSR
+ 275:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 276:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_T_Pos                         24U                                            /*!< xPSR
+ 277:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_T_Msk                         (1UL << xPSR_T_Pos)                            /*!< xPSR
+ 278:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 279:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_ISR_Pos                        0U                                            /*!< xPSR
+ 280:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_ISR_Msk                       (0x1FFUL /*<< xPSR_ISR_Pos*/)                  /*!< xPSR
+ 281:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 282:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 283:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 284:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief  Union type to access the Control Registers (CONTROL).
+ 285:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 286:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** typedef union
+ 287:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** {
+ 288:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   struct
+ 289:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 290:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t _reserved0:1;               /*!< bit:      0  Reserved */
+ 291:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t SPSEL:1;                    /*!< bit:      1  Stack to be used */
+ 292:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t _reserved1:30;              /*!< bit:  2..31  Reserved */
+ 293:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   } b;                                   /*!< Structure used for bit  access */
+ 294:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   uint32_t w;                            /*!< Type      used for word access */
+ 295:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** } CONTROL_Type;
+ 296:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 297:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* CONTROL Register Definitions */
+ 298:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define CONTROL_SPSEL_Pos                   1U                                            /*!< CONT
+ 299:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define CONTROL_SPSEL_Msk                  (1UL << CONTROL_SPSEL_Pos)                     /*!< CONT
+ 300:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 301:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /*@} end of group CMSIS_CORE */
+ 302:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 303:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 304:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 305:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \ingroup    CMSIS_core_register
+ 306:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \defgroup   CMSIS_NVIC  Nested Vectored Interrupt Controller (NVIC)
+ 307:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief      Type definitions for the NVIC Registers
+ 308:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   @{
+ 309:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 310:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 311:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 312:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief  Structure type to access the Nested Vectored Interrupt Controller (NVIC).
+ 313:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 314:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** typedef struct
+ 315:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** {
+ 316:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t ISER[1U];               /*!< Offset: 0x000 (R/W)  Interrupt Set Enable Register */
+ 317:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****         uint32_t RESERVED0[31U];
+ 318:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t ICER[1U];               /*!< Offset: 0x080 (R/W)  Interrupt Clear Enable Register 
+ 319:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****         uint32_t RSERVED1[31U];
+ 320:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t ISPR[1U];               /*!< Offset: 0x100 (R/W)  Interrupt Set Pending Register *
+ 321:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****         uint32_t RESERVED2[31U];
+ 322:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t ICPR[1U];               /*!< Offset: 0x180 (R/W)  Interrupt Clear Pending Register
+ 323:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****         uint32_t RESERVED3[31U];
+ 324:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****         uint32_t RESERVED4[64U];
+ 325:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t IP[8U];                 /*!< Offset: 0x300 (R/W)  Interrupt Priority Register */
+ 326:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** }  NVIC_Type;
+ 327:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 328:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /*@} end of group CMSIS_NVIC */
+ 329:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 330:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 331:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 332:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \ingroup  CMSIS_core_register
+ 333:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \defgroup CMSIS_SCB     System Control Block (SCB)
+ 334:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief    Type definitions for the System Control Block Registers
+ 335:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   @{
+ 336:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 337:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 338:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 339:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief  Structure type to access the System Control Block (SCB).
+ 340:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 341:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** typedef struct
+ 342:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** {
+ 343:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   __IM  uint32_t CPUID;                  /*!< Offset: 0x000 (R/ )  CPUID Base Register */
+ 344:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t ICSR;                   /*!< Offset: 0x004 (R/W)  Interrupt Control and State Regi
+ 345:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****         uint32_t RESERVED0;
+ 346:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t AIRCR;                  /*!< Offset: 0x00C (R/W)  Application Interrupt and Reset 
+ 347:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t SCR;                    /*!< Offset: 0x010 (R/W)  System Control Register */
+ 348:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t CCR;                    /*!< Offset: 0x014 (R/W)  Configuration Control Register *
+ 349:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****         uint32_t RESERVED1;
+ 350:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t SHP[2U];                /*!< Offset: 0x01C (R/W)  System Handlers Priority Registe
+ 351:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t SHCSR;                  /*!< Offset: 0x024 (R/W)  System Handler Control and State
+ 352:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** } SCB_Type;
+ 353:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 354:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* SCB CPUID Register Definitions */
+ 355:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CPUID_IMPLEMENTER_Pos          24U                                            /*!< SCB 
+ 356:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CPUID_IMPLEMENTER_Msk          (0xFFUL << SCB_CPUID_IMPLEMENTER_Pos)          /*!< SCB 
+ 357:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 358:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CPUID_VARIANT_Pos              20U                                            /*!< SCB 
+ 359:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CPUID_VARIANT_Msk              (0xFUL << SCB_CPUID_VARIANT_Pos)               /*!< SCB 
+ 360:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 361:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CPUID_ARCHITECTURE_Pos         16U                                            /*!< SCB 
+ 362:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CPUID_ARCHITECTURE_Msk         (0xFUL << SCB_CPUID_ARCHITECTURE_Pos)          /*!< SCB 
+ 363:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 364:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CPUID_PARTNO_Pos                4U                                            /*!< SCB 
+ 365:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CPUID_PARTNO_Msk               (0xFFFUL << SCB_CPUID_PARTNO_Pos)              /*!< SCB 
+ 366:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 367:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CPUID_REVISION_Pos              0U                                            /*!< SCB 
+ 368:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CPUID_REVISION_Msk             (0xFUL /*<< SCB_CPUID_REVISION_Pos*/)          /*!< SCB 
+ 369:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 370:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* SCB Interrupt Control State Register Definitions */
+ 371:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_NMIPENDSET_Pos            31U                                            /*!< SCB 
+ 372:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_NMIPENDSET_Msk            (1UL << SCB_ICSR_NMIPENDSET_Pos)               /*!< SCB 
+ 373:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 374:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_PENDSVSET_Pos             28U                                            /*!< SCB 
+ 375:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_PENDSVSET_Msk             (1UL << SCB_ICSR_PENDSVSET_Pos)                /*!< SCB 
+ 376:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 377:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_PENDSVCLR_Pos             27U                                            /*!< SCB 
+ 378:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_PENDSVCLR_Msk             (1UL << SCB_ICSR_PENDSVCLR_Pos)                /*!< SCB 
+ 379:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 380:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_PENDSTSET_Pos             26U                                            /*!< SCB 
+ 381:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_PENDSTSET_Msk             (1UL << SCB_ICSR_PENDSTSET_Pos)                /*!< SCB 
+ 382:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 383:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_PENDSTCLR_Pos             25U                                            /*!< SCB 
+ 384:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_PENDSTCLR_Msk             (1UL << SCB_ICSR_PENDSTCLR_Pos)                /*!< SCB 
+ 385:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 386:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_ISRPREEMPT_Pos            23U                                            /*!< SCB 
+ 387:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_ISRPREEMPT_Msk            (1UL << SCB_ICSR_ISRPREEMPT_Pos)               /*!< SCB 
+ 388:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 389:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_ISRPENDING_Pos            22U                                            /*!< SCB 
+ 390:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_ISRPENDING_Msk            (1UL << SCB_ICSR_ISRPENDING_Pos)               /*!< SCB 
+ 391:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 392:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_VECTPENDING_Pos           12U                                            /*!< SCB 
+ 393:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_VECTPENDING_Msk           (0x1FFUL << SCB_ICSR_VECTPENDING_Pos)          /*!< SCB 
+ 394:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 395:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_VECTACTIVE_Pos             0U                                            /*!< SCB 
+ 396:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_VECTACTIVE_Msk            (0x1FFUL /*<< SCB_ICSR_VECTACTIVE_Pos*/)       /*!< SCB 
+ 397:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 398:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* SCB Application Interrupt and Reset Control Register Definitions */
+ 399:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_AIRCR_VECTKEY_Pos              16U                                            /*!< SCB 
+ 400:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_AIRCR_VECTKEY_Msk              (0xFFFFUL << SCB_AIRCR_VECTKEY_Pos)            /*!< SCB 
+ 401:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 402:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_AIRCR_VECTKEYSTAT_Pos          16U                                            /*!< SCB 
+ 403:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_AIRCR_VECTKEYSTAT_Msk          (0xFFFFUL << SCB_AIRCR_VECTKEYSTAT_Pos)        /*!< SCB 
+ 404:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 405:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_AIRCR_ENDIANESS_Pos            15U                                            /*!< SCB 
+ 406:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_AIRCR_ENDIANESS_Msk            (1UL << SCB_AIRCR_ENDIANESS_Pos)               /*!< SCB 
+ 407:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 408:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_AIRCR_SYSRESETREQ_Pos           2U                                            /*!< SCB 
+ 409:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_AIRCR_SYSRESETREQ_Msk          (1UL << SCB_AIRCR_SYSRESETREQ_Pos)             /*!< SCB 
+ 410:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 411:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_AIRCR_VECTCLRACTIVE_Pos         1U                                            /*!< SCB 
+ 412:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_AIRCR_VECTCLRACTIVE_Msk        (1UL << SCB_AIRCR_VECTCLRACTIVE_Pos)           /*!< SCB 
+ 413:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 414:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* SCB System Control Register Definitions */
+ 415:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_SCR_SEVONPEND_Pos               4U                                            /*!< SCB 
+ 416:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_SCR_SEVONPEND_Msk              (1UL << SCB_SCR_SEVONPEND_Pos)                 /*!< SCB 
+ 417:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 418:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_SCR_SLEEPDEEP_Pos               2U                                            /*!< SCB 
+ 419:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_SCR_SLEEPDEEP_Msk              (1UL << SCB_SCR_SLEEPDEEP_Pos)                 /*!< SCB 
+ 420:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 421:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_SCR_SLEEPONEXIT_Pos             1U                                            /*!< SCB 
+ 422:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_SCR_SLEEPONEXIT_Msk            (1UL << SCB_SCR_SLEEPONEXIT_Pos)               /*!< SCB 
+ 423:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 424:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* SCB Configuration Control Register Definitions */
+ 425:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CCR_STKALIGN_Pos                9U                                            /*!< SCB 
+ 426:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CCR_STKALIGN_Msk               (1UL << SCB_CCR_STKALIGN_Pos)                  /*!< SCB 
+ 427:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 428:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CCR_UNALIGN_TRP_Pos             3U                                            /*!< SCB 
+ 429:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CCR_UNALIGN_TRP_Msk            (1UL << SCB_CCR_UNALIGN_TRP_Pos)               /*!< SCB 
+ 430:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 431:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* SCB System Handler Control and State Register Definitions */
+ 432:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_SHCSR_SVCALLPENDED_Pos         15U                                            /*!< SCB 
+ 433:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_SHCSR_SVCALLPENDED_Msk         (1UL << SCB_SHCSR_SVCALLPENDED_Pos)            /*!< SCB 
+ 434:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 435:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /*@} end of group CMSIS_SCB */
+ 436:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 437:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 438:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 439:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \ingroup  CMSIS_core_register
+ 440:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \defgroup CMSIS_SysTick     System Tick Timer (SysTick)
+ 441:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief    Type definitions for the System Timer Registers.
+ 442:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   @{
+ 443:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 444:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 445:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 446:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief  Structure type to access the System Timer (SysTick).
+ 447:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 448:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** typedef struct
+ 449:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** {
+ 450:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t CTRL;                   /*!< Offset: 0x000 (R/W)  SysTick Control and Status Regis
+ 451:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t LOAD;                   /*!< Offset: 0x004 (R/W)  SysTick Reload Value Register */
+ 452:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t VAL;                    /*!< Offset: 0x008 (R/W)  SysTick Current Value Register *
+ 453:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   __IM  uint32_t CALIB;                  /*!< Offset: 0x00C (R/ )  SysTick Calibration Register */
+ 454:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** } SysTick_Type;
+ 455:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 456:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* SysTick Control / Status Register Definitions */
+ 457:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CTRL_COUNTFLAG_Pos         16U                                            /*!< SysT
+ 458:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CTRL_COUNTFLAG_Msk         (1UL << SysTick_CTRL_COUNTFLAG_Pos)            /*!< SysT
+ 459:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 460:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CTRL_CLKSOURCE_Pos          2U                                            /*!< SysT
+ 461:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CTRL_CLKSOURCE_Msk         (1UL << SysTick_CTRL_CLKSOURCE_Pos)            /*!< SysT
+ 462:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 463:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CTRL_TICKINT_Pos            1U                                            /*!< SysT
+ 464:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CTRL_TICKINT_Msk           (1UL << SysTick_CTRL_TICKINT_Pos)              /*!< SysT
+ 465:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 466:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CTRL_ENABLE_Pos             0U                                            /*!< SysT
+ 467:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CTRL_ENABLE_Msk            (1UL /*<< SysTick_CTRL_ENABLE_Pos*/)           /*!< SysT
+ 468:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 469:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* SysTick Reload Register Definitions */
+ 470:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_LOAD_RELOAD_Pos             0U                                            /*!< SysT
+ 471:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_LOAD_RELOAD_Msk            (0xFFFFFFUL /*<< SysTick_LOAD_RELOAD_Pos*/)    /*!< SysT
+ 472:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 473:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* SysTick Current Register Definitions */
+ 474:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_VAL_CURRENT_Pos             0U                                            /*!< SysT
+ 475:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_VAL_CURRENT_Msk            (0xFFFFFFUL /*<< SysTick_VAL_CURRENT_Pos*/)    /*!< SysT
+ 476:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 477:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* SysTick Calibration Register Definitions */
+ 478:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CALIB_NOREF_Pos            31U                                            /*!< SysT
+ 479:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CALIB_NOREF_Msk            (1UL << SysTick_CALIB_NOREF_Pos)               /*!< SysT
+ 480:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 481:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CALIB_SKEW_Pos             30U                                            /*!< SysT
+ 482:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CALIB_SKEW_Msk             (1UL << SysTick_CALIB_SKEW_Pos)                /*!< SysT
+ 483:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 484:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CALIB_TENMS_Pos             0U                                            /*!< SysT
+ 485:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CALIB_TENMS_Msk            (0xFFFFFFUL /*<< SysTick_CALIB_TENMS_Pos*/)    /*!< SysT
+ 486:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 487:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /*@} end of group CMSIS_SysTick */
+ 488:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 489:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 490:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 491:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \ingroup  CMSIS_core_register
+ 492:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \defgroup CMSIS_CoreDebug       Core Debug Registers (CoreDebug)
+ 493:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief    Cortex-M0 Core Debug Registers (DCB registers, SHCSR, and DFSR) are only accessible ove
+ 494:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****             Therefore they are not covered by the Cortex-M0 header file.
+ 495:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   @{
+ 496:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 497:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /*@} end of group CMSIS_CoreDebug */
+ 498:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 499:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 500:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 501:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \ingroup    CMSIS_core_register
+ 502:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \defgroup   CMSIS_core_bitfield     Core register bit field macros
+ 503:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief      Macros for use with bit field definitions (xxx_Pos, xxx_Msk).
+ 504:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   @{
+ 505:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 506:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 507:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 508:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief   Mask and shift a bit field value for use in a register bit range.
+ 509:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \param[in] field  Name of the register bit field.
+ 510:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \param[in] value  Value of the bit field. This parameter is interpreted as an uint32_t type.
+ 511:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \return           Masked and shifted value.
+ 512:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** */
+ 513:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define _VAL2FLD(field, value)    (((uint32_t)(value) << field ## _Pos) & field ## _Msk)
+ 514:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 515:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 516:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief     Mask and shift a register value to extract a bit filed value.
+ 517:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \param[in] field  Name of the register bit field.
+ 518:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \param[in] value  Value of register. This parameter is interpreted as an uint32_t type.
+ 519:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \return           Masked and shifted bit field value.
+ 520:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** */
+ 521:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define _FLD2VAL(field, value)    (((uint32_t)(value) & field ## _Msk) >> field ## _Pos)
+ 522:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 523:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /*@} end of group CMSIS_core_bitfield */
+ 524:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 525:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 526:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 527:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \ingroup    CMSIS_core_register
+ 528:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \defgroup   CMSIS_core_base     Core Definitions
+ 529:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief      Definitions for base addresses, unions, and structures.
+ 530:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   @{
+ 531:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 532:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 533:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* Memory mapping of Core Hardware */
+ 534:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCS_BASE            (0xE000E000UL)                            /*!< System Control Space Bas
+ 535:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_BASE        (SCS_BASE +  0x0010UL)                    /*!< SysTick Base Address */
+ 536:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define NVIC_BASE           (SCS_BASE +  0x0100UL)                    /*!< NVIC Base Address */
+ 537:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_BASE            (SCS_BASE +  0x0D00UL)                    /*!< System Control Block Bas
+ 538:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 539:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SCB                 ((SCB_Type       *)     SCB_BASE      )   /*!< SCB configuration struct
+ 540:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick             ((SysTick_Type   *)     SysTick_BASE  )   /*!< SysTick configuration st
+ 541:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struc
+ 542:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 543:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 544:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /*@} */
+ 545:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 546:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 547:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 548:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /*******************************************************************************
+ 549:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  *                Hardware Abstraction Layer
+ 550:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   Core Function Interface contains:
+ 551:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   - Core NVIC Functions
+ 552:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   - Core SysTick Functions
+ 553:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   - Core Register Access Functions
+ 554:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  ******************************************************************************/
+ 555:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 556:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \defgroup CMSIS_Core_FunctionInterface Functions and Instructions Reference
+ 557:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** */
+ 558:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 559:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 560:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 561:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* ##########################   NVIC functions  #################################### */
+ 562:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 563:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \ingroup  CMSIS_Core_FunctionInterface
+ 564:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \defgroup CMSIS_Core_NVICFunctions NVIC Functions
+ 565:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief    Functions that manage interrupts and exceptions via the NVIC.
+ 566:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   @{
+ 567:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 568:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 569:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #ifdef CMSIS_NVIC_VIRTUAL
+ 570:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #ifndef CMSIS_NVIC_VIRTUAL_HEADER_FILE
+ 571:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     #define CMSIS_NVIC_VIRTUAL_HEADER_FILE "cmsis_nvic_virtual.h"
+ 572:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+ 573:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #include CMSIS_NVIC_VIRTUAL_HEADER_FILE
+ 574:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #else
+ 575:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /*#define NVIC_SetPriorityGrouping    __NVIC_SetPriorityGrouping   not available for Cortex-M0 */
+ 576:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /*#define NVIC_GetPriorityGrouping    __NVIC_GetPriorityGrouping   not available for Cortex-M0 */
+ 577:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_EnableIRQ              __NVIC_EnableIRQ
+ 578:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_GetEnableIRQ           __NVIC_GetEnableIRQ
+ 579:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_DisableIRQ             __NVIC_DisableIRQ
+ 580:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_GetPendingIRQ          __NVIC_GetPendingIRQ
+ 581:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_SetPendingIRQ          __NVIC_SetPendingIRQ
+ 582:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_ClearPendingIRQ        __NVIC_ClearPendingIRQ
+ 583:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /*#define NVIC_GetActive              __NVIC_GetActive             not available for Cortex-M0 */
+ 584:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_SetPriority            __NVIC_SetPriority
+ 585:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_GetPriority            __NVIC_GetPriority
+ 586:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_SystemReset            __NVIC_SystemReset
+ 587:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #endif /* CMSIS_NVIC_VIRTUAL */
+ 588:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 589:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #ifdef CMSIS_VECTAB_VIRTUAL
+ 590:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #ifndef CMSIS_VECTAB_VIRTUAL_HEADER_FILE
+ 591:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     #define CMSIS_VECTAB_VIRTUAL_HEADER_FILE "cmsis_vectab_virtual.h"
+ 592:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+ 593:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #include CMSIS_VECTAB_VIRTUAL_HEADER_FILE
+ 594:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #else
+ 595:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_SetVector              __NVIC_SetVector
+ 596:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_GetVector              __NVIC_GetVector
+ 597:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #endif  /* (CMSIS_VECTAB_VIRTUAL) */
+ 598:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 599:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define NVIC_USER_IRQ_OFFSET          16
+ 600:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 601:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 602:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* Interrupt Priorities are WORD accessible only under ARMv6M                   */
+ 603:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /* The following MACROS handle generation of the register offset and byte masks */
+ 604:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define _BIT_SHIFT(IRQn)         (  ((((uint32_t)(int32_t)(IRQn))         )      &  0x03UL) * 8UL)
+ 605:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define _SHP_IDX(IRQn)           ( (((((uint32_t)(int32_t)(IRQn)) & 0x0FUL)-8UL) >>    2UL)      )
+ 606:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** #define _IP_IDX(IRQn)            (   (((uint32_t)(int32_t)(IRQn))                >>    2UL)      )
+ 607:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 608:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 609:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 610:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief   Enable Interrupt
+ 611:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \details Enables a device specific interrupt in the NVIC interrupt controller.
+ 612:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \param [in]      IRQn  Device specific interrupt number.
+ 613:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \note    IRQn must not be negative.
+ 614:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 615:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** __STATIC_INLINE void __NVIC_EnableIRQ(IRQn_Type IRQn)
+ 616:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** {
+  25              	 .loc 1 616 0
+  26              	 .cfi_startproc
+  27 0000 80B5     	 push {r7,lr}
+  28              	.LCFI0:
+  29              	 .cfi_def_cfa_offset 8
+  30              	 .cfi_offset 7,-8
+  31              	 .cfi_offset 14,-4
+  32 0002 82B0     	 sub sp,sp,#8
+  33              	.LCFI1:
+  34              	 .cfi_def_cfa_offset 16
+  35 0004 00AF     	 add r7,sp,#0
+  36              	.LCFI2:
+  37              	 .cfi_def_cfa_register 7
+  38 0006 021C     	 mov r2,r0
+  39 0008 FB1D     	 add r3,r7,#7
+  40 000a 1A70     	 strb r2,[r3]
+ 617:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   if ((int32_t)(IRQn) >= 0)
+  41              	 .loc 1 617 0
+  42 000c FB1D     	 add r3,r7,#7
+  43 000e 1B78     	 ldrb r3,[r3]
+  44 0010 7F2B     	 cmp r3,#127
+  45 0012 09D8     	 bhi .L1
+ 618:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 619:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     NVIC->ISER[0U] = (uint32_t)(1UL << (((uint32_t)(int32_t)IRQn) & 0x1FUL));
+  46              	 .loc 1 619 0
+  47 0014 064B     	 ldr r3,.L3
+  48 0016 FA1D     	 add r2,r7,#7
+  49 0018 1278     	 ldrb r2,[r2]
+  50 001a 111C     	 mov r1,r2
+  51 001c 1F22     	 mov r2,#31
+  52 001e 0A40     	 and r2,r1
+  53 0020 0121     	 mov r1,#1
+  54 0022 9140     	 lsl r1,r1,r2
+  55 0024 0A1C     	 mov r2,r1
+  56 0026 1A60     	 str r2,[r3]
+  57              	.L1:
+ 620:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   }
+ 621:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** }
+  58              	 .loc 1 621 0
+  59 0028 BD46     	 mov sp,r7
+  60 002a 02B0     	 add sp,sp,#8
+  61              	 
+  62 002c 80BD     	 pop {r7,pc}
+  63              	.L4:
+  64 002e C046     	 .align 2
+  65              	.L3:
+  66 0030 00E100E0 	 .word -536813312
+  67              	 .cfi_endproc
+  68              	.LFE23:
+  70              	 .section .text.__NVIC_ClearPendingIRQ,"ax",%progbits
+  71              	 .align 2
+  72              	 .code 16
+  73              	 .thumb_func
+  75              	__NVIC_ClearPendingIRQ:
+  76              	.LFB28:
+ 622:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 623:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 624:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 625:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief   Get Interrupt Enable status
+ 626:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \details Returns a device specific interrupt enable status from the NVIC interrupt controller.
+ 627:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \param [in]      IRQn  Device specific interrupt number.
+ 628:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \return             0  Interrupt is not enabled.
+ 629:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \return             1  Interrupt is enabled.
+ 630:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \note    IRQn must not be negative.
+ 631:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 632:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** __STATIC_INLINE uint32_t __NVIC_GetEnableIRQ(IRQn_Type IRQn)
+ 633:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** {
+ 634:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   if ((int32_t)(IRQn) >= 0)
+ 635:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 636:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     return((uint32_t)(((NVIC->ISER[0U] & (1UL << (((uint32_t)(int32_t)IRQn) & 0x1FUL))) != 0UL) ? 1
+ 637:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   }
+ 638:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   else
+ 639:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 640:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     return(0U);
+ 641:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   }
+ 642:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** }
+ 643:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 644:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 645:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 646:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief   Disable Interrupt
+ 647:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \details Disables a device specific interrupt in the NVIC interrupt controller.
+ 648:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \param [in]      IRQn  Device specific interrupt number.
+ 649:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \note    IRQn must not be negative.
+ 650:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 651:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** __STATIC_INLINE void __NVIC_DisableIRQ(IRQn_Type IRQn)
+ 652:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** {
+ 653:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   if ((int32_t)(IRQn) >= 0)
+ 654:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 655:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     NVIC->ICER[0U] = (uint32_t)(1UL << (((uint32_t)(int32_t)IRQn) & 0x1FUL));
+ 656:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     __DSB();
+ 657:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     __ISB();
+ 658:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   }
+ 659:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** }
+ 660:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 661:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 662:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 663:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief   Get Pending Interrupt
+ 664:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \details Reads the NVIC pending register and returns the pending bit for the specified device spe
+ 665:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \param [in]      IRQn  Device specific interrupt number.
+ 666:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \return             0  Interrupt status is not pending.
+ 667:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \return             1  Interrupt status is pending.
+ 668:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \note    IRQn must not be negative.
+ 669:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 670:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** __STATIC_INLINE uint32_t __NVIC_GetPendingIRQ(IRQn_Type IRQn)
+ 671:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** {
+ 672:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   if ((int32_t)(IRQn) >= 0)
+ 673:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 674:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     return((uint32_t)(((NVIC->ISPR[0U] & (1UL << (((uint32_t)(int32_t)IRQn) & 0x1FUL))) != 0UL) ? 1
+ 675:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   }
+ 676:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   else
+ 677:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 678:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     return(0U);
+ 679:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   }
+ 680:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** }
+ 681:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 682:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 683:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 684:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief   Set Pending Interrupt
+ 685:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \details Sets the pending bit of a device specific interrupt in the NVIC pending register.
+ 686:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \param [in]      IRQn  Device specific interrupt number.
+ 687:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \note    IRQn must not be negative.
+ 688:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 689:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** __STATIC_INLINE void __NVIC_SetPendingIRQ(IRQn_Type IRQn)
+ 690:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** {
+ 691:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   if ((int32_t)(IRQn) >= 0)
+ 692:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 693:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     NVIC->ISPR[0U] = (uint32_t)(1UL << (((uint32_t)(int32_t)IRQn) & 0x1FUL));
+ 694:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   }
+ 695:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** }
+ 696:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 697:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 698:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 699:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief   Clear Pending Interrupt
+ 700:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \details Clears the pending bit of a device specific interrupt in the NVIC pending register.
+ 701:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \param [in]      IRQn  Device specific interrupt number.
+ 702:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \note    IRQn must not be negative.
+ 703:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 704:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** __STATIC_INLINE void __NVIC_ClearPendingIRQ(IRQn_Type IRQn)
+ 705:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** {
+  77              	 .loc 1 705 0
+  78              	 .cfi_startproc
+  79 0000 80B5     	 push {r7,lr}
+  80              	.LCFI3:
+  81              	 .cfi_def_cfa_offset 8
+  82              	 .cfi_offset 7,-8
+  83              	 .cfi_offset 14,-4
+  84 0002 82B0     	 sub sp,sp,#8
+  85              	.LCFI4:
+  86              	 .cfi_def_cfa_offset 16
+  87 0004 00AF     	 add r7,sp,#0
+  88              	.LCFI5:
+  89              	 .cfi_def_cfa_register 7
+  90 0006 021C     	 mov r2,r0
+  91 0008 FB1D     	 add r3,r7,#7
+  92 000a 1A70     	 strb r2,[r3]
+ 706:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   if ((int32_t)(IRQn) >= 0)
+  93              	 .loc 1 706 0
+  94 000c FB1D     	 add r3,r7,#7
+  95 000e 1B78     	 ldrb r3,[r3]
+  96 0010 7F2B     	 cmp r3,#127
+  97 0012 0AD8     	 bhi .L5
+ 707:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 708:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     NVIC->ICPR[0U] = (uint32_t)(1UL << (((uint32_t)(int32_t)IRQn) & 0x1FUL));
+  98              	 .loc 1 708 0
+  99 0014 0649     	 ldr r1,.L7
+ 100 0016 FB1D     	 add r3,r7,#7
+ 101 0018 1B78     	 ldrb r3,[r3]
+ 102 001a 1A1C     	 mov r2,r3
+ 103 001c 1F23     	 mov r3,#31
+ 104 001e 1340     	 and r3,r2
+ 105 0020 0122     	 mov r2,#1
+ 106 0022 9A40     	 lsl r2,r2,r3
+ 107 0024 C023     	 mov r3,#192
+ 108 0026 5B00     	 lsl r3,r3,#1
+ 109 0028 CA50     	 str r2,[r1,r3]
+ 110              	.L5:
+ 709:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   }
+ 710:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** }
+ 111              	 .loc 1 710 0
+ 112 002a BD46     	 mov sp,r7
+ 113 002c 02B0     	 add sp,sp,#8
+ 114              	 
+ 115 002e 80BD     	 pop {r7,pc}
+ 116              	.L8:
+ 117              	 .align 2
+ 118              	.L7:
+ 119 0030 00E100E0 	 .word -536813312
+ 120              	 .cfi_endproc
+ 121              	.LFE28:
+ 123              	 .section .text.__NVIC_SetPriority,"ax",%progbits
+ 124              	 .align 2
+ 125              	 .code 16
+ 126              	 .thumb_func
+ 128              	__NVIC_SetPriority:
+ 129              	.LFB29:
+ 711:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 712:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** 
+ 713:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 714:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \brief   Set Interrupt Priority
+ 715:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \details Sets the priority of a device specific interrupt or a processor exception.
+ 716:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****            The interrupt number can be positive to specify a device specific interrupt,
+ 717:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****            or negative to specify a processor exception.
+ 718:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \param [in]      IRQn  Interrupt number.
+ 719:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \param [in]  priority  Priority to set.
+ 720:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   \note    The priority cannot be set for every processor exception.
+ 721:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 722:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** __STATIC_INLINE void __NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
+ 723:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** {
+ 130              	 .loc 1 723 0
+ 131              	 .cfi_startproc
+ 132 0000 B0B5     	 push {r4,r5,r7,lr}
+ 133              	.LCFI6:
+ 134              	 .cfi_def_cfa_offset 16
+ 135              	 .cfi_offset 4,-16
+ 136              	 .cfi_offset 5,-12
+ 137              	 .cfi_offset 7,-8
+ 138              	 .cfi_offset 14,-4
+ 139 0002 82B0     	 sub sp,sp,#8
+ 140              	.LCFI7:
+ 141              	 .cfi_def_cfa_offset 24
+ 142 0004 00AF     	 add r7,sp,#0
+ 143              	.LCFI8:
+ 144              	 .cfi_def_cfa_register 7
+ 145 0006 021C     	 mov r2,r0
+ 146 0008 3960     	 str r1,[r7]
+ 147 000a FB1D     	 add r3,r7,#7
+ 148 000c 1A70     	 strb r2,[r3]
+ 724:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   if ((int32_t)(IRQn) >= 0)
+ 149              	 .loc 1 724 0
+ 150 000e FB1D     	 add r3,r7,#7
+ 151 0010 1B78     	 ldrb r3,[r3]
+ 152 0012 7F2B     	 cmp r3,#127
+ 153 0014 27D8     	 bhi .L10
+ 725:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 726:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     NVIC->IP[_IP_IDX(IRQn)]  = ((uint32_t)(NVIC->IP[_IP_IDX(IRQn)]  & ~(0xFFUL << _BIT_SHIFT(IRQn))
+ 154              	 .loc 1 726 0
+ 155 0016 2D4C     	 ldr r4,.L12
+ 156 0018 FB1D     	 add r3,r7,#7
+ 157 001a 1B78     	 ldrb r3,[r3]
+ 158 001c 5BB2     	 sxtb r3,r3
+ 159 001e 9B08     	 lsr r3,r3,#2
+ 160 0020 2A49     	 ldr r1,.L12
+ 161 0022 FA1D     	 add r2,r7,#7
+ 162 0024 1278     	 ldrb r2,[r2]
+ 163 0026 52B2     	 sxtb r2,r2
+ 164 0028 9208     	 lsr r2,r2,#2
+ 165 002a C032     	 add r2,r2,#192
+ 166 002c 9200     	 lsl r2,r2,#2
+ 167 002e 5258     	 ldr r2,[r2,r1]
+ 168 0030 F91D     	 add r1,r7,#7
+ 169 0032 0978     	 ldrb r1,[r1]
+ 170 0034 081C     	 mov r0,r1
+ 171 0036 0321     	 mov r1,#3
+ 172 0038 0140     	 and r1,r0
+ 173 003a C900     	 lsl r1,r1,#3
+ 174 003c 081C     	 mov r0,r1
+ 175 003e FF21     	 mov r1,#255
+ 176 0040 8140     	 lsl r1,r1,r0
+ 177 0042 C943     	 mvn r1,r1
+ 178 0044 1140     	 and r1,r2
+ 727:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 179              	 .loc 1 727 0
+ 180 0046 3A68     	 ldr r2,[r7]
+ 181 0048 9201     	 lsl r2,r2,#6
+ 182 004a FF20     	 mov r0,#255
+ 183 004c 0240     	 and r2,r0
+ 184 004e F81D     	 add r0,r7,#7
+ 185 0050 0078     	 ldrb r0,[r0]
+ 186 0052 051C     	 mov r5,r0
+ 187 0054 0320     	 mov r0,#3
+ 188 0056 2840     	 and r0,r5
+ 189 0058 C000     	 lsl r0,r0,#3
+ 190 005a 8240     	 lsl r2,r2,r0
+ 726:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 191              	 .loc 1 726 0
+ 192 005c 0A43     	 orr r2,r1
+ 193 005e C033     	 add r3,r3,#192
+ 194 0060 9B00     	 lsl r3,r3,#2
+ 195 0062 1A51     	 str r2,[r3,r4]
+ 196 0064 2EE0     	 b .L9
+ 197              	.L10:
+ 728:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   }
+ 729:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   else
+ 730:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 731:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****     SCB->SHP[_SHP_IDX(IRQn)] = ((uint32_t)(SCB->SHP[_SHP_IDX(IRQn)] & ~(0xFFUL << _BIT_SHIFT(IRQn))
+ 198              	 .loc 1 731 0
+ 199 0066 1A4C     	 ldr r4,.L12+4
+ 200 0068 FB1D     	 add r3,r7,#7
+ 201 006a 1B78     	 ldrb r3,[r3]
+ 202 006c 1A1C     	 mov r2,r3
+ 203 006e 0F23     	 mov r3,#15
+ 204 0070 1340     	 and r3,r2
+ 205 0072 083B     	 sub r3,r3,#8
+ 206 0074 9908     	 lsr r1,r3,#2
+ 207 0076 164A     	 ldr r2,.L12+4
+ 208 0078 FB1D     	 add r3,r7,#7
+ 209 007a 1B78     	 ldrb r3,[r3]
+ 210 007c 181C     	 mov r0,r3
+ 211 007e 0F23     	 mov r3,#15
+ 212 0080 0340     	 and r3,r0
+ 213 0082 083B     	 sub r3,r3,#8
+ 214 0084 9B08     	 lsr r3,r3,#2
+ 215 0086 0633     	 add r3,r3,#6
+ 216 0088 9B00     	 lsl r3,r3,#2
+ 217 008a D318     	 add r3,r2,r3
+ 218 008c 5B68     	 ldr r3,[r3,#4]
+ 219 008e FA1D     	 add r2,r7,#7
+ 220 0090 1278     	 ldrb r2,[r2]
+ 221 0092 101C     	 mov r0,r2
+ 222 0094 0322     	 mov r2,#3
+ 223 0096 0240     	 and r2,r0
+ 224 0098 D200     	 lsl r2,r2,#3
+ 225 009a 101C     	 mov r0,r2
+ 226 009c FF22     	 mov r2,#255
+ 227 009e 8240     	 lsl r2,r2,r0
+ 228 00a0 D243     	 mvn r2,r2
+ 229 00a2 1A40     	 and r2,r3
+ 732:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 230              	 .loc 1 732 0
+ 231 00a4 3B68     	 ldr r3,[r7]
+ 232 00a6 9B01     	 lsl r3,r3,#6
+ 233 00a8 FF20     	 mov r0,#255
+ 234 00aa 0340     	 and r3,r0
+ 235 00ac F81D     	 add r0,r7,#7
+ 236 00ae 0078     	 ldrb r0,[r0]
+ 237 00b0 051C     	 mov r5,r0
+ 238 00b2 0320     	 mov r0,#3
+ 239 00b4 2840     	 and r0,r5
+ 240 00b6 C000     	 lsl r0,r0,#3
+ 241 00b8 8340     	 lsl r3,r3,r0
+ 731:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 242              	 .loc 1 731 0
+ 243 00ba 1A43     	 orr r2,r3
+ 244 00bc 8B1D     	 add r3,r1,#6
+ 245 00be 9B00     	 lsl r3,r3,#2
+ 246 00c0 E318     	 add r3,r4,r3
+ 247 00c2 5A60     	 str r2,[r3,#4]
+ 248              	.L9:
+ 733:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h ****   }
+ 734:C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Include\core_cm0.h **** }
+ 249              	 .loc 1 734 0
+ 250 00c4 BD46     	 mov sp,r7
+ 251 00c6 02B0     	 add sp,sp,#8
+ 252              	 
+ 253 00c8 B0BD     	 pop {r4,r5,r7,pc}
+ 254              	.L13:
+ 255 00ca C046     	 .align 2
+ 256              	.L12:
+ 257 00cc 00E100E0 	 .word -536813312
+ 258 00d0 00ED00E0 	 .word -536810240
+ 259              	 .cfi_endproc
+ 260              	.LFE29:
+ 262              	 .section .text.PIN_INTERRUPT_GetAppVersion,"ax",%progbits
+ 263              	 .align 2
+ 264              	 .global PIN_INTERRUPT_GetAppVersion
+ 265              	 .code 16
+ 266              	 .thumb_func
+ 268              	PIN_INTERRUPT_GetAppVersion:
+ 269              	.LFB78:
+ 270              	 .file 2 "../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c"
+   1:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** /**
+   2:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * @file pin_interrupt.c
+   3:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * @date 2016-03-02
+   4:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  *
+   5:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * NOTE:
+   6:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * This file is generated by DAVE. Any manual modification done to this file will be lost when the 
+   7:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  *
+   8:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * @cond
+   9:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  **************************************************************************************************
+  10:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * PIN_INTERRUPT v4.0.2 - The PIN_INTERRUPT APP invokes user interrupt handler in a response to ris
+  11:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  *                        edge event signal on a pin.
+  12:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  *
+  13:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * Copyright (c) 2016, Infineon Technologies AG
+  14:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * All rights reserved.                        
+  15:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  *                                             
+  16:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  17:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * following conditions are met:   
+  18:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  *                                                                              
+  19:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  *   Redistributions of source code must retain the above copyright notice, this list of conditions
+  20:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  *   disclaimer.                        
+  21:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * 
+  22:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  *   Redistributions in binary form must reproduce the above copyright notice, this list of conditi
+  23:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  *   following disclaimer in the documentation and/or other materials provided with the distributio
+  24:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  *                         
+  25:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  *   Neither the name of the copyright holders nor the names of its contributors may be used to end
+  26:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  *   products derived from this software without specific prior written permission. 
+  27:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  *                                             
+  28:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  29:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  30:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  31:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  32:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  33:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  34:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.    
+  35:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  *                                                                              
+  36:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  37:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * with Infineon Technologies AG (dave@infineon.com).        
+  38:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  **************************************************************************************************
+  39:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  *
+  40:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * Change History
+  41:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * --------------
+  42:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * 2015-12-03:
+  43:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  *     - Initial version for DAVEv4. <BR>
+  44:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * @endcond 
+  45:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  *
+  46:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  */
+  47:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** 
+  48:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** /**************************************************************************************************
+  49:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * HEADER FILES                                                                                    
+  50:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  **************************************************************************************************
+  51:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** #include "pin_interrupt.h"
+  52:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** 
+  53:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** /**************************************************************************************************
+  54:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * MACROS
+  55:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  **************************************************************************************************
+  56:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** 
+  57:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** /**************************************************************************************************
+  58:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * LOCAL DATA
+  59:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  **************************************************************************************************
+  60:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** 
+  61:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** /**************************************************************************************************
+  62:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * LOCAL ROUTINES
+  63:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  **************************************************************************************************
+  64:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** 
+  65:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** /**************************************************************************************************
+  66:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** * API IMPLEMENTATION
+  67:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** ***************************************************************************************************
+  68:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** /*  API to retrieve version of the APP */
+  69:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** DAVE_APP_VERSION_t PIN_INTERRUPT_GetAppVersion(void)
+  70:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** {
+ 271              	 .loc 2 70 0
+ 272              	 .cfi_startproc
+ 273 0000 80B5     	 push {r7,lr}
+ 274              	.LCFI9:
+ 275              	 .cfi_def_cfa_offset 8
+ 276              	 .cfi_offset 7,-8
+ 277              	 .cfi_offset 14,-4
+ 278 0002 82B0     	 sub sp,sp,#8
+ 279              	.LCFI10:
+ 280              	 .cfi_def_cfa_offset 16
+ 281 0004 00AF     	 add r7,sp,#0
+ 282              	.LCFI11:
+ 283              	 .cfi_def_cfa_register 7
+  71:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   DAVE_APP_VERSION_t version;
+  72:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   version.major = (uint8_t)PIN_INTERRUPT_MAJOR_VERSION;
+ 284              	 .loc 2 72 0
+ 285 0006 3B1C     	 mov r3,r7
+ 286 0008 0422     	 mov r2,#4
+ 287 000a 1A70     	 strb r2,[r3]
+  73:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   version.minor = (uint8_t)PIN_INTERRUPT_MINOR_VERSION;
+ 288              	 .loc 2 73 0
+ 289 000c 3B1C     	 mov r3,r7
+ 290 000e 0022     	 mov r2,#0
+ 291 0010 5A70     	 strb r2,[r3,#1]
+  74:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   version.patch = (uint8_t)PIN_INTERRUPT_PATCH_VERSION;
+ 292              	 .loc 2 74 0
+ 293 0012 3B1C     	 mov r3,r7
+ 294 0014 0222     	 mov r2,#2
+ 295 0016 9A70     	 strb r2,[r3,#2]
+  75:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   return (version);
+ 296              	 .loc 2 75 0
+ 297 0018 3B1D     	 add r3,r7,#4
+ 298 001a 3A1C     	 mov r2,r7
+ 299 001c 1188     	 ldrh r1,[r2]
+ 300 001e 1980     	 strh r1,[r3]
+ 301 0020 9278     	 ldrb r2,[r2,#2]
+ 302 0022 9A70     	 strb r2,[r3,#2]
+ 303 0024 3A1D     	 add r2,r7,#4
+ 304 0026 0023     	 mov r3,#0
+ 305 0028 1178     	 ldrb r1,[r2]
+ 306 002a FF20     	 mov r0,#255
+ 307 002c 0140     	 and r1,r0
+ 308 002e FF20     	 mov r0,#255
+ 309 0030 8343     	 bic r3,r0
+ 310 0032 0B43     	 orr r3,r1
+ 311 0034 5178     	 ldrb r1,[r2,#1]
+ 312 0036 FF20     	 mov r0,#255
+ 313 0038 0140     	 and r1,r0
+ 314 003a 0902     	 lsl r1,r1,#8
+ 315 003c 0648     	 ldr r0,.L16
+ 316 003e 0340     	 and r3,r0
+ 317 0040 0B43     	 orr r3,r1
+ 318 0042 9278     	 ldrb r2,[r2,#2]
+ 319 0044 FF21     	 mov r1,#255
+ 320 0046 0A40     	 and r2,r1
+ 321 0048 1204     	 lsl r2,r2,#16
+ 322 004a 0449     	 ldr r1,.L16+4
+ 323 004c 0B40     	 and r3,r1
+ 324 004e 1343     	 orr r3,r2
+  76:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** }
+ 325              	 .loc 2 76 0
+ 326 0050 181C     	 mov r0,r3
+ 327 0052 BD46     	 mov sp,r7
+ 328 0054 02B0     	 add sp,sp,#8
+ 329              	 
+ 330 0056 80BD     	 pop {r7,pc}
+ 331              	.L17:
+ 332              	 .align 2
+ 333              	.L16:
+ 334 0058 FF00FFFF 	 .word -65281
+ 335 005c FFFF00FF 	 .word -16711681
+ 336              	 .cfi_endproc
+ 337              	.LFE78:
+ 339              	 .section .text.PIN_INTERRUPT_Init,"ax",%progbits
+ 340              	 .align 2
+ 341              	 .global PIN_INTERRUPT_Init
+ 342              	 .code 16
+ 343              	 .thumb_func
+ 345              	PIN_INTERRUPT_Init:
+ 346              	.LFB79:
+  77:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** 
+  78:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** /*
+  79:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * API to initialize the PIN_INTERRUPT APP ERU Event Trigger Logic, Output Gating Unit Hardware ini
+  80:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * and NVIC node configuration.
+  81:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  */
+  82:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** PIN_INTERRUPT_STATUS_t PIN_INTERRUPT_Init(const PIN_INTERRUPT_t *const handle)
+  83:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** {
+ 347              	 .loc 2 83 0
+ 348              	 .cfi_startproc
+ 349 0000 80B5     	 push {r7,lr}
+ 350              	.LCFI12:
+ 351              	 .cfi_def_cfa_offset 8
+ 352              	 .cfi_offset 7,-8
+ 353              	 .cfi_offset 14,-4
+ 354 0002 82B0     	 sub sp,sp,#8
+ 355              	.LCFI13:
+ 356              	 .cfi_def_cfa_offset 16
+ 357 0004 00AF     	 add r7,sp,#0
+ 358              	.LCFI14:
+ 359              	 .cfi_def_cfa_register 7
+ 360 0006 7860     	 str r0,[r7,#4]
+  84:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   XMC_ASSERT("PIN_INTERRUPT_Init: PIN_INTERRUPT APP handle function pointer uninitialized", (handle
+  85:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** 
+  86:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   /* Initializes input pin characteristics */
+  87:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   XMC_GPIO_Init(handle->port, handle->pin, &handle->gpio_config);
+ 361              	 .loc 2 87 0
+ 362 0008 7B68     	 ldr r3,[r7,#4]
+ 363 000a 5968     	 ldr r1,[r3,#4]
+ 364 000c 7B68     	 ldr r3,[r7,#4]
+ 365 000e 9A7F     	 ldrb r2,[r3,#30]
+ 366 0010 7B68     	 ldr r3,[r7,#4]
+ 367 0012 0833     	 add r3,r3,#8
+ 368 0014 081C     	 mov r0,r1
+ 369 0016 111C     	 mov r1,r2
+ 370 0018 1A1C     	 mov r2,r3
+ 371 001a FFF7FEFF 	 bl XMC_GPIO_Init
+  88:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   /* ERU Event Trigger Logic Hardware initialization based on UI */
+  89:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   XMC_ERU_ETL_Init(handle->eru, handle->etl, &handle->etl_config);
+ 372              	 .loc 2 89 0
+ 373 001e 7B68     	 ldr r3,[r7,#4]
+ 374 0020 1968     	 ldr r1,[r3]
+ 375 0022 7B68     	 ldr r3,[r7,#4]
+ 376 0024 1A7F     	 ldrb r2,[r3,#28]
+ 377 0026 7B68     	 ldr r3,[r7,#4]
+ 378 0028 1033     	 add r3,r3,#16
+ 379 002a 081C     	 mov r0,r1
+ 380 002c 111C     	 mov r1,r2
+ 381 002e 1A1C     	 mov r2,r3
+ 382 0030 FFF7FEFF 	 bl XMC_ERU_ETL_Init
+  90:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   /* OGU is configured to generate event on configured trigger edge */
+  91:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   XMC_ERU_OGU_SetServiceRequestMode(handle->eru, handle->ogu, XMC_ERU_OGU_SERVICE_REQUEST_ON_TRIGGE
+ 383              	 .loc 2 91 0
+ 384 0034 7B68     	 ldr r3,[r7,#4]
+ 385 0036 1A68     	 ldr r2,[r3]
+ 386 0038 7B68     	 ldr r3,[r7,#4]
+ 387 003a 5B7F     	 ldrb r3,[r3,#29]
+ 388 003c 101C     	 mov r0,r2
+ 389 003e 191C     	 mov r1,r3
+ 390 0040 0122     	 mov r2,#1
+ 391 0042 FFF7FEFF 	 bl XMC_ERU_OGU_SetServiceRequestMode
+  92:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** #if (UC_FAMILY == XMC1)
+  93:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   /* Configure NVIC node and priority */
+  94:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   NVIC_SetPriority((IRQn_Type)handle->IRQn, handle->irq_priority);
+ 392              	 .loc 2 94 0
+ 393 0046 7B68     	 ldr r3,[r7,#4]
+ 394 0048 9A7E     	 ldrb r2,[r3,#26]
+ 395 004a 7B68     	 ldr r3,[r7,#4]
+ 396 004c DB7E     	 ldrb r3,[r3,#27]
+ 397 004e 191C     	 mov r1,r3
+ 398 0050 53B2     	 sxtb r3,r2
+ 399 0052 181C     	 mov r0,r3
+ 400 0054 FFF7FEFF 	 bl __NVIC_SetPriority
+  95:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** #else
+  96:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   /* Configure NVIC node, priority and subpriority */
+  97:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   NVIC_SetPriority((IRQn_Type)handle->IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),
+  98:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****                     handle->irq_priority, handle->irq_subpriority));
+  99:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** #endif
+ 100:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** #if (UC_SERIES == XMC14)
+ 101:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   XMC_SCU_SetInterruptControl((IRQn_Type)handle->IRQn, (XMC_SCU_IRQCTRL_t)handle->irqctrl);
+ 401              	 .loc 2 101 0
+ 402 0058 7B68     	 ldr r3,[r7,#4]
+ 403 005a 9B7E     	 ldrb r3,[r3,#26]
+ 404 005c DAB2     	 uxtb r2,r3
+ 405 005e 7B68     	 ldr r3,[r7,#4]
+ 406 0060 1B8B     	 ldrh r3,[r3,#24]
+ 407 0062 101C     	 mov r0,r2
+ 408 0064 191C     	 mov r1,r3
+ 409 0066 FFF7FEFF 	 bl XMC_SCU_SetInterruptControl
+ 102:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** #endif
+ 103:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   if (true == handle->enable_at_init)
+ 410              	 .loc 2 103 0
+ 411 006a 7B68     	 ldr r3,[r7,#4]
+ 412 006c DB7F     	 ldrb r3,[r3,#31]
+ 413 006e 002B     	 cmp r3,#0
+ 414 0070 0BD0     	 beq .L19
+ 104:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   {
+ 105:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****     /* Clear pending interrupt before enabling it */
+ 106:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****     NVIC_ClearPendingIRQ((IRQn_Type)handle->IRQn);
+ 415              	 .loc 2 106 0
+ 416 0072 7B68     	 ldr r3,[r7,#4]
+ 417 0074 9B7E     	 ldrb r3,[r3,#26]
+ 418 0076 5BB2     	 sxtb r3,r3
+ 419 0078 181C     	 mov r0,r3
+ 420 007a FFF7FEFF 	 bl __NVIC_ClearPendingIRQ
+ 107:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****     /* Enable NVIC node */
+ 108:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****     NVIC_EnableIRQ((IRQn_Type)handle->IRQn);
+ 421              	 .loc 2 108 0
+ 422 007e 7B68     	 ldr r3,[r7,#4]
+ 423 0080 9B7E     	 ldrb r3,[r3,#26]
+ 424 0082 5BB2     	 sxtb r3,r3
+ 425 0084 181C     	 mov r0,r3
+ 426 0086 FFF7FEFF 	 bl __NVIC_EnableIRQ
+ 427              	.L19:
+ 109:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   }
+ 110:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   return (PIN_INTERRUPT_STATUS_SUCCESS);
+ 428              	 .loc 2 110 0
+ 429 008a 0023     	 mov r3,#0
+ 111:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** }
+ 430              	 .loc 2 111 0
+ 431 008c 181C     	 mov r0,r3
+ 432 008e BD46     	 mov sp,r7
+ 433 0090 02B0     	 add sp,sp,#8
+ 434              	 
+ 435 0092 80BD     	 pop {r7,pc}
+ 436              	 .cfi_endproc
+ 437              	.LFE79:
+ 439              	 .section .text.PIN_INTERRUPT_SetEdgeSensitivity,"ax",%progbits
+ 440              	 .align 2
+ 441              	 .global PIN_INTERRUPT_SetEdgeSensitivity
+ 442              	 .code 16
+ 443              	 .thumb_func
+ 445              	PIN_INTERRUPT_SetEdgeSensitivity:
+ 446              	.LFB80:
+ 112:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** 
+ 113:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** /**
+ 114:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * This function is used to configure event trigger edge during run time.
+ 115:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  */
+ 116:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** void PIN_INTERRUPT_SetEdgeSensitivity(const PIN_INTERRUPT_t *const handle, const PIN_INTERRUPT_EDGE
+ 117:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** {
+ 447              	 .loc 2 117 0
+ 448              	 .cfi_startproc
+ 449 0000 80B5     	 push {r7,lr}
+ 450              	.LCFI15:
+ 451              	 .cfi_def_cfa_offset 8
+ 452              	 .cfi_offset 7,-8
+ 453              	 .cfi_offset 14,-4
+ 454 0002 82B0     	 sub sp,sp,#8
+ 455              	.LCFI16:
+ 456              	 .cfi_def_cfa_offset 16
+ 457 0004 00AF     	 add r7,sp,#0
+ 458              	.LCFI17:
+ 459              	 .cfi_def_cfa_register 7
+ 460 0006 7860     	 str r0,[r7,#4]
+ 461 0008 0A1C     	 mov r2,r1
+ 462 000a FB1C     	 add r3,r7,#3
+ 463 000c 1A70     	 strb r2,[r3]
+ 118:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   XMC_ASSERT("PIN_INTERRUPT_SetEdgeSensitivity: Handler null pointer", handle != NULL);
+ 119:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   XMC_ERU_ETL_SetEdgeDetection(handle->eru, handle->etl, (XMC_ERU_ETL_EDGE_DETECTION_t)edge);
+ 464              	 .loc 2 119 0
+ 465 000e 7B68     	 ldr r3,[r7,#4]
+ 466 0010 1968     	 ldr r1,[r3]
+ 467 0012 7B68     	 ldr r3,[r7,#4]
+ 468 0014 1A7F     	 ldrb r2,[r3,#28]
+ 469 0016 FB1C     	 add r3,r7,#3
+ 470 0018 1B78     	 ldrb r3,[r3]
+ 471 001a 081C     	 mov r0,r1
+ 472 001c 111C     	 mov r1,r2
+ 473 001e 1A1C     	 mov r2,r3
+ 474 0020 FFF7FEFF 	 bl XMC_ERU_ETL_SetEdgeDetection
+ 120:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** }
+ 475              	 .loc 2 120 0
+ 476 0024 BD46     	 mov sp,r7
+ 477 0026 02B0     	 add sp,sp,#8
+ 478              	 
+ 479 0028 80BD     	 pop {r7,pc}
+ 480              	 .cfi_endproc
+ 481              	.LFE80:
+ 483 002a C046     	 .section .text.PIN_INTERRUPT_GetEdgeSensitivity,"ax",%progbits
+ 484              	 .align 2
+ 485              	 .global PIN_INTERRUPT_GetEdgeSensitivity
+ 486              	 .code 16
+ 487              	 .thumb_func
+ 489              	PIN_INTERRUPT_GetEdgeSensitivity:
+ 490              	.LFB81:
+ 121:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** 
+ 122:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** /**
+ 123:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  * This function is used to get the configured event trigger edge during run time.
+ 124:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****  */
+ 125:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** PIN_INTERRUPT_EDGE_t PIN_INTERRUPT_GetEdgeSensitivity(const PIN_INTERRUPT_t *const handle)
+ 126:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** {
+ 491              	 .loc 2 126 0
+ 492              	 .cfi_startproc
+ 493 0000 80B5     	 push {r7,lr}
+ 494              	.LCFI18:
+ 495              	 .cfi_def_cfa_offset 8
+ 496              	 .cfi_offset 7,-8
+ 497              	 .cfi_offset 14,-4
+ 498 0002 82B0     	 sub sp,sp,#8
+ 499              	.LCFI19:
+ 500              	 .cfi_def_cfa_offset 16
+ 501 0004 00AF     	 add r7,sp,#0
+ 502              	.LCFI20:
+ 503              	 .cfi_def_cfa_register 7
+ 504 0006 7860     	 str r0,[r7,#4]
+ 127:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   XMC_ASSERT("PIN_INTERRUPT_GetEdgeSensitivity: Handler null pointer", handle != NULL);
+ 128:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c ****   return ((PIN_INTERRUPT_EDGE_t)XMC_ERU_ETL_GetEdgeDetection(handle->eru, handle->etl));
+ 505              	 .loc 2 128 0
+ 506 0008 7B68     	 ldr r3,[r7,#4]
+ 507 000a 1A68     	 ldr r2,[r3]
+ 508 000c 7B68     	 ldr r3,[r7,#4]
+ 509 000e 1B7F     	 ldrb r3,[r3,#28]
+ 510 0010 101C     	 mov r0,r2
+ 511 0012 191C     	 mov r1,r3
+ 512 0014 FFF7FEFF 	 bl XMC_ERU_ETL_GetEdgeDetection
+ 513 0018 031C     	 mov r3,r0
+ 129:../Dave/Generated/PIN_INTERRUPT/pin_interrupt.c **** }
+ 514              	 .loc 2 129 0
+ 515 001a 181C     	 mov r0,r3
+ 516 001c BD46     	 mov sp,r7
+ 517 001e 02B0     	 add sp,sp,#8
+ 518              	 
+ 519 0020 80BD     	 pop {r7,pc}
+ 520              	 .cfi_endproc
+ 521              	.LFE81:
+ 523 0022 C046     	 .text
+ 524              	.Letext0:
+ 525              	 .file 3 "c:\\users\\victor.paschoal\\documents\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 526              	 .file 4 "c:\\users\\victor.paschoal\\documents\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 527              	 .file 5 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Infineon/XMC1400_series/Include/XMC1400.h"
+ 528              	 .file 6 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc/xmc1_scu.h"
+ 529              	 .file 7 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc/xmc_gpio.h"
+ 530              	 .file 8 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc/xmc1_gpio.h"
+ 531              	 .file 9 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc/xmc_eru.h"
+ 532              	 .file 10 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DAVE_Common.h"
+ 533              	 .file 11 "../Dave/Generated/PIN_INTERRUPT/pin_interrupt.h"
+ 534              	 .file 12 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Infineon/XMC1400_series/Include/system_XMC1400.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 pin_interrupt.c
+    {standard input}:18     .text.__NVIC_EnableIRQ:00000000 $t
+    {standard input}:22     .text.__NVIC_EnableIRQ:00000000 __NVIC_EnableIRQ
+    {standard input}:66     .text.__NVIC_EnableIRQ:00000030 $d
+    {standard input}:71     .text.__NVIC_ClearPendingIRQ:00000000 $t
+    {standard input}:75     .text.__NVIC_ClearPendingIRQ:00000000 __NVIC_ClearPendingIRQ
+    {standard input}:119    .text.__NVIC_ClearPendingIRQ:00000030 $d
+    {standard input}:124    .text.__NVIC_SetPriority:00000000 $t
+    {standard input}:128    .text.__NVIC_SetPriority:00000000 __NVIC_SetPriority
+    {standard input}:257    .text.__NVIC_SetPriority:000000cc $d
+    {standard input}:263    .text.PIN_INTERRUPT_GetAppVersion:00000000 $t
+    {standard input}:268    .text.PIN_INTERRUPT_GetAppVersion:00000000 PIN_INTERRUPT_GetAppVersion
+    {standard input}:334    .text.PIN_INTERRUPT_GetAppVersion:00000058 $d
+    {standard input}:340    .text.PIN_INTERRUPT_Init:00000000 $t
+    {standard input}:345    .text.PIN_INTERRUPT_Init:00000000 PIN_INTERRUPT_Init
+    {standard input}:440    .text.PIN_INTERRUPT_SetEdgeSensitivity:00000000 $t
+    {standard input}:445    .text.PIN_INTERRUPT_SetEdgeSensitivity:00000000 PIN_INTERRUPT_SetEdgeSensitivity
+    {standard input}:484    .text.PIN_INTERRUPT_GetEdgeSensitivity:00000000 $t
+    {standard input}:489    .text.PIN_INTERRUPT_GetEdgeSensitivity:00000000 PIN_INTERRUPT_GetEdgeSensitivity
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+XMC_GPIO_Init
+XMC_ERU_ETL_Init
+XMC_ERU_OGU_SetServiceRequestMode
+XMC_SCU_SetInterruptControl
+XMC_ERU_ETL_SetEdgeDetection
+XMC_ERU_ETL_GetEdgeDetection
