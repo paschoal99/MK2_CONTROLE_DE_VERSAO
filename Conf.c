@@ -103,7 +103,7 @@ void ConfTask(void){
 		case BOT_MIN_PRESS:
 		{
 
-			if(/*(CONF.AUTOMATICO == true && CONF.STATUS_BOT_AUTO == false) ||*/ (CONF.BOT_ZERO == false && CONF.STATUS_ANG_ZERO == false && DEBAUCE.STATUS_DEBAUCE == true)){
+			if(/*(CONF.AUTOMATICO == true && CONF.STATUS_BOT_AUTO == false) ||*/ (CONF.BOT_ZERO == false && CONF.STATUS_ANG_ZERO == false && DEBAUCE.STATUS_DEBAUCE_ANG_MIN == true)){
 				CONF.ANG_MAX_SUP = false;
 				DIGITAL_IO_SetOutputHigh(&LED_CONF_MIN_0);
 				DIGITAL_IO_SetOutputLow (&LED_CONF_MIN_5);
@@ -111,7 +111,7 @@ void ConfTask(void){
 				ACTION.Ang_min = 0;
 				CONF.BOT_ZERO = 1;
 				CONF.STATUS_ANG_ZERO = true;
-				DEBAUCE.STATUS_DEBAUCE = false;
+				DEBAUCE.STATUS_DEBAUCE_ANG_MIN = false;
 				CONF.Maq_Ang_Min = BOT_MIN_DPRESS;
 				CONF.STATUS_CONF_ANG_LOW[0] = 1;
 				E_EEPROM_XMC1_Write(CONF_ANG_LOW, &CONF.STATUS_CONF_ANG_LOW[0]);
@@ -122,7 +122,7 @@ void ConfTask(void){
 
 		case BOT_MIN_DPRESS:
 		{
-			if(/*(CONF.AUTOMATICO == true && CONF.STATUS_BOT_AUTO == true) ||*/ (CONF.BOT_ZERO == false && CONF.STATUS_ANG_ZERO == true && DEBAUCE.STATUS_DEBAUCE == true)){
+			if(/*(CONF.AUTOMATICO == true && CONF.STATUS_BOT_AUTO == true) ||*/ (CONF.BOT_ZERO == false && CONF.STATUS_ANG_ZERO == true && DEBAUCE.STATUS_DEBAUCE_ANG_MIN == true)){
 				CONF.ANG_MAX_SUP = true;
 				DIGITAL_IO_SetOutputLow (&LED_CONF_MIN_0);
 				DIGITAL_IO_SetOutputHigh(&LED_CONF_MIN_5);
@@ -131,7 +131,7 @@ void ConfTask(void){
 				CONF.Maq_Ang_Min = BOT_MIN_PRESS;
 				CONF.Cont_AUT = 0;
 				CONF.STATUS_ANG_ZERO = false;
-				DEBAUCE.STATUS_DEBAUCE = false;
+				DEBAUCE.STATUS_DEBAUCE_ANG_MIN = false;
 				CONF.STATUS_CONF_ANG_LOW[0] = 2;
 				E_EEPROM_XMC1_Write(CONF_ANG_LOW, &CONF.STATUS_CONF_ANG_LOW[0]);
 				taskSetState(TASK_DEBAUCE, TASK_GO);

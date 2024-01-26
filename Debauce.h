@@ -123,7 +123,9 @@ typedef struct STDEBAUCE{
 	bool				 STATUS_ANG_ZERO;
 
 	bool				STATUS_DEBAUCE;
+	bool				STATUS_DEBAUCE_ANG_MIN;
 	uint16_t			CONT_DEBAUCE;
+	uint16_t			CONT_DEBAUCE_ANG_MIN;
 
 
 

@@ -1364,7 +1364,7 @@
  510 004a 36D0     	 beq .L21
  511              	 .loc 3 106 0 discriminator 2
  512 004c C84B     	 ldr r3,.L43+8
- 513 004e DE22     	 mov r2,#222
+ 513 004e DF22     	 mov r2,#223
  514 0050 9B5C     	 ldrb r3,[r3,r2]
  515 0052 002B     	 cmp r3,#0
  516 0054 31D0     	 beq .L21
@@ -1408,10 +1408,10 @@
  547 0088 E322     	 mov r2,#227
  548 008a 0121     	 mov r1,#1
  549 008c 9954     	 strb r1,[r3,r2]
- 114:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE = false;
+ 114:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE_ANG_MIN = false;
  550              	 .loc 3 114 0
  551 008e B84B     	 ldr r3,.L43+8
- 552 0090 DE22     	 mov r2,#222
+ 552 0090 DF22     	 mov r2,#223
  553 0092 0021     	 mov r1,#0
  554 0094 9954     	 strb r1,[r3,r2]
  115:../Conf.c     **** 				CONF.Maq_Ang_Min = BOT_MIN_DPRESS;
@@ -1463,7 +1463,7 @@
  590 00ce 36D0     	 beq .L22
  591              	 .loc 3 125 0 discriminator 2
  592 00d0 A74B     	 ldr r3,.L43+8
- 593 00d2 DE22     	 mov r2,#222
+ 593 00d2 DF22     	 mov r2,#223
  594 00d4 9B5C     	 ldrb r3,[r3,r2]
  595 00d6 002B     	 cmp r3,#0
  596 00d8 31D0     	 beq .L22
@@ -1513,10 +1513,10 @@
  632 0114 E322     	 mov r2,#227
  633 0116 0021     	 mov r1,#0
  634 0118 9954     	 strb r1,[r3,r2]
- 134:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE = false;
+ 134:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE_ANG_MIN = false;
  635              	 .loc 3 134 0
  636 011a 954B     	 ldr r3,.L43+8
- 637 011c DE22     	 mov r2,#222
+ 637 011c DF22     	 mov r2,#223
  638 011e 0021     	 mov r1,#0
  639 0120 9954     	 strb r1,[r3,r2]
  135:../Conf.c     **** 				CONF.STATUS_CONF_ANG_LOW[0] = 2;

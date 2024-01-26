@@ -48,4 +48,14 @@ void DebauceTask(void){
 		taskSetState(TASK_DEBAUCE, TASK_200MS);
 	}
 
+	DEBAUCE.CONT_DEBAUCE_ANG_MIN ++;
+	if((DEBAUCE.CONT_DEBAUCE_ANG_MIN >= 2) && (DIGITAL_IO_GetInput(&BOT_MIN))){
+
+		DEBAUCE.CONT_DEBAUCE_ANG_MIN = 0;
+		DEBAUCE.STATUS_DEBAUCE_ANG_MIN = true;
+		taskSetState(TASK_DEBAUCE, TASK_STOP);
+	}else{
+		taskSetState(TASK_DEBAUCE, TASK_200MS);
+	}
+
 }
