@@ -10,7 +10,6 @@
  *
  * @version 1.0
  *
- *
  */
 #include <ReadAxis1.h>
 #include <Action.h>
@@ -44,18 +43,16 @@ void DebauceTask(void){
 		DEBAUCE.CONT_DEBAUCE = 0;
 		DEBAUCE.STATUS_DEBAUCE = true;
 		taskSetState(TASK_DEBAUCE, TASK_STOP);
-	}else{
-		taskSetState(TASK_DEBAUCE, TASK_200MS);
 	}
-
-	DEBAUCE.CONT_DEBAUCE_ANG_MIN ++;
+		DEBAUCE.CONT_DEBAUCE_ANG_MIN ++;
 	if((DEBAUCE.CONT_DEBAUCE_ANG_MIN >= 2) && (DIGITAL_IO_GetInput(&BOT_MIN))){
 
 		DEBAUCE.CONT_DEBAUCE_ANG_MIN = 0;
 		DEBAUCE.STATUS_DEBAUCE_ANG_MIN = true;
 		taskSetState(TASK_DEBAUCE, TASK_STOP);
-	}else{
-		taskSetState(TASK_DEBAUCE, TASK_200MS);
 	}
+	else{
+	}
+		taskSetState(TASK_DEBAUCE, TASK_200MS);
 
 }

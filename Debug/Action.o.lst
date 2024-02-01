@@ -1458,8 +1458,8 @@
  165:../Action.c   **** 				}
  166:../Action.c   **** 
  167:../Action.c   **** 			}
- 168:../Action.c   **** 
- 169:../Action.c   **** 			taskSetState(TASK_ACTION, TASK_STOP);
+ 168:../Action.c   **** //
+ 169:../Action.c   **** taskSetState(TASK_ACTION, TASK_STOP);
  699              	 .loc 3 169 0
  700 036e 0123     	 mov r3,#1
  701 0370 5B42     	 neg r3,r3
@@ -1516,18 +1516,19 @@
  742 03c6 0121     	 mov r1,#1
  743 03c8 FFF7FEFF 	 bl taskSetState
  744              	.L33:
- 178:../Action.c   **** 	}
- 179:../Action.c   **** 
+ 178:../Action.c   **** 
+ 179:../Action.c   **** 	}
  180:../Action.c   **** 
- 181:../Action.c   **** 	//////////////////////////////////////////////////////////////////////////////////////////////////
- 182:../Action.c   **** 	//////////////////////////--------------------------------------------------//////////////////////
- 183:../Action.c   **** 	//////////////////////////--CONTROLE DE CICLOS REALIZADOS PELO EQUIPAMENTO--//////////////////////
- 184:../Action.c   **** 	//////////////////////////--------------------------------------------------//////////////////////
- 185:../Action.c   **** 	//////////////////////////////////////////////////////////////////////////////////////////////////
- 186:../Action.c   **** 
+ 181:../Action.c   **** 
+ 182:../Action.c   **** 	//////////////////////////////////////////////////////////////////////////////////////////////////
+ 183:../Action.c   **** 	//////////////////////////--------------------------------------------------//////////////////////
+ 184:../Action.c   **** 	//////////////////////////--CONTROLE DE CICLOS REALIZADOS PELO EQUIPAMENTO--//////////////////////
+ 185:../Action.c   **** 	//////////////////////////--------------------------------------------------//////////////////////
+ 186:../Action.c   **** 	//////////////////////////////////////////////////////////////////////////////////////////////////
  187:../Action.c   **** 
- 188:../Action.c   **** 	if(ReadAxis1.Angle <= 0 && ACTION.Ang_High == true){
- 745              	 .loc 3 188 0
+ 188:../Action.c   **** 
+ 189:../Action.c   **** 	if(ReadAxis1.Angle <= 0 && ACTION.Ang_High == true){
+ 745              	 .loc 3 189 0
  746 03cc 2A4B     	 ldr r3,.L52+12
  747 03ce 9822     	 mov r2,#152
  748 03d0 9B58     	 ldr r3,[r3,r2]
@@ -1536,21 +1537,21 @@
  751 03d6 FFF7FEFF 	 bl __aeabi_fcmple
  752 03da 031E     	 sub r3,r0,#0
  753 03dc 36D0     	 beq .L34
- 754              	 .loc 3 188 0 is_stmt 0 discriminator 1
+ 754              	 .loc 3 189 0 is_stmt 0 discriminator 1
  755 03de 274B     	 ldr r3,.L52+16
  756 03e0 F022     	 mov r2,#240
  757 03e2 9B5C     	 ldrb r3,[r3,r2]
  758 03e4 002B     	 cmp r3,#0
  759 03e6 31D0     	 beq .L34
- 189:../Action.c   **** 
- 190:../Action.c   **** 		ACTION.Ang_High = false;
- 760              	 .loc 3 190 0 is_stmt 1
+ 190:../Action.c   **** 
+ 191:../Action.c   **** 		ACTION.Ang_High = false;
+ 760              	 .loc 3 191 0 is_stmt 1
  761 03e8 244B     	 ldr r3,.L52+16
  762 03ea F022     	 mov r2,#240
  763 03ec 0021     	 mov r1,#0
  764 03ee 9954     	 strb r1,[r3,r2]
- 191:../Action.c   **** 		ACTION.Cont_Ciclos = ACTION.Cont_Ciclos_Report ++;
- 765              	 .loc 3 191 0
+ 192:../Action.c   **** 		ACTION.Cont_Ciclos = ACTION.Cont_Ciclos_Report ++;
+ 765              	 .loc 3 192 0
  766 03f0 224B     	 ldr r3,.L52+16
  767 03f2 E022     	 mov r2,#224
  768 03f4 9B58     	 ldr r3,[r3,r2]
@@ -1561,9 +1562,9 @@
  773 03fe 1F4A     	 ldr r2,.L52+16
  774 0400 D821     	 mov r1,#216
  775 0402 5350     	 str r3,[r2,r1]
- 192:../Action.c   **** 
- 193:../Action.c   **** 		ACTION.Cont_Ciclos_Memory[0] = ACTION.Cont_Ciclos >> 24;
- 776              	 .loc 3 193 0
+ 193:../Action.c   **** 
+ 194:../Action.c   **** 		ACTION.Cont_Ciclos_Memory[0] = ACTION.Cont_Ciclos >> 24;
+ 776              	 .loc 3 194 0
  777 0404 1D4B     	 ldr r3,.L52+16
  778 0406 D822     	 mov r2,#216
  779 0408 9B58     	 ldr r3,[r3,r2]
@@ -1572,8 +1573,8 @@
  782 040e 1B4B     	 ldr r3,.L52+16
  783 0410 DC22     	 mov r2,#220
  784 0412 9954     	 strb r1,[r3,r2]
- 194:../Action.c   **** 		ACTION.Cont_Ciclos_Memory[1] = ACTION.Cont_Ciclos >> 16;
- 785              	 .loc 3 194 0
+ 195:../Action.c   **** 		ACTION.Cont_Ciclos_Memory[1] = ACTION.Cont_Ciclos >> 16;
+ 785              	 .loc 3 195 0
  786 0414 194B     	 ldr r3,.L52+16
  787 0416 D822     	 mov r2,#216
  788 0418 9B58     	 ldr r3,[r3,r2]
@@ -1582,8 +1583,8 @@
  791 041e 174B     	 ldr r3,.L52+16
  792 0420 DD22     	 mov r2,#221
  793 0422 9954     	 strb r1,[r3,r2]
- 195:../Action.c   **** 		ACTION.Cont_Ciclos_Memory[2] = ACTION.Cont_Ciclos >> 8;
- 794              	 .loc 3 195 0
+ 196:../Action.c   **** 		ACTION.Cont_Ciclos_Memory[2] = ACTION.Cont_Ciclos >> 8;
+ 794              	 .loc 3 196 0
  795 0424 154B     	 ldr r3,.L52+16
  796 0426 D822     	 mov r2,#216
  797 0428 9B58     	 ldr r3,[r3,r2]
@@ -1592,8 +1593,8 @@
  800 042e 134B     	 ldr r3,.L52+16
  801 0430 DE22     	 mov r2,#222
  802 0432 9954     	 strb r1,[r3,r2]
- 196:../Action.c   **** 		ACTION.Cont_Ciclos_Memory[3] = ACTION.Cont_Ciclos;
- 803              	 .loc 3 196 0
+ 197:../Action.c   **** 		ACTION.Cont_Ciclos_Memory[3] = ACTION.Cont_Ciclos;
+ 803              	 .loc 3 197 0
  804 0434 114B     	 ldr r3,.L52+16
  805 0436 D822     	 mov r2,#216
  806 0438 9B58     	 ldr r3,[r3,r2]
@@ -1601,19 +1602,19 @@
  808 043c 0F4B     	 ldr r3,.L52+16
  809 043e DF22     	 mov r2,#223
  810 0440 9954     	 strb r1,[r3,r2]
- 197:../Action.c   **** 
  198:../Action.c   **** 
- 199:../Action.c   **** 		E_EEPROM_XMC1_Write(CONT_CYCLES, ACTION.Cont_Ciclos_Memory);
- 811              	 .loc 3 199 0
+ 199:../Action.c   **** 
+ 200:../Action.c   **** 		E_EEPROM_XMC1_Write(CONT_CYCLES, ACTION.Cont_Ciclos_Memory);
+ 811              	 .loc 3 200 0
  812 0442 0F4B     	 ldr r3,.L52+20
  813 0444 0620     	 mov r0,#6
  814 0446 191C     	 mov r1,r3
  815 0448 FFF7FEFF 	 bl E_EEPROM_XMC1_Write
  816              	.L34:
- 200:../Action.c   **** 	}
- 201:../Action.c   **** 
- 202:../Action.c   **** 	if(ReadAxis1.Angle >= 5){
- 817              	 .loc 3 202 0
+ 201:../Action.c   **** 	}
+ 202:../Action.c   **** 
+ 203:../Action.c   **** 	if(ReadAxis1.Angle >= 5){
+ 817              	 .loc 3 203 0
  818 044c 0A4B     	 ldr r3,.L52+12
  819 044e 9822     	 mov r2,#152
  820 0450 9B58     	 ldr r3,[r3,r2]
@@ -1622,16 +1623,16 @@
  823 0456 FFF7FEFF 	 bl __aeabi_fcmpge
  824 045a 031E     	 sub r3,r0,#0
  825 045c 03D0     	 beq .L6
- 203:../Action.c   **** 		ACTION.Ang_High = true;
- 826              	 .loc 3 203 0
+ 204:../Action.c   **** 		ACTION.Ang_High = true;
+ 826              	 .loc 3 204 0
  827 045e 074B     	 ldr r3,.L52+16
  828 0460 F022     	 mov r2,#240
  829 0462 0121     	 mov r1,#1
  830 0464 9954     	 strb r1,[r3,r2]
  831              	.L6:
- 204:../Action.c   **** 	}
- 205:../Action.c   **** }
- 832              	 .loc 3 205 0
+ 205:../Action.c   **** 	}
+ 206:../Action.c   **** }
+ 832              	 .loc 3 206 0
  833 0466 BD46     	 mov sp,r7
  834              	 
  835 0468 98BD     	 pop {r3,r4,r7,pc}

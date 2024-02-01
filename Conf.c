@@ -165,6 +165,7 @@ void ConfTask(void){
 
 		case BOT_AUTO_DPRESS:
 		{
+
 			if((CONF.AUTOMATICO == true && CONF.STATUS_BOT_AUTO == true) || (CONF.BOT_AUTO == false && CONF.STATUS_BOT_AUTO == true && DEBAUCE.STATUS_DEBAUCE == true)){ //Desliga automatico
 				CONF.Maq_Auto = BOT_AUTO_PRESS;
 				CONF.Cont_AUT = 0;
@@ -173,8 +174,8 @@ void ConfTask(void){
 				DEBAUCE.STATUS_DEBAUCE = false;
 				CONF.BOT_AUTO = 1;
 				taskSetState(TASK_DEBAUCE, TASK_GO);
-				DIGITAL_IO_SetOutputLow(&LED1);
-				DIGITAL_IO_SetOutputLow(&LED2);
+//				DIGITAL_IO_SetOutputLow(&LED1);
+//				DIGITAL_IO_SetOutputLow(&LED2);
 				taskSetState(TASK_ACTION, TASK_STOP);
 			}
 		}

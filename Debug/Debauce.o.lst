@@ -877,24 +877,23 @@
   10:../Debauce.c  ****  *
   11:../Debauce.c  ****  * @version 1.0
   12:../Debauce.c  ****  *
-  13:../Debauce.c  ****  *
-  14:../Debauce.c  ****  */
-  15:../Debauce.c  **** #include <ReadAxis1.h>
-  16:../Debauce.c  **** #include <Action.h>
-  17:../Debauce.c  **** #include <Conf.h>
-  18:../Debauce.c  **** #include <scheduler.h>
-  19:../Debauce.c  **** #include <math.h>
-  20:../Debauce.c  **** #include <stdlib.h>
-  21:../Debauce.c  **** #include <Debauce.h>
-  22:../Debauce.c  **** 
-  23:../Debauce.c  **** DEBAUCE_t		DEBAUCE;
-  24:../Debauce.c  **** 
-  25:../Debauce.c  **** //*************************************************************************************************
-  26:../Debauce.c  **** //***********************************************************== CONF INIT ==***********************
-  27:../Debauce.c  **** //*************************************************************************************************
-  28:../Debauce.c  **** 
-  29:../Debauce.c  **** void DebauceInit(void){
- 110              	 .loc 3 29 0
+  13:../Debauce.c  ****  */
+  14:../Debauce.c  **** #include <ReadAxis1.h>
+  15:../Debauce.c  **** #include <Action.h>
+  16:../Debauce.c  **** #include <Conf.h>
+  17:../Debauce.c  **** #include <scheduler.h>
+  18:../Debauce.c  **** #include <math.h>
+  19:../Debauce.c  **** #include <stdlib.h>
+  20:../Debauce.c  **** #include <Debauce.h>
+  21:../Debauce.c  **** 
+  22:../Debauce.c  **** DEBAUCE_t		DEBAUCE;
+  23:../Debauce.c  **** 
+  24:../Debauce.c  **** //*************************************************************************************************
+  25:../Debauce.c  **** //***********************************************************== CONF INIT ==***********************
+  26:../Debauce.c  **** //*************************************************************************************************
+  27:../Debauce.c  **** 
+  28:../Debauce.c  **** void DebauceInit(void){
+ 110              	 .loc 3 28 0
  111              	 .cfi_startproc
  112 0000 80B5     	 push {r7,lr}
  113              	.LCFI6:
@@ -904,17 +903,17 @@
  117 0002 00AF     	 add r7,sp,#0
  118              	.LCFI7:
  119              	 .cfi_def_cfa_register 7
-  30:../Debauce.c  **** 
-  31:../Debauce.c  **** 	taskSetState(TASK_DEBAUCE, TASK_1S);
- 120              	 .loc 3 31 0
+  29:../Debauce.c  **** 
+  30:../Debauce.c  **** 	taskSetState(TASK_DEBAUCE, TASK_1S);
+ 120              	 .loc 3 30 0
  121 0004 FA23     	 mov r3,#250
  122 0006 9B00     	 lsl r3,r3,#2
  123 0008 0420     	 mov r0,#4
  124 000a 191C     	 mov r1,r3
  125 000c FFF7FEFF 	 bl taskSetState
-  32:../Debauce.c  **** 
-  33:../Debauce.c  **** }
- 126              	 .loc 3 33 0
+  31:../Debauce.c  **** 
+  32:../Debauce.c  **** }
+ 126              	 .loc 3 32 0
  127 0010 BD46     	 mov sp,r7
  128              	 
  129 0012 80BD     	 pop {r7,pc}
@@ -927,13 +926,13 @@
  137              	 .thumb_func
  139              	DebauceTask:
  140              	.LFB300:
-  34:../Debauce.c  **** 
-  35:../Debauce.c  **** //*************************************************************************************************
-  36:../Debauce.c  **** //***********************************************************== CONF TASK ==***********************
-  37:../Debauce.c  **** //*************************************************************************************************
-  38:../Debauce.c  **** 
-  39:../Debauce.c  **** void DebauceTask(void){
- 141              	 .loc 3 39 0
+  33:../Debauce.c  **** 
+  34:../Debauce.c  **** //*************************************************************************************************
+  35:../Debauce.c  **** //***********************************************************== CONF TASK ==***********************
+  36:../Debauce.c  **** //*************************************************************************************************
+  37:../Debauce.c  **** 
+  38:../Debauce.c  **** void DebauceTask(void){
+ 141              	 .loc 3 38 0
  142              	 .cfi_startproc
  143 0000 80B5     	 push {r7,lr}
  144              	.LCFI8:
@@ -943,138 +942,128 @@
  148 0002 00AF     	 add r7,sp,#0
  149              	.LCFI9:
  150              	 .cfi_def_cfa_register 7
-  40:../Debauce.c  **** 
-  41:../Debauce.c  **** 	DEBAUCE.CONT_DEBAUCE ++;
- 151              	 .loc 3 41 0
- 152 0004 264B     	 ldr r3,.L11
+  39:../Debauce.c  **** 
+  40:../Debauce.c  **** 	DEBAUCE.CONT_DEBAUCE ++;
+ 151              	 .loc 3 40 0
+ 152 0004 234B     	 ldr r3,.L9
  153 0006 E022     	 mov r2,#224
  154 0008 9B5A     	 ldrh r3,[r3,r2]
  155 000a 0133     	 add r3,r3,#1
  156 000c 99B2     	 uxth r1,r3
- 157 000e 244B     	 ldr r3,.L11
+ 157 000e 214B     	 ldr r3,.L9
  158 0010 E022     	 mov r2,#224
  159 0012 9952     	 strh r1,[r3,r2]
-  42:../Debauce.c  **** 	if((DEBAUCE.CONT_DEBAUCE >= 2) && (DIGITAL_IO_GetInput(&BOT_AUTO))){
- 160              	 .loc 3 42 0
- 161 0014 224B     	 ldr r3,.L11
+  41:../Debauce.c  **** 	if((DEBAUCE.CONT_DEBAUCE >= 2) && (DIGITAL_IO_GetInput(&BOT_AUTO))){
+ 160              	 .loc 3 41 0
+ 161 0014 1F4B     	 ldr r3,.L9
  162 0016 E022     	 mov r2,#224
  163 0018 9B5A     	 ldrh r3,[r3,r2]
  164 001a 012B     	 cmp r3,#1
- 165 001c 14D9     	 bls .L7
- 166              	 .loc 3 42 0 is_stmt 0 discriminator 1
- 167 001e 214B     	 ldr r3,.L11+4
+ 165 001c 13D9     	 bls .L7
+ 166              	 .loc 3 41 0 is_stmt 0 discriminator 1
+ 167 001e 1E4B     	 ldr r3,.L9+4
  168 0020 181C     	 mov r0,r3
  169 0022 FFF7FEFF 	 bl DIGITAL_IO_GetInput
  170 0026 031E     	 sub r3,r0,#0
- 171 0028 0ED0     	 beq .L7
-  43:../Debauce.c  **** 
-  44:../Debauce.c  **** 		DEBAUCE.CONT_DEBAUCE = 0;
- 172              	 .loc 3 44 0 is_stmt 1
- 173 002a 1D4B     	 ldr r3,.L11
+ 171 0028 0DD0     	 beq .L7
+  42:../Debauce.c  **** 
+  43:../Debauce.c  **** 		DEBAUCE.CONT_DEBAUCE = 0;
+ 172              	 .loc 3 43 0 is_stmt 1
+ 173 002a 1A4B     	 ldr r3,.L9
  174 002c E022     	 mov r2,#224
  175 002e 0021     	 mov r1,#0
  176 0030 9952     	 strh r1,[r3,r2]
-  45:../Debauce.c  **** 		DEBAUCE.STATUS_DEBAUCE = true;
- 177              	 .loc 3 45 0
- 178 0032 1B4B     	 ldr r3,.L11
+  44:../Debauce.c  **** 		DEBAUCE.STATUS_DEBAUCE = true;
+ 177              	 .loc 3 44 0
+ 178 0032 184B     	 ldr r3,.L9
  179 0034 DE22     	 mov r2,#222
  180 0036 0121     	 mov r1,#1
  181 0038 9954     	 strb r1,[r3,r2]
-  46:../Debauce.c  **** 		taskSetState(TASK_DEBAUCE, TASK_STOP);
- 182              	 .loc 3 46 0
+  45:../Debauce.c  **** 		taskSetState(TASK_DEBAUCE, TASK_STOP);
+ 182              	 .loc 3 45 0
  183 003a 0123     	 mov r3,#1
  184 003c 5B42     	 neg r3,r3
  185 003e 0420     	 mov r0,#4
  186 0040 191C     	 mov r1,r3
  187 0042 FFF7FEFF 	 bl taskSetState
- 188 0046 03E0     	 b .L8
- 189              	.L7:
-  47:../Debauce.c  **** 	}else{
-  48:../Debauce.c  **** 		taskSetState(TASK_DEBAUCE, TASK_200MS);
- 190              	 .loc 3 48 0
- 191 0048 0420     	 mov r0,#4
- 192 004a C821     	 mov r1,#200
- 193 004c FFF7FEFF 	 bl taskSetState
- 194              	.L8:
-  49:../Debauce.c  **** 	}
-  50:../Debauce.c  **** 
-  51:../Debauce.c  **** 	DEBAUCE.CONT_DEBAUCE_ANG_MIN ++;
- 195              	 .loc 3 51 0
- 196 0050 134B     	 ldr r3,.L11
- 197 0052 E222     	 mov r2,#226
- 198 0054 9B5A     	 ldrh r3,[r3,r2]
- 199 0056 0133     	 add r3,r3,#1
- 200 0058 99B2     	 uxth r1,r3
- 201 005a 114B     	 ldr r3,.L11
- 202 005c E222     	 mov r2,#226
- 203 005e 9952     	 strh r1,[r3,r2]
-  52:../Debauce.c  **** 	if((DEBAUCE.CONT_DEBAUCE_ANG_MIN >= 2) && (DIGITAL_IO_GetInput(&BOT_MIN))){
- 204              	 .loc 3 52 0
- 205 0060 0F4B     	 ldr r3,.L11
- 206 0062 E222     	 mov r2,#226
- 207 0064 9B5A     	 ldrh r3,[r3,r2]
- 208 0066 012B     	 cmp r3,#1
- 209 0068 14D9     	 bls .L9
- 210              	 .loc 3 52 0 is_stmt 0 discriminator 1
- 211 006a 0F4B     	 ldr r3,.L11+8
- 212 006c 181C     	 mov r0,r3
- 213 006e FFF7FEFF 	 bl DIGITAL_IO_GetInput
- 214 0072 031E     	 sub r3,r0,#0
- 215 0074 0ED0     	 beq .L9
-  53:../Debauce.c  **** 
-  54:../Debauce.c  **** 		DEBAUCE.CONT_DEBAUCE_ANG_MIN = 0;
- 216              	 .loc 3 54 0 is_stmt 1
- 217 0076 0A4B     	 ldr r3,.L11
- 218 0078 E222     	 mov r2,#226
- 219 007a 0021     	 mov r1,#0
- 220 007c 9952     	 strh r1,[r3,r2]
-  55:../Debauce.c  **** 		DEBAUCE.STATUS_DEBAUCE_ANG_MIN = true;
- 221              	 .loc 3 55 0
- 222 007e 084B     	 ldr r3,.L11
- 223 0080 DF22     	 mov r2,#223
- 224 0082 0121     	 mov r1,#1
- 225 0084 9954     	 strb r1,[r3,r2]
-  56:../Debauce.c  **** 		taskSetState(TASK_DEBAUCE, TASK_STOP);
- 226              	 .loc 3 56 0
- 227 0086 0123     	 mov r3,#1
- 228 0088 5B42     	 neg r3,r3
- 229 008a 0420     	 mov r0,#4
- 230 008c 191C     	 mov r1,r3
- 231 008e FFF7FEFF 	 bl taskSetState
- 232 0092 03E0     	 b .L6
- 233              	.L9:
-  57:../Debauce.c  **** 	}else{
-  58:../Debauce.c  **** 		taskSetState(TASK_DEBAUCE, TASK_200MS);
- 234              	 .loc 3 58 0
- 235 0094 0420     	 mov r0,#4
- 236 0096 C821     	 mov r1,#200
- 237 0098 FFF7FEFF 	 bl taskSetState
- 238              	.L6:
-  59:../Debauce.c  **** 	}
-  60:../Debauce.c  **** 
-  61:../Debauce.c  **** }
- 239              	 .loc 3 61 0
- 240 009c BD46     	 mov sp,r7
- 241              	 
- 242 009e 80BD     	 pop {r7,pc}
- 243              	.L12:
- 244              	 .align 2
- 245              	.L11:
- 246 00a0 00000000 	 .word DEBAUCE
- 247 00a4 00000000 	 .word BOT_AUTO
- 248 00a8 00000000 	 .word BOT_MIN
- 249              	 .cfi_endproc
- 250              	.LFE300:
- 252              	 .text
- 253              	.Letext0:
- 254              	 .file 4 "c:\\users\\victor.paschoal\\documents\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
- 255              	 .file 5 "c:\\users\\victor.paschoal\\documents\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
- 256              	 .file 6 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc/xmc1_gpio.h"
- 257              	 .file 7 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc/xmc_usic.h"
- 258              	 .file 8 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/I2C_MASTER/i2c_master.h"
- 259              	 .file 9 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Debauce.h"
- 260              	 .file 10 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Infineon/XMC1400_series/Include/system_XMC1400.h"
- 261              	 .file 11 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO/digital_io_extern.h"
+ 188              	.L7:
+  46:../Debauce.c  **** 	}
+  47:../Debauce.c  **** 		DEBAUCE.CONT_DEBAUCE_ANG_MIN ++;
+ 189              	 .loc 3 47 0
+ 190 0046 134B     	 ldr r3,.L9
+ 191 0048 E222     	 mov r2,#226
+ 192 004a 9B5A     	 ldrh r3,[r3,r2]
+ 193 004c 0133     	 add r3,r3,#1
+ 194 004e 99B2     	 uxth r1,r3
+ 195 0050 104B     	 ldr r3,.L9
+ 196 0052 E222     	 mov r2,#226
+ 197 0054 9952     	 strh r1,[r3,r2]
+  48:../Debauce.c  **** 	if((DEBAUCE.CONT_DEBAUCE_ANG_MIN >= 2) && (DIGITAL_IO_GetInput(&BOT_MIN))){
+ 198              	 .loc 3 48 0
+ 199 0056 0F4B     	 ldr r3,.L9
+ 200 0058 E222     	 mov r2,#226
+ 201 005a 9B5A     	 ldrh r3,[r3,r2]
+ 202 005c 012B     	 cmp r3,#1
+ 203 005e 13D9     	 bls .L8
+ 204              	 .loc 3 48 0 is_stmt 0 discriminator 1
+ 205 0060 0E4B     	 ldr r3,.L9+8
+ 206 0062 181C     	 mov r0,r3
+ 207 0064 FFF7FEFF 	 bl DIGITAL_IO_GetInput
+ 208 0068 031E     	 sub r3,r0,#0
+ 209 006a 0DD0     	 beq .L8
+  49:../Debauce.c  **** 
+  50:../Debauce.c  **** 		DEBAUCE.CONT_DEBAUCE_ANG_MIN = 0;
+ 210              	 .loc 3 50 0 is_stmt 1
+ 211 006c 094B     	 ldr r3,.L9
+ 212 006e E222     	 mov r2,#226
+ 213 0070 0021     	 mov r1,#0
+ 214 0072 9952     	 strh r1,[r3,r2]
+  51:../Debauce.c  **** 		DEBAUCE.STATUS_DEBAUCE_ANG_MIN = true;
+ 215              	 .loc 3 51 0
+ 216 0074 074B     	 ldr r3,.L9
+ 217 0076 DF22     	 mov r2,#223
+ 218 0078 0121     	 mov r1,#1
+ 219 007a 9954     	 strb r1,[r3,r2]
+  52:../Debauce.c  **** 		taskSetState(TASK_DEBAUCE, TASK_STOP);
+ 220              	 .loc 3 52 0
+ 221 007c 0123     	 mov r3,#1
+ 222 007e 5B42     	 neg r3,r3
+ 223 0080 0420     	 mov r0,#4
+ 224 0082 191C     	 mov r1,r3
+ 225 0084 FFF7FEFF 	 bl taskSetState
+ 226              	.L8:
+  53:../Debauce.c  **** 	}
+  54:../Debauce.c  **** 	else{
+  55:../Debauce.c  **** 	}
+  56:../Debauce.c  **** 		taskSetState(TASK_DEBAUCE, TASK_200MS);
+ 227              	 .loc 3 56 0
+ 228 0088 0420     	 mov r0,#4
+ 229 008a C821     	 mov r1,#200
+ 230 008c FFF7FEFF 	 bl taskSetState
+  57:../Debauce.c  **** 
+  58:../Debauce.c  **** }
+ 231              	 .loc 3 58 0
+ 232 0090 BD46     	 mov sp,r7
+ 233              	 
+ 234 0092 80BD     	 pop {r7,pc}
+ 235              	.L10:
+ 236              	 .align 2
+ 237              	.L9:
+ 238 0094 00000000 	 .word DEBAUCE
+ 239 0098 00000000 	 .word BOT_AUTO
+ 240 009c 00000000 	 .word BOT_MIN
+ 241              	 .cfi_endproc
+ 242              	.LFE300:
+ 244              	 .text
+ 245              	.Letext0:
+ 246              	 .file 4 "c:\\users\\victor.paschoal\\documents\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 247              	 .file 5 "c:\\users\\victor.paschoal\\documents\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 248              	 .file 6 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc/xmc1_gpio.h"
+ 249              	 .file 7 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc/xmc_usic.h"
+ 250              	 .file 8 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/I2C_MASTER/i2c_master.h"
+ 251              	 .file 9 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Debauce.h"
+ 252              	 .file 10 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Infineon/XMC1400_series/Include/system_XMC1400.h"
+ 253              	 .file 11 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO/digital_io_extern.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 Debauce.c
     {standard input}:18     .text.XMC_GPIO_GetInput:00000000 $t
@@ -1086,7 +1075,7 @@ DEFINED SYMBOLS
     {standard input}:107    .text.DebauceInit:00000000 DebauceInit
     {standard input}:134    .text.DebauceTask:00000000 $t
     {standard input}:139    .text.DebauceTask:00000000 DebauceTask
-    {standard input}:246    .text.DebauceTask:000000a0 $d
+    {standard input}:238    .text.DebauceTask:00000094 $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS

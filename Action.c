@@ -165,8 +165,8 @@ void ActionTask(void){
 				}
 
 			}
-
-			taskSetState(TASK_ACTION, TASK_STOP);
+//
+taskSetState(TASK_ACTION, TASK_STOP);
 		}
 
 	}else{
@@ -175,6 +175,7 @@ void ActionTask(void){
 		DIGITAL_IO_SetOutputLow(&PARTIDA);
 		taskSetState(TASK_ACTION, TASK_STOP);
 		taskSetState(TASK_CONF, TASK_GO);
+
 	}
 
 

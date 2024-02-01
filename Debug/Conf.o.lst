@@ -1311,17 +1311,17 @@
   95:../Conf.c     **** 
   96:../Conf.c     **** 	CONF.BOT_ZERO = DIGITAL_IO_GetInput(&BOT_MIN);
  469              	 .loc 3 96 0
- 470 0004 D84B     	 ldr r3,.L43
+ 470 0004 D44B     	 ldr r3,.L43
  471 0006 181C     	 mov r0,r3
  472 0008 FFF7FEFF 	 bl DIGITAL_IO_GetInput
  473 000c 031C     	 mov r3,r0
  474 000e D9B2     	 uxtb r1,r3
- 475 0010 D64B     	 ldr r3,.L43+4
+ 475 0010 D24B     	 ldr r3,.L43+4
  476 0012 C922     	 mov r2,#201
  477 0014 9954     	 strb r1,[r3,r2]
   97:../Conf.c     **** 	if(CONF.BOT_ZERO == false){
  478              	 .loc 3 97 0
- 479 0016 D54B     	 ldr r3,.L43+4
+ 479 0016 D14B     	 ldr r3,.L43+4
  480 0018 C922     	 mov r2,#201
  481 001a 9B5C     	 ldrb r3,[r3,r2]
  482 001c 002B     	 cmp r3,#0
@@ -1333,7 +1333,7 @@
  100:../Conf.c     **** 
  101:../Conf.c     **** 		switch(CONF.Maq_Ang_Min)
  486              	 .loc 3 101 0
- 487 0022 D24B     	 ldr r3,.L43+4
+ 487 0022 CE4B     	 ldr r3,.L43+4
  488 0024 C322     	 mov r2,#195
  489 0026 9B5C     	 ldrb r3,[r3,r2]
  490 0028 002B     	 cmp r3,#0
@@ -1348,13 +1348,13 @@
  105:../Conf.c     **** 
  106:../Conf.c     **** 			if(/*(CONF.AUTOMATICO == true && CONF.STATUS_BOT_AUTO == false) ||*/ (CONF.BOT_ZERO == false && 
  496              	 .loc 3 106 0
- 497 0032 CE4B     	 ldr r3,.L43+4
+ 497 0032 CA4B     	 ldr r3,.L43+4
  498 0034 C922     	 mov r2,#201
  499 0036 9B5C     	 ldrb r3,[r3,r2]
  500 0038 002B     	 cmp r3,#0
  501 003a 3ED1     	 bne .L21
  502              	 .loc 3 106 0 is_stmt 0 discriminator 1
- 503 003c CB4B     	 ldr r3,.L43+4
+ 503 003c C74B     	 ldr r3,.L43+4
  504 003e E322     	 mov r2,#227
  505 0040 9B5C     	 ldrb r3,[r3,r2]
  506 0042 0122     	 mov r2,#1
@@ -1363,72 +1363,72 @@
  509 0048 002B     	 cmp r3,#0
  510 004a 36D0     	 beq .L21
  511              	 .loc 3 106 0 discriminator 2
- 512 004c C84B     	 ldr r3,.L43+8
+ 512 004c C44B     	 ldr r3,.L43+8
  513 004e DF22     	 mov r2,#223
  514 0050 9B5C     	 ldrb r3,[r3,r2]
  515 0052 002B     	 cmp r3,#0
  516 0054 31D0     	 beq .L21
  107:../Conf.c     **** 				CONF.ANG_MAX_SUP = false;
  517              	 .loc 3 107 0 is_stmt 1
- 518 0056 C54B     	 ldr r3,.L43+4
+ 518 0056 C14B     	 ldr r3,.L43+4
  519 0058 E522     	 mov r2,#229
  520 005a 0021     	 mov r1,#0
  521 005c 9954     	 strb r1,[r3,r2]
  108:../Conf.c     **** 				DIGITAL_IO_SetOutputHigh(&LED_CONF_MIN_0);
  522              	 .loc 3 108 0
- 523 005e C54B     	 ldr r3,.L43+12
+ 523 005e C14B     	 ldr r3,.L43+12
  524 0060 181C     	 mov r0,r3
  525 0062 FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
  109:../Conf.c     **** 				DIGITAL_IO_SetOutputLow (&LED_CONF_MIN_5);
  526              	 .loc 3 109 0
- 527 0066 C44B     	 ldr r3,.L43+16
+ 527 0066 C04B     	 ldr r3,.L43+16
  528 0068 181C     	 mov r0,r3
  529 006a FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
  110:../Conf.c     **** 				ACTION.Erro_Ang_Min_0 = 4;
  530              	 .loc 3 110 0
- 531 006e C34B     	 ldr r3,.L43+20
+ 531 006e BF4B     	 ldr r3,.L43+20
  532 0070 D122     	 mov r2,#209
  533 0072 0421     	 mov r1,#4
  534 0074 9954     	 strb r1,[r3,r2]
  111:../Conf.c     **** 				ACTION.Ang_min = 0;
  535              	 .loc 3 111 0
- 536 0076 C14B     	 ldr r3,.L43+20
+ 536 0076 BD4B     	 ldr r3,.L43+20
  537 0078 C022     	 mov r2,#192
  538 007a 0021     	 mov r1,#0
  539 007c 9950     	 str r1,[r3,r2]
  112:../Conf.c     **** 				CONF.BOT_ZERO = 1;
  540              	 .loc 3 112 0
- 541 007e BB4B     	 ldr r3,.L43+4
+ 541 007e B74B     	 ldr r3,.L43+4
  542 0080 C922     	 mov r2,#201
  543 0082 0121     	 mov r1,#1
  544 0084 9954     	 strb r1,[r3,r2]
  113:../Conf.c     **** 				CONF.STATUS_ANG_ZERO = true;
  545              	 .loc 3 113 0
- 546 0086 B94B     	 ldr r3,.L43+4
+ 546 0086 B54B     	 ldr r3,.L43+4
  547 0088 E322     	 mov r2,#227
  548 008a 0121     	 mov r1,#1
  549 008c 9954     	 strb r1,[r3,r2]
  114:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE_ANG_MIN = false;
  550              	 .loc 3 114 0
- 551 008e B84B     	 ldr r3,.L43+8
+ 551 008e B44B     	 ldr r3,.L43+8
  552 0090 DF22     	 mov r2,#223
  553 0092 0021     	 mov r1,#0
  554 0094 9954     	 strb r1,[r3,r2]
  115:../Conf.c     **** 				CONF.Maq_Ang_Min = BOT_MIN_DPRESS;
  555              	 .loc 3 115 0
- 556 0096 B54B     	 ldr r3,.L43+4
+ 556 0096 B14B     	 ldr r3,.L43+4
  557 0098 C322     	 mov r2,#195
  558 009a 0121     	 mov r1,#1
  559 009c 9954     	 strb r1,[r3,r2]
  116:../Conf.c     **** 				CONF.STATUS_CONF_ANG_LOW[0] = 1;
  560              	 .loc 3 116 0
- 561 009e B34B     	 ldr r3,.L43+4
+ 561 009e AF4B     	 ldr r3,.L43+4
  562 00a0 DC22     	 mov r2,#220
  563 00a2 0121     	 mov r1,#1
  564 00a4 9954     	 strb r1,[r3,r2]
  117:../Conf.c     **** 				E_EEPROM_XMC1_Write(CONF_ANG_LOW, &CONF.STATUS_CONF_ANG_LOW[0]);
  565              	 .loc 3 117 0
- 566 00a6 B64B     	 ldr r3,.L43+24
+ 566 00a6 B24B     	 ldr r3,.L43+24
  567 00a8 0520     	 mov r0,#5
  568 00aa 191C     	 mov r1,r3
  569 00ac FFF7FEFF 	 bl E_EEPROM_XMC1_Write
@@ -1450,84 +1450,84 @@
  124:../Conf.c     **** 		{
  125:../Conf.c     **** 			if(/*(CONF.AUTOMATICO == true && CONF.STATUS_BOT_AUTO == true) ||*/ (CONF.BOT_ZERO == false && C
  579              	 .loc 3 125 0
- 580 00bc AB4B     	 ldr r3,.L43+4
+ 580 00bc A74B     	 ldr r3,.L43+4
  581 00be C922     	 mov r2,#201
  582 00c0 9B5C     	 ldrb r3,[r3,r2]
  583 00c2 002B     	 cmp r3,#0
  584 00c4 3BD1     	 bne .L22
  585              	 .loc 3 125 0 is_stmt 0 discriminator 1
- 586 00c6 A94B     	 ldr r3,.L43+4
+ 586 00c6 A54B     	 ldr r3,.L43+4
  587 00c8 E322     	 mov r2,#227
  588 00ca 9B5C     	 ldrb r3,[r3,r2]
  589 00cc 002B     	 cmp r3,#0
  590 00ce 36D0     	 beq .L22
  591              	 .loc 3 125 0 discriminator 2
- 592 00d0 A74B     	 ldr r3,.L43+8
+ 592 00d0 A34B     	 ldr r3,.L43+8
  593 00d2 DF22     	 mov r2,#223
  594 00d4 9B5C     	 ldrb r3,[r3,r2]
  595 00d6 002B     	 cmp r3,#0
  596 00d8 31D0     	 beq .L22
  126:../Conf.c     **** 				CONF.ANG_MAX_SUP = true;
  597              	 .loc 3 126 0 is_stmt 1
- 598 00da A44B     	 ldr r3,.L43+4
+ 598 00da A04B     	 ldr r3,.L43+4
  599 00dc E522     	 mov r2,#229
  600 00de 0121     	 mov r1,#1
  601 00e0 9954     	 strb r1,[r3,r2]
  127:../Conf.c     **** 				DIGITAL_IO_SetOutputLow (&LED_CONF_MIN_0);
  602              	 .loc 3 127 0
- 603 00e2 A44B     	 ldr r3,.L43+12
+ 603 00e2 A04B     	 ldr r3,.L43+12
  604 00e4 181C     	 mov r0,r3
  605 00e6 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
  128:../Conf.c     **** 				DIGITAL_IO_SetOutputHigh(&LED_CONF_MIN_5);
  606              	 .loc 3 128 0
- 607 00ea A34B     	 ldr r3,.L43+16
+ 607 00ea 9F4B     	 ldr r3,.L43+16
  608 00ec 181C     	 mov r0,r3
  609 00ee FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
  129:../Conf.c     **** 				ACTION.Erro_Ang_Min_5 = 4;
  610              	 .loc 3 129 0
- 611 00f2 A24B     	 ldr r3,.L43+20
+ 611 00f2 9E4B     	 ldr r3,.L43+20
  612 00f4 D022     	 mov r2,#208
  613 00f6 0421     	 mov r1,#4
  614 00f8 9954     	 strb r1,[r3,r2]
  130:../Conf.c     **** 				ACTION.Ang_min = -5;
  615              	 .loc 3 130 0
- 616 00fa A04B     	 ldr r3,.L43+20
+ 616 00fa 9C4B     	 ldr r3,.L43+20
  617 00fc C022     	 mov r2,#192
- 618 00fe A149     	 ldr r1,.L43+28
+ 618 00fe 9D49     	 ldr r1,.L43+28
  619 0100 9950     	 str r1,[r3,r2]
  131:../Conf.c     **** 				CONF.Maq_Ang_Min = BOT_MIN_PRESS;
  620              	 .loc 3 131 0
- 621 0102 9A4B     	 ldr r3,.L43+4
+ 621 0102 964B     	 ldr r3,.L43+4
  622 0104 C322     	 mov r2,#195
  623 0106 0021     	 mov r1,#0
  624 0108 9954     	 strb r1,[r3,r2]
  132:../Conf.c     **** 				CONF.Cont_AUT = 0;
  625              	 .loc 3 132 0
- 626 010a 984B     	 ldr r3,.L43+4
+ 626 010a 944B     	 ldr r3,.L43+4
  627 010c D222     	 mov r2,#210
  628 010e 0021     	 mov r1,#0
  629 0110 9952     	 strh r1,[r3,r2]
  133:../Conf.c     **** 				CONF.STATUS_ANG_ZERO = false;
  630              	 .loc 3 133 0
- 631 0112 964B     	 ldr r3,.L43+4
+ 631 0112 924B     	 ldr r3,.L43+4
  632 0114 E322     	 mov r2,#227
  633 0116 0021     	 mov r1,#0
  634 0118 9954     	 strb r1,[r3,r2]
  134:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE_ANG_MIN = false;
  635              	 .loc 3 134 0
- 636 011a 954B     	 ldr r3,.L43+8
+ 636 011a 914B     	 ldr r3,.L43+8
  637 011c DF22     	 mov r2,#223
  638 011e 0021     	 mov r1,#0
  639 0120 9954     	 strb r1,[r3,r2]
  135:../Conf.c     **** 				CONF.STATUS_CONF_ANG_LOW[0] = 2;
  640              	 .loc 3 135 0
- 641 0122 924B     	 ldr r3,.L43+4
+ 641 0122 8E4B     	 ldr r3,.L43+4
  642 0124 DC22     	 mov r2,#220
  643 0126 0221     	 mov r1,#2
  644 0128 9954     	 strb r1,[r3,r2]
  136:../Conf.c     **** 				E_EEPROM_XMC1_Write(CONF_ANG_LOW, &CONF.STATUS_CONF_ANG_LOW[0]);
  645              	 .loc 3 136 0
- 646 012a 954B     	 ldr r3,.L43+24
+ 646 012a 914B     	 ldr r3,.L43+24
  647 012c 0520     	 mov r0,#5
  648 012e 191C     	 mov r1,r3
  649 0130 FFF7FEFF 	 bl E_EEPROM_XMC1_Write
@@ -1552,48 +1552,48 @@
  145:../Conf.c     **** 
  146:../Conf.c     **** 	CONF.BOT_AUTO = DIGITAL_IO_GetInput(&BOT_AUTO);
  660              	 .loc 3 146 0
- 661 0140 914B     	 ldr r3,.L43+32
+ 661 0140 8D4B     	 ldr r3,.L43+32
  662 0142 181C     	 mov r0,r3
  663 0144 FFF7FEFF 	 bl DIGITAL_IO_GetInput
  664 0148 031C     	 mov r3,r0
  665 014a D9B2     	 uxtb r1,r3
- 666 014c 874B     	 ldr r3,.L43+4
+ 666 014c 834B     	 ldr r3,.L43+4
  667 014e CB22     	 mov r2,#203
  668 0150 9954     	 strb r1,[r3,r2]
  147:../Conf.c     **** 	if(CONF.BOT_AUTO == false){
  669              	 .loc 3 147 0
- 670 0152 864B     	 ldr r3,.L43+4
+ 670 0152 824B     	 ldr r3,.L43+4
  671 0154 CB22     	 mov r2,#203
  672 0156 9B5C     	 ldrb r3,[r3,r2]
  673 0158 002B     	 cmp r3,#0
  674 015a 00D0     	 beq .LCB566
- 675 015c 89E0     	 b .L23
+ 675 015c 81E0     	 b .L23
  676              	.LCB566:
  148:../Conf.c     **** 		//		CONF.BOT_AUTO = true;
  149:../Conf.c     **** 
  150:../Conf.c     **** 		switch(CONF.Maq_Auto)
  677              	 .loc 3 150 0
- 678 015e 834B     	 ldr r3,.L43+4
+ 678 015e 7F4B     	 ldr r3,.L43+4
  679 0160 C222     	 mov r2,#194
  680 0162 9B5C     	 ldrb r3,[r3,r2]
  681 0164 002B     	 cmp r3,#0
  682 0166 02D0     	 beq .L24
  683 0168 012B     	 cmp r3,#1
  684 016a 3DD0     	 beq .L25
- 685 016c 81E0     	 b .L23
+ 685 016c 79E0     	 b .L23
  686              	.L24:
  151:../Conf.c     **** 		{
  152:../Conf.c     **** 		case BOT_AUTO_PRESS:
  153:../Conf.c     **** 		{
  154:../Conf.c     **** 			if((CONF.AUTOMATICO == true && CONF.STATUS_BOT_AUTO == false) || (CONF.BOT_AUTO == false && CONF
  687              	 .loc 3 154 0
- 688 016e 7F4B     	 ldr r3,.L43+4
+ 688 016e 7B4B     	 ldr r3,.L43+4
  689 0170 CA22     	 mov r2,#202
  690 0172 9B5C     	 ldrb r3,[r3,r2]
  691 0174 002B     	 cmp r3,#0
  692 0176 07D0     	 beq .L26
  693              	 .loc 3 154 0 is_stmt 0 discriminator 1
- 694 0178 7C4B     	 ldr r3,.L43+4
+ 694 0178 784B     	 ldr r3,.L43+4
  695 017a E022     	 mov r2,#224
  696 017c 9B5C     	 ldrb r3,[r3,r2]
  697 017e 0122     	 mov r2,#1
@@ -1603,13 +1603,13 @@
  701 0186 11D1     	 bne .L27
  702              	.L26:
  703              	 .loc 3 154 0 discriminator 3
- 704 0188 784B     	 ldr r3,.L43+4
+ 704 0188 744B     	 ldr r3,.L43+4
  705 018a CB22     	 mov r2,#203
  706 018c 9B5C     	 ldrb r3,[r3,r2]
  707 018e 002B     	 cmp r3,#0
  708 0190 29D1     	 bne .L28
  709              	 .loc 3 154 0 discriminator 4
- 710 0192 764B     	 ldr r3,.L43+4
+ 710 0192 724B     	 ldr r3,.L43+4
  711 0194 E022     	 mov r2,#224
  712 0196 9B5C     	 ldrb r3,[r3,r2]
  713 0198 0122     	 mov r2,#1
@@ -1618,7 +1618,7 @@
  716 019e 002B     	 cmp r3,#0
  717 01a0 21D0     	 beq .L28
  718              	 .loc 3 154 0 discriminator 5
- 719 01a2 734B     	 ldr r3,.L43+8
+ 719 01a2 6F4B     	 ldr r3,.L43+8
  720 01a4 DE22     	 mov r2,#222
  721 01a6 9B5C     	 ldrb r3,[r3,r2]
  722 01a8 002B     	 cmp r3,#0
@@ -1626,31 +1626,31 @@
  724              	.L27:
  155:../Conf.c     **** 				CONF.Maq_Auto = BOT_AUTO_DPRESS;
  725              	 .loc 3 155 0 is_stmt 1
- 726 01ac 6F4B     	 ldr r3,.L43+4
+ 726 01ac 6B4B     	 ldr r3,.L43+4
  727 01ae C222     	 mov r2,#194
  728 01b0 0121     	 mov r1,#1
  729 01b2 9954     	 strb r1,[r3,r2]
  156:../Conf.c     **** 				CONF.STATUS_BOT_AUTO = true;
  730              	 .loc 3 156 0
- 731 01b4 6D4B     	 ldr r3,.L43+4
+ 731 01b4 694B     	 ldr r3,.L43+4
  732 01b6 E022     	 mov r2,#224
  733 01b8 0121     	 mov r1,#1
  734 01ba 9954     	 strb r1,[r3,r2]
  157:../Conf.c     **** 				CONF.STATUS_AUTOMATICO = true;
  735              	 .loc 3 157 0
- 736 01bc 6B4B     	 ldr r3,.L43+4
+ 736 01bc 674B     	 ldr r3,.L43+4
  737 01be DE22     	 mov r2,#222
  738 01c0 0121     	 mov r1,#1
  739 01c2 9954     	 strb r1,[r3,r2]
  158:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE = false;
  740              	 .loc 3 158 0
- 741 01c4 6A4B     	 ldr r3,.L43+8
+ 741 01c4 664B     	 ldr r3,.L43+8
  742 01c6 DE22     	 mov r2,#222
  743 01c8 0021     	 mov r1,#0
  744 01ca 9954     	 strb r1,[r3,r2]
  159:../Conf.c     **** 				CONF.BOT_AUTO = 1;
  745              	 .loc 3 159 0
- 746 01cc 674B     	 ldr r3,.L43+4
+ 746 01cc 634B     	 ldr r3,.L43+4
  747 01ce CB22     	 mov r2,#203
  748 01d0 0121     	 mov r1,#1
  749 01d2 9954     	 strb r1,[r3,r2]
@@ -1668,548 +1668,539 @@
  163:../Conf.c     **** 		}
  164:../Conf.c     **** 		break;
  758              	 .loc 3 164 0
- 759 01e4 45E0     	 b .L23
+ 759 01e4 3DE0     	 b .L23
  760              	.L28:
- 761 01e6 44E0     	 b .L23
+ 761 01e6 3CE0     	 b .L23
  762              	.L25:
  165:../Conf.c     **** 
  166:../Conf.c     **** 		case BOT_AUTO_DPRESS:
  167:../Conf.c     **** 		{
- 168:../Conf.c     **** 			if((CONF.AUTOMATICO == true && CONF.STATUS_BOT_AUTO == true) || (CONF.BOT_AUTO == false && CONF.
- 763              	 .loc 3 168 0
- 764 01e8 604B     	 ldr r3,.L43+4
+ 168:../Conf.c     **** 
+ 169:../Conf.c     **** 			if((CONF.AUTOMATICO == true && CONF.STATUS_BOT_AUTO == true) || (CONF.BOT_AUTO == false && CONF.
+ 763              	 .loc 3 169 0
+ 764 01e8 5C4B     	 ldr r3,.L43+4
  765 01ea CA22     	 mov r2,#202
  766 01ec 9B5C     	 ldrb r3,[r3,r2]
  767 01ee 002B     	 cmp r3,#0
  768 01f0 04D0     	 beq .L29
- 769              	 .loc 3 168 0 is_stmt 0 discriminator 1
- 770 01f2 5E4B     	 ldr r3,.L43+4
+ 769              	 .loc 3 169 0 is_stmt 0 discriminator 1
+ 770 01f2 5A4B     	 ldr r3,.L43+4
  771 01f4 E022     	 mov r2,#224
  772 01f6 9B5C     	 ldrb r3,[r3,r2]
  773 01f8 002B     	 cmp r3,#0
  774 01fa 0ED1     	 bne .L30
  775              	.L29:
- 776              	 .loc 3 168 0 discriminator 3
- 777 01fc 5B4B     	 ldr r3,.L43+4
+ 776              	 .loc 3 169 0 discriminator 3
+ 777 01fc 574B     	 ldr r3,.L43+4
  778 01fe CB22     	 mov r2,#203
  779 0200 9B5C     	 ldrb r3,[r3,r2]
  780 0202 002B     	 cmp r3,#0
- 781 0204 34D1     	 bne .L31
- 782              	 .loc 3 168 0 discriminator 4
- 783 0206 594B     	 ldr r3,.L43+4
+ 781 0204 2CD1     	 bne .L31
+ 782              	 .loc 3 169 0 discriminator 4
+ 783 0206 554B     	 ldr r3,.L43+4
  784 0208 E022     	 mov r2,#224
  785 020a 9B5C     	 ldrb r3,[r3,r2]
  786 020c 002B     	 cmp r3,#0
- 787 020e 2FD0     	 beq .L31
- 788              	 .loc 3 168 0 discriminator 5
- 789 0210 574B     	 ldr r3,.L43+8
+ 787 020e 27D0     	 beq .L31
+ 788              	 .loc 3 169 0 discriminator 5
+ 789 0210 534B     	 ldr r3,.L43+8
  790 0212 DE22     	 mov r2,#222
  791 0214 9B5C     	 ldrb r3,[r3,r2]
  792 0216 002B     	 cmp r3,#0
- 793 0218 2AD0     	 beq .L31
+ 793 0218 22D0     	 beq .L31
  794              	.L30:
- 169:../Conf.c     **** 				CONF.Maq_Auto = BOT_AUTO_PRESS;
- 795              	 .loc 3 169 0 is_stmt 1
- 796 021a 544B     	 ldr r3,.L43+4
+ 170:../Conf.c     **** 				CONF.Maq_Auto = BOT_AUTO_PRESS;
+ 795              	 .loc 3 170 0 is_stmt 1
+ 796 021a 504B     	 ldr r3,.L43+4
  797 021c C222     	 mov r2,#194
  798 021e 0021     	 mov r1,#0
  799 0220 9954     	 strb r1,[r3,r2]
- 170:../Conf.c     **** 				CONF.Cont_AUT = 0;
- 800              	 .loc 3 170 0
- 801 0222 524B     	 ldr r3,.L43+4
+ 171:../Conf.c     **** 				CONF.Cont_AUT = 0;
+ 800              	 .loc 3 171 0
+ 801 0222 4E4B     	 ldr r3,.L43+4
  802 0224 D222     	 mov r2,#210
  803 0226 0021     	 mov r1,#0
  804 0228 9952     	 strh r1,[r3,r2]
- 171:../Conf.c     **** 				CONF.STATUS_BOT_AUTO = false;
- 805              	 .loc 3 171 0
- 806 022a 504B     	 ldr r3,.L43+4
+ 172:../Conf.c     **** 				CONF.STATUS_BOT_AUTO = false;
+ 805              	 .loc 3 172 0
+ 806 022a 4C4B     	 ldr r3,.L43+4
  807 022c E022     	 mov r2,#224
  808 022e 0021     	 mov r1,#0
  809 0230 9954     	 strb r1,[r3,r2]
- 172:../Conf.c     **** 				CONF.STATUS_AUTOMATICO = false;
- 810              	 .loc 3 172 0
- 811 0232 4E4B     	 ldr r3,.L43+4
+ 173:../Conf.c     **** 				CONF.STATUS_AUTOMATICO = false;
+ 810              	 .loc 3 173 0
+ 811 0232 4A4B     	 ldr r3,.L43+4
  812 0234 DE22     	 mov r2,#222
  813 0236 0021     	 mov r1,#0
  814 0238 9954     	 strb r1,[r3,r2]
- 173:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE = false;
- 815              	 .loc 3 173 0
- 816 023a 4D4B     	 ldr r3,.L43+8
+ 174:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE = false;
+ 815              	 .loc 3 174 0
+ 816 023a 494B     	 ldr r3,.L43+8
  817 023c DE22     	 mov r2,#222
  818 023e 0021     	 mov r1,#0
  819 0240 9954     	 strb r1,[r3,r2]
- 174:../Conf.c     **** 				CONF.BOT_AUTO = 1;
- 820              	 .loc 3 174 0
- 821 0242 4A4B     	 ldr r3,.L43+4
+ 175:../Conf.c     **** 				CONF.BOT_AUTO = 1;
+ 820              	 .loc 3 175 0
+ 821 0242 464B     	 ldr r3,.L43+4
  822 0244 CB22     	 mov r2,#203
  823 0246 0121     	 mov r1,#1
  824 0248 9954     	 strb r1,[r3,r2]
- 175:../Conf.c     **** 				taskSetState(TASK_DEBAUCE, TASK_GO);
- 825              	 .loc 3 175 0
+ 176:../Conf.c     **** 				taskSetState(TASK_DEBAUCE, TASK_GO);
+ 825              	 .loc 3 176 0
  826 024a 0420     	 mov r0,#4
  827 024c 0121     	 mov r1,#1
  828 024e FFF7FEFF 	 bl taskSetState
- 176:../Conf.c     **** 				DIGITAL_IO_SetOutputLow(&LED1);
- 829              	 .loc 3 176 0
- 830 0252 4E4B     	 ldr r3,.L43+36
- 831 0254 181C     	 mov r0,r3
- 832 0256 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
- 177:../Conf.c     **** 				DIGITAL_IO_SetOutputLow(&LED2);
- 833              	 .loc 3 177 0
- 834 025a 4D4B     	 ldr r3,.L43+40
- 835 025c 181C     	 mov r0,r3
- 836 025e FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
- 178:../Conf.c     **** 				taskSetState(TASK_ACTION, TASK_STOP);
- 837              	 .loc 3 178 0
- 838 0262 0123     	 mov r3,#1
- 839 0264 5B42     	 neg r3,r3
- 840 0266 0220     	 mov r0,#2
- 841 0268 191C     	 mov r1,r3
- 842 026a FFF7FEFF 	 bl taskSetState
- 179:../Conf.c     **** 			}
- 180:../Conf.c     **** 		}
- 181:../Conf.c     **** 		break;
- 843              	 .loc 3 181 0
- 844 026e FFE7     	 b .L42
- 845              	.L31:
- 846              	.L42:
- 847 0270 C046     	 mov r8,r8
- 848              	.L23:
- 182:../Conf.c     **** 		}
- 183:../Conf.c     **** 	}
- 184:../Conf.c     **** 
+ 177:../Conf.c     **** //				DIGITAL_IO_SetOutputLow(&LED1);
+ 178:../Conf.c     **** //				DIGITAL_IO_SetOutputLow(&LED2);
+ 179:../Conf.c     **** 				taskSetState(TASK_ACTION, TASK_STOP);
+ 829              	 .loc 3 179 0
+ 830 0252 0123     	 mov r3,#1
+ 831 0254 5B42     	 neg r3,r3
+ 832 0256 0220     	 mov r0,#2
+ 833 0258 191C     	 mov r1,r3
+ 834 025a FFF7FEFF 	 bl taskSetState
+ 180:../Conf.c     **** 			}
+ 181:../Conf.c     **** 		}
+ 182:../Conf.c     **** 		break;
+ 835              	 .loc 3 182 0
+ 836 025e FFE7     	 b .L42
+ 837              	.L31:
+ 838              	.L42:
+ 839 0260 C046     	 mov r8,r8
+ 840              	.L23:
+ 183:../Conf.c     **** 		}
+ 184:../Conf.c     **** 	}
  185:../Conf.c     **** 
  186:../Conf.c     **** 
  187:../Conf.c     **** 
  188:../Conf.c     **** 
  189:../Conf.c     **** 
- 190:../Conf.c     **** 	CONF.BOT_MANUAL = DIGITAL_IO_GetInput(&BOT_MANUAL);
- 849              	 .loc 3 190 0
- 850 0272 484B     	 ldr r3,.L43+44
- 851 0274 181C     	 mov r0,r3
- 852 0276 FFF7FEFF 	 bl DIGITAL_IO_GetInput
- 853 027a 031C     	 mov r3,r0
- 854 027c D9B2     	 uxtb r1,r3
- 855 027e 3B4B     	 ldr r3,.L43+4
- 856 0280 CD22     	 mov r2,#205
- 857 0282 9954     	 strb r1,[r3,r2]
- 191:../Conf.c     **** 	if(CONF.MANUAL == true || CONF.BOT_MANUAL == 1){
- 858              	 .loc 3 191 0
- 859 0284 394B     	 ldr r3,.L43+4
- 860 0286 CC22     	 mov r2,#204
- 861 0288 9B5C     	 ldrb r3,[r3,r2]
- 862 028a 002B     	 cmp r3,#0
- 863 028c 04D1     	 bne .L32
- 864              	 .loc 3 191 0 is_stmt 0 discriminator 1
- 865 028e 374B     	 ldr r3,.L43+4
- 866 0290 CD22     	 mov r2,#205
- 867 0292 9B5C     	 ldrb r3,[r3,r2]
- 868 0294 012B     	 cmp r3,#1
- 869 0296 1DD1     	 bne .L33
- 870              	.L32:
- 192:../Conf.c     **** 		CONF.Maq_Auto = BOT_AUTO_PRESS;
- 871              	 .loc 3 192 0 is_stmt 1
- 872 0298 344B     	 ldr r3,.L43+4
- 873 029a C222     	 mov r2,#194
- 874 029c 0021     	 mov r1,#0
- 875 029e 9954     	 strb r1,[r3,r2]
- 193:../Conf.c     **** 		CONF.STATUS_BOT_AUTO = false;
- 876              	 .loc 3 193 0
- 877 02a0 324B     	 ldr r3,.L43+4
- 878 02a2 E022     	 mov r2,#224
- 879 02a4 0021     	 mov r1,#0
- 880 02a6 9954     	 strb r1,[r3,r2]
- 194:../Conf.c     **** 		CONF.STATUS_AUTOMATICO = false;
- 881              	 .loc 3 194 0
- 882 02a8 304B     	 ldr r3,.L43+4
- 883 02aa DE22     	 mov r2,#222
- 884 02ac 0021     	 mov r1,#0
- 885 02ae 9954     	 strb r1,[r3,r2]
- 195:../Conf.c     **** 		CONF.STATUS_MANUAL = true;
- 886              	 .loc 3 195 0
- 887 02b0 2E4B     	 ldr r3,.L43+4
- 888 02b2 DF22     	 mov r2,#223
- 889 02b4 0121     	 mov r1,#1
- 890 02b6 9954     	 strb r1,[r3,r2]
- 196:../Conf.c     **** 		CONF.STATUS_BOT_MANUAL = true;
- 891              	 .loc 3 196 0
- 892 02b8 2C4B     	 ldr r3,.L43+4
- 893 02ba E122     	 mov r2,#225
- 894 02bc 0121     	 mov r1,#1
- 895 02be 9954     	 strb r1,[r3,r2]
- 197:../Conf.c     **** 		taskSetState(TASK_ACTION, TASK_GO);
- 896              	 .loc 3 197 0
- 897 02c0 0220     	 mov r0,#2
- 898 02c2 0121     	 mov r1,#1
- 899 02c4 FFF7FEFF 	 bl taskSetState
- 198:../Conf.c     **** 		taskSetState(TASK_CONF, TASK_STOP);
- 900              	 .loc 3 198 0
- 901 02c8 0123     	 mov r3,#1
- 902 02ca 5B42     	 neg r3,r3
- 903 02cc 0320     	 mov r0,#3
- 904 02ce 191C     	 mov r1,r3
- 905 02d0 FFF7FEFF 	 bl taskSetState
- 906              	.L33:
- 199:../Conf.c     **** 	}
- 200:../Conf.c     **** 
- 201:../Conf.c     **** 	if(CONF.ANGLE == true ){
- 907              	 .loc 3 201 0
- 908 02d4 254B     	 ldr r3,.L43+4
- 909 02d6 C622     	 mov r2,#198
- 910 02d8 9B5C     	 ldrb r3,[r3,r2]
- 911 02da 002B     	 cmp r3,#0
- 912 02dc 00D1     	 bne .LCB772
- 913 02de CAE0     	 b .L17
- 914              	.LCB772:
- 202:../Conf.c     **** 		CONF.ANGLE = false;
- 915              	 .loc 3 202 0
- 916 02e0 224B     	 ldr r3,.L43+4
- 917 02e2 C622     	 mov r2,#198
- 918 02e4 0021     	 mov r1,#0
- 919 02e6 9954     	 strb r1,[r3,r2]
- 203:../Conf.c     **** 		switch(CONF.Bot_Ang)
- 920              	 .loc 3 203 0
- 921 02e8 204B     	 ldr r3,.L43+4
- 922 02ea C122     	 mov r2,#193
- 923 02ec 9B5C     	 ldrb r3,[r3,r2]
- 924 02ee 012B     	 cmp r3,#1
- 925 02f0 5AD0     	 beq .L35
- 926 02f2 022B     	 cmp r3,#2
- 927 02f4 00D1     	 bne .LCB783
- 928 02f6 8BE0     	 b .L36
- 929              	.LCB783:
- 930 02f8 002B     	 cmp r3,#0
- 931 02fa 00D0     	 beq .LCB785
- 932 02fc BBE0     	 b .L17
- 933              	.LCB785:
- 204:../Conf.c     **** 		{
- 205:../Conf.c     **** 		case CONF_ANG_1:
- 206:../Conf.c     **** 		{
- 207:../Conf.c     **** 			if(DEBAUCE.STATUS_DEBAUCE == true){
- 934              	 .loc 3 207 0
- 935 02fe 1C4B     	 ldr r3,.L43+8
- 936 0300 DE22     	 mov r2,#222
- 937 0302 9B5C     	 ldrb r3,[r3,r2]
- 938 0304 002B     	 cmp r3,#0
- 939 0306 2DD0     	 beq .L38
- 208:../Conf.c     **** 				CONF.ANG_MAX_INF = false;
- 940              	 .loc 3 208 0
- 941 0308 184B     	 ldr r3,.L43+4
- 942 030a E422     	 mov r2,#228
- 943 030c 0021     	 mov r1,#0
- 944 030e 9954     	 strb r1,[r3,r2]
- 209:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE = false;
- 945              	 .loc 3 209 0
- 946 0310 174B     	 ldr r3,.L43+8
- 947 0312 DE22     	 mov r2,#222
- 948 0314 0021     	 mov r1,#0
- 949 0316 9954     	 strb r1,[r3,r2]
- 210:../Conf.c     **** 				CONF.STATUS_CONF_ANG_HIGH[0] = 1;
- 950              	 .loc 3 210 0
- 951 0318 144B     	 ldr r3,.L43+4
- 952 031a DA22     	 mov r2,#218
- 953 031c 0121     	 mov r1,#1
- 954 031e 9954     	 strb r1,[r3,r2]
- 211:../Conf.c     **** 				ACTION.Ang_max = 3;						//valor teste prototipo
- 955              	 .loc 3 211 0
- 956 0320 164B     	 ldr r3,.L43+20
- 957 0322 BF22     	 mov r2,#191
- 958 0324 0321     	 mov r1,#3
- 959 0326 9954     	 strb r1,[r3,r2]
- 212:../Conf.c     **** 				ACTION.VAL_Porcent = 95;
- 960              	 .loc 3 212 0
- 961 0328 144B     	 ldr r3,.L43+20
- 962 032a C522     	 mov r2,#197
- 963 032c 5F21     	 mov r1,#95
- 964 032e 9954     	 strb r1,[r3,r2]
- 213:../Conf.c     **** 				CONF.Bot_Ang = CONF_ANG_2;
- 965              	 .loc 3 213 0
- 966 0330 0E4B     	 ldr r3,.L43+4
- 967 0332 C122     	 mov r2,#193
- 968 0334 0121     	 mov r1,#1
- 969 0336 9954     	 strb r1,[r3,r2]
- 214:../Conf.c     **** 				taskSetState(TASK_DEBAUCE, TASK_GO);
- 970              	 .loc 3 214 0
- 971 0338 0420     	 mov r0,#4
- 972 033a 0121     	 mov r1,#1
- 973 033c FFF7FEFF 	 bl taskSetState
- 215:../Conf.c     **** 				DIGITAL_IO_SetOutputHigh(&LED_CONF_5);
- 974              	 .loc 3 215 0
- 975 0340 154B     	 ldr r3,.L43+48
+ 190:../Conf.c     **** 
+ 191:../Conf.c     **** 	CONF.BOT_MANUAL = DIGITAL_IO_GetInput(&BOT_MANUAL);
+ 841              	 .loc 3 191 0
+ 842 0262 464B     	 ldr r3,.L43+36
+ 843 0264 181C     	 mov r0,r3
+ 844 0266 FFF7FEFF 	 bl DIGITAL_IO_GetInput
+ 845 026a 031C     	 mov r3,r0
+ 846 026c D9B2     	 uxtb r1,r3
+ 847 026e 3B4B     	 ldr r3,.L43+4
+ 848 0270 CD22     	 mov r2,#205
+ 849 0272 9954     	 strb r1,[r3,r2]
+ 192:../Conf.c     **** 	if(CONF.MANUAL == true || CONF.BOT_MANUAL == 1){
+ 850              	 .loc 3 192 0
+ 851 0274 394B     	 ldr r3,.L43+4
+ 852 0276 CC22     	 mov r2,#204
+ 853 0278 9B5C     	 ldrb r3,[r3,r2]
+ 854 027a 002B     	 cmp r3,#0
+ 855 027c 04D1     	 bne .L32
+ 856              	 .loc 3 192 0 is_stmt 0 discriminator 1
+ 857 027e 374B     	 ldr r3,.L43+4
+ 858 0280 CD22     	 mov r2,#205
+ 859 0282 9B5C     	 ldrb r3,[r3,r2]
+ 860 0284 012B     	 cmp r3,#1
+ 861 0286 1DD1     	 bne .L33
+ 862              	.L32:
+ 193:../Conf.c     **** 		CONF.Maq_Auto = BOT_AUTO_PRESS;
+ 863              	 .loc 3 193 0 is_stmt 1
+ 864 0288 344B     	 ldr r3,.L43+4
+ 865 028a C222     	 mov r2,#194
+ 866 028c 0021     	 mov r1,#0
+ 867 028e 9954     	 strb r1,[r3,r2]
+ 194:../Conf.c     **** 		CONF.STATUS_BOT_AUTO = false;
+ 868              	 .loc 3 194 0
+ 869 0290 324B     	 ldr r3,.L43+4
+ 870 0292 E022     	 mov r2,#224
+ 871 0294 0021     	 mov r1,#0
+ 872 0296 9954     	 strb r1,[r3,r2]
+ 195:../Conf.c     **** 		CONF.STATUS_AUTOMATICO = false;
+ 873              	 .loc 3 195 0
+ 874 0298 304B     	 ldr r3,.L43+4
+ 875 029a DE22     	 mov r2,#222
+ 876 029c 0021     	 mov r1,#0
+ 877 029e 9954     	 strb r1,[r3,r2]
+ 196:../Conf.c     **** 		CONF.STATUS_MANUAL = true;
+ 878              	 .loc 3 196 0
+ 879 02a0 2E4B     	 ldr r3,.L43+4
+ 880 02a2 DF22     	 mov r2,#223
+ 881 02a4 0121     	 mov r1,#1
+ 882 02a6 9954     	 strb r1,[r3,r2]
+ 197:../Conf.c     **** 		CONF.STATUS_BOT_MANUAL = true;
+ 883              	 .loc 3 197 0
+ 884 02a8 2C4B     	 ldr r3,.L43+4
+ 885 02aa E122     	 mov r2,#225
+ 886 02ac 0121     	 mov r1,#1
+ 887 02ae 9954     	 strb r1,[r3,r2]
+ 198:../Conf.c     **** 		taskSetState(TASK_ACTION, TASK_GO);
+ 888              	 .loc 3 198 0
+ 889 02b0 0220     	 mov r0,#2
+ 890 02b2 0121     	 mov r1,#1
+ 891 02b4 FFF7FEFF 	 bl taskSetState
+ 199:../Conf.c     **** 		taskSetState(TASK_CONF, TASK_STOP);
+ 892              	 .loc 3 199 0
+ 893 02b8 0123     	 mov r3,#1
+ 894 02ba 5B42     	 neg r3,r3
+ 895 02bc 0320     	 mov r0,#3
+ 896 02be 191C     	 mov r1,r3
+ 897 02c0 FFF7FEFF 	 bl taskSetState
+ 898              	.L33:
+ 200:../Conf.c     **** 	}
+ 201:../Conf.c     **** 
+ 202:../Conf.c     **** 	if(CONF.ANGLE == true ){
+ 899              	 .loc 3 202 0
+ 900 02c4 254B     	 ldr r3,.L43+4
+ 901 02c6 C622     	 mov r2,#198
+ 902 02c8 9B5C     	 ldrb r3,[r3,r2]
+ 903 02ca 002B     	 cmp r3,#0
+ 904 02cc 00D1     	 bne .LCB766
+ 905 02ce C6E0     	 b .L17
+ 906              	.LCB766:
+ 203:../Conf.c     **** 		CONF.ANGLE = false;
+ 907              	 .loc 3 203 0
+ 908 02d0 224B     	 ldr r3,.L43+4
+ 909 02d2 C622     	 mov r2,#198
+ 910 02d4 0021     	 mov r1,#0
+ 911 02d6 9954     	 strb r1,[r3,r2]
+ 204:../Conf.c     **** 		switch(CONF.Bot_Ang)
+ 912              	 .loc 3 204 0
+ 913 02d8 204B     	 ldr r3,.L43+4
+ 914 02da C122     	 mov r2,#193
+ 915 02dc 9B5C     	 ldrb r3,[r3,r2]
+ 916 02de 012B     	 cmp r3,#1
+ 917 02e0 56D0     	 beq .L35
+ 918 02e2 022B     	 cmp r3,#2
+ 919 02e4 00D1     	 bne .LCB777
+ 920 02e6 87E0     	 b .L36
+ 921              	.LCB777:
+ 922 02e8 002B     	 cmp r3,#0
+ 923 02ea 00D0     	 beq .LCB779
+ 924 02ec B7E0     	 b .L17
+ 925              	.LCB779:
+ 205:../Conf.c     **** 		{
+ 206:../Conf.c     **** 		case CONF_ANG_1:
+ 207:../Conf.c     **** 		{
+ 208:../Conf.c     **** 			if(DEBAUCE.STATUS_DEBAUCE == true){
+ 926              	 .loc 3 208 0
+ 927 02ee 1C4B     	 ldr r3,.L43+8
+ 928 02f0 DE22     	 mov r2,#222
+ 929 02f2 9B5C     	 ldrb r3,[r3,r2]
+ 930 02f4 002B     	 cmp r3,#0
+ 931 02f6 2DD0     	 beq .L38
+ 209:../Conf.c     **** 				CONF.ANG_MAX_INF = false;
+ 932              	 .loc 3 209 0
+ 933 02f8 184B     	 ldr r3,.L43+4
+ 934 02fa E422     	 mov r2,#228
+ 935 02fc 0021     	 mov r1,#0
+ 936 02fe 9954     	 strb r1,[r3,r2]
+ 210:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE = false;
+ 937              	 .loc 3 210 0
+ 938 0300 174B     	 ldr r3,.L43+8
+ 939 0302 DE22     	 mov r2,#222
+ 940 0304 0021     	 mov r1,#0
+ 941 0306 9954     	 strb r1,[r3,r2]
+ 211:../Conf.c     **** 				CONF.STATUS_CONF_ANG_HIGH[0] = 1;
+ 942              	 .loc 3 211 0
+ 943 0308 144B     	 ldr r3,.L43+4
+ 944 030a DA22     	 mov r2,#218
+ 945 030c 0121     	 mov r1,#1
+ 946 030e 9954     	 strb r1,[r3,r2]
+ 212:../Conf.c     **** 				ACTION.Ang_max = 3;						//valor teste prototipo
+ 947              	 .loc 3 212 0
+ 948 0310 164B     	 ldr r3,.L43+20
+ 949 0312 BF22     	 mov r2,#191
+ 950 0314 0321     	 mov r1,#3
+ 951 0316 9954     	 strb r1,[r3,r2]
+ 213:../Conf.c     **** 				ACTION.VAL_Porcent = 95;
+ 952              	 .loc 3 213 0
+ 953 0318 144B     	 ldr r3,.L43+20
+ 954 031a C522     	 mov r2,#197
+ 955 031c 5F21     	 mov r1,#95
+ 956 031e 9954     	 strb r1,[r3,r2]
+ 214:../Conf.c     **** 				CONF.Bot_Ang = CONF_ANG_2;
+ 957              	 .loc 3 214 0
+ 958 0320 0E4B     	 ldr r3,.L43+4
+ 959 0322 C122     	 mov r2,#193
+ 960 0324 0121     	 mov r1,#1
+ 961 0326 9954     	 strb r1,[r3,r2]
+ 215:../Conf.c     **** 				taskSetState(TASK_DEBAUCE, TASK_GO);
+ 962              	 .loc 3 215 0
+ 963 0328 0420     	 mov r0,#4
+ 964 032a 0121     	 mov r1,#1
+ 965 032c FFF7FEFF 	 bl taskSetState
+ 216:../Conf.c     **** 				DIGITAL_IO_SetOutputHigh(&LED_CONF_5);
+ 966              	 .loc 3 216 0
+ 967 0330 134B     	 ldr r3,.L43+40
+ 968 0332 181C     	 mov r0,r3
+ 969 0334 FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+ 217:../Conf.c     **** 				DIGITAL_IO_SetOutputLow(&LED_CONF_10);
+ 970              	 .loc 3 217 0
+ 971 0338 124B     	 ldr r3,.L43+44
+ 972 033a 181C     	 mov r0,r3
+ 973 033c FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 218:../Conf.c     **** 				DIGITAL_IO_SetOutputLow(&LED_CONF_15);
+ 974              	 .loc 3 218 0
+ 975 0340 114B     	 ldr r3,.L43+48
  976 0342 181C     	 mov r0,r3
- 977 0344 FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
- 216:../Conf.c     **** 				DIGITAL_IO_SetOutputLow(&LED_CONF_10);
- 978              	 .loc 3 216 0
- 979 0348 144B     	 ldr r3,.L43+52
- 980 034a 181C     	 mov r0,r3
- 981 034c FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
- 217:../Conf.c     **** 				DIGITAL_IO_SetOutputLow(&LED_CONF_15);
- 982              	 .loc 3 217 0
- 983 0350 134B     	 ldr r3,.L43+56
- 984 0352 181C     	 mov r0,r3
- 985 0354 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
- 218:../Conf.c     **** 				E_EEPROM_XMC1_Write(CONF_ANG_HIGH, &CONF.STATUS_CONF_ANG_HIGH[0]);
- 986              	 .loc 3 218 0
- 987 0358 124B     	 ldr r3,.L43+60
- 988 035a 0420     	 mov r0,#4
- 989 035c 191C     	 mov r1,r3
- 990 035e FFF7FEFF 	 bl E_EEPROM_XMC1_Write
- 219:../Conf.c     **** 			}
- 220:../Conf.c     **** 
- 221:../Conf.c     **** 		}
- 222:../Conf.c     **** 		break;
- 991              	 .loc 3 222 0
- 992 0362 88E0     	 b .L17
- 993              	.L38:
- 994 0364 87E0     	 b .L17
- 995              	.L44:
- 996 0366 C046     	 .align 2
- 997              	.L43:
- 998 0368 00000000 	 .word BOT_MIN
- 999 036c 00000000 	 .word CONF
- 1000 0370 00000000 	 .word DEBAUCE
- 1001 0374 00000000 	 .word LED_CONF_MIN_0
- 1002 0378 00000000 	 .word LED_CONF_MIN_5
- 1003 037c 00000000 	 .word ACTION
- 1004 0380 DC000000 	 .word CONF+220
- 1005 0384 0000A0C0 	 .word -1063256064
- 1006 0388 00000000 	 .word BOT_AUTO
- 1007 038c 00000000 	 .word LED1
- 1008 0390 00000000 	 .word LED2
- 1009 0394 00000000 	 .word BOT_MANUAL
- 1010 0398 00000000 	 .word LED_CONF_5
- 1011 039c 00000000 	 .word LED_CONF_10
- 1012 03a0 00000000 	 .word LED_CONF_15
- 1013 03a4 DA000000 	 .word CONF+218
- 1014              	.L35:
- 223:../Conf.c     **** 
- 224:../Conf.c     **** 		case CONF_ANG_2:
- 225:../Conf.c     **** 		{
- 226:../Conf.c     **** 			if(DEBAUCE.STATUS_DEBAUCE == true){
- 1015              	 .loc 3 226 0
- 1016 03a8 344B     	 ldr r3,.L45
- 1017 03aa DE22     	 mov r2,#222
- 1018 03ac 9B5C     	 ldrb r3,[r3,r2]
- 1019 03ae 002B     	 cmp r3,#0
- 1020 03b0 2DD0     	 beq .L39
- 227:../Conf.c     **** 				CONF.ANG_MAX_INF = false;
- 1021              	 .loc 3 227 0
- 1022 03b2 334B     	 ldr r3,.L45+4
- 1023 03b4 E422     	 mov r2,#228
- 1024 03b6 0021     	 mov r1,#0
- 1025 03b8 9954     	 strb r1,[r3,r2]
- 228:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE = false;
- 1026              	 .loc 3 228 0
- 1027 03ba 304B     	 ldr r3,.L45
- 1028 03bc DE22     	 mov r2,#222
- 1029 03be 0021     	 mov r1,#0
- 1030 03c0 9954     	 strb r1,[r3,r2]
- 229:../Conf.c     **** 				CONF.STATUS_CONF_ANG_HIGH[0] = 2;
- 1031              	 .loc 3 229 0
- 1032 03c2 2F4B     	 ldr r3,.L45+4
- 1033 03c4 DA22     	 mov r2,#218
- 1034 03c6 0221     	 mov r1,#2
- 1035 03c8 9954     	 strb r1,[r3,r2]
- 230:../Conf.c     **** 				ACTION.Ang_max = 5;						//valor teste prototipo
- 1036              	 .loc 3 230 0
- 1037 03ca 2E4B     	 ldr r3,.L45+8
- 1038 03cc BF22     	 mov r2,#191
- 1039 03ce 0521     	 mov r1,#5
- 1040 03d0 9954     	 strb r1,[r3,r2]
- 231:../Conf.c     **** 				ACTION.VAL_Porcent = 50;
- 1041              	 .loc 3 231 0
- 1042 03d2 2C4B     	 ldr r3,.L45+8
- 1043 03d4 C522     	 mov r2,#197
- 1044 03d6 3221     	 mov r1,#50
- 1045 03d8 9954     	 strb r1,[r3,r2]
- 232:../Conf.c     **** 				CONF.Bot_Ang = CONF_ANG_3;
- 1046              	 .loc 3 232 0
- 1047 03da 294B     	 ldr r3,.L45+4
- 1048 03dc C122     	 mov r2,#193
- 1049 03de 0221     	 mov r1,#2
- 1050 03e0 9954     	 strb r1,[r3,r2]
- 233:../Conf.c     **** 				taskSetState(TASK_DEBAUCE, TASK_GO);
- 1051              	 .loc 3 233 0
- 1052 03e2 0420     	 mov r0,#4
- 1053 03e4 0121     	 mov r1,#1
- 1054 03e6 FFF7FEFF 	 bl taskSetState
- 234:../Conf.c     **** 				DIGITAL_IO_SetOutputLow (&LED_CONF_5);
- 1055              	 .loc 3 234 0
- 1056 03ea 274B     	 ldr r3,.L45+12
- 1057 03ec 181C     	 mov r0,r3
- 1058 03ee FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
- 235:../Conf.c     **** 				DIGITAL_IO_SetOutputHigh(&LED_CONF_10);
- 1059              	 .loc 3 235 0
- 1060 03f2 264B     	 ldr r3,.L45+16
- 1061 03f4 181C     	 mov r0,r3
- 1062 03f6 FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
- 236:../Conf.c     **** 				DIGITAL_IO_SetOutputLow (&LED_CONF_15);
- 1063              	 .loc 3 236 0
- 1064 03fa 254B     	 ldr r3,.L45+20
- 1065 03fc 181C     	 mov r0,r3
- 1066 03fe FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
- 237:../Conf.c     **** 				E_EEPROM_XMC1_Write(CONF_ANG_HIGH, &CONF.STATUS_CONF_ANG_HIGH[0]);
- 1067              	 .loc 3 237 0
- 1068 0402 244B     	 ldr r3,.L45+24
- 1069 0404 0420     	 mov r0,#4
- 1070 0406 191C     	 mov r1,r3
- 1071 0408 FFF7FEFF 	 bl E_EEPROM_XMC1_Write
- 238:../Conf.c     **** 			}
- 239:../Conf.c     **** 
- 240:../Conf.c     **** 		}
- 241:../Conf.c     **** 		break;
- 1072              	 .loc 3 241 0
- 1073 040c 33E0     	 b .L17
- 1074              	.L39:
- 1075 040e 32E0     	 b .L17
- 1076              	.L36:
- 242:../Conf.c     **** 
- 243:../Conf.c     **** 		case CONF_ANG_3:
- 244:../Conf.c     **** 		{
- 245:../Conf.c     **** 			if(DEBAUCE.STATUS_DEBAUCE == true){
- 1077              	 .loc 3 245 0
- 1078 0410 1A4B     	 ldr r3,.L45
- 1079 0412 DE22     	 mov r2,#222
- 1080 0414 9B5C     	 ldrb r3,[r3,r2]
- 1081 0416 002B     	 cmp r3,#0
- 1082 0418 2CD0     	 beq .L40
- 246:../Conf.c     **** 				CONF.ANG_MAX_INF = true;
- 1083              	 .loc 3 246 0
- 1084 041a 194B     	 ldr r3,.L45+4
- 1085 041c E422     	 mov r2,#228
- 1086 041e 0121     	 mov r1,#1
- 1087 0420 9954     	 strb r1,[r3,r2]
- 247:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE = false;
- 1088              	 .loc 3 247 0
- 1089 0422 164B     	 ldr r3,.L45
- 1090 0424 DE22     	 mov r2,#222
- 1091 0426 0021     	 mov r1,#0
- 1092 0428 9954     	 strb r1,[r3,r2]
- 248:../Conf.c     **** 				CONF.STATUS_CONF_ANG_HIGH[0] = 3;
- 1093              	 .loc 3 248 0
- 1094 042a 154B     	 ldr r3,.L45+4
- 1095 042c DA22     	 mov r2,#218
- 1096 042e 0321     	 mov r1,#3
- 1097 0430 9954     	 strb r1,[r3,r2]
- 249:../Conf.c     **** 				ACTION.Ang_max = 9;						//valor teste prototipo
- 1098              	 .loc 3 249 0
- 1099 0432 144B     	 ldr r3,.L45+8
- 1100 0434 BF22     	 mov r2,#191
- 1101 0436 0921     	 mov r1,#9
- 1102 0438 9954     	 strb r1,[r3,r2]
- 250:../Conf.c     **** 				ACTION.VAL_Porcent = 10;
- 1103              	 .loc 3 250 0
- 1104 043a 124B     	 ldr r3,.L45+8
- 1105 043c C522     	 mov r2,#197
- 1106 043e 0A21     	 mov r1,#10
- 1107 0440 9954     	 strb r1,[r3,r2]
- 251:../Conf.c     **** 				CONF.Bot_Ang = CONF_ANG_1;
- 1108              	 .loc 3 251 0
- 1109 0442 0F4B     	 ldr r3,.L45+4
- 1110 0444 C122     	 mov r2,#193
- 1111 0446 0021     	 mov r1,#0
- 1112 0448 9954     	 strb r1,[r3,r2]
- 252:../Conf.c     **** 				taskSetState(TASK_DEBAUCE, TASK_GO);
- 1113              	 .loc 3 252 0
- 1114 044a 0420     	 mov r0,#4
- 1115 044c 0121     	 mov r1,#1
- 1116 044e FFF7FEFF 	 bl taskSetState
- 253:../Conf.c     **** 				DIGITAL_IO_SetOutputLow (&LED_CONF_5);
- 1117              	 .loc 3 253 0
- 1118 0452 0D4B     	 ldr r3,.L45+12
- 1119 0454 181C     	 mov r0,r3
- 1120 0456 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
- 254:../Conf.c     **** 				DIGITAL_IO_SetOutputLow (&LED_CONF_10);
- 1121              	 .loc 3 254 0
- 1122 045a 0C4B     	 ldr r3,.L45+16
- 1123 045c 181C     	 mov r0,r3
- 1124 045e FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
- 255:../Conf.c     **** 				DIGITAL_IO_SetOutputHigh(&LED_CONF_15);
- 1125              	 .loc 3 255 0
- 1126 0462 0B4B     	 ldr r3,.L45+20
- 1127 0464 181C     	 mov r0,r3
- 1128 0466 FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
- 256:../Conf.c     **** 				E_EEPROM_XMC1_Write(CONF_ANG_HIGH, &CONF.STATUS_CONF_ANG_HIGH[0]);
- 1129              	 .loc 3 256 0
- 1130 046a 0A4B     	 ldr r3,.L45+24
- 1131 046c 0420     	 mov r0,#4
- 1132 046e 191C     	 mov r1,r3
- 1133 0470 FFF7FEFF 	 bl E_EEPROM_XMC1_Write
- 1134              	.L40:
- 257:../Conf.c     **** 			}
- 258:../Conf.c     **** 
- 259:../Conf.c     **** 		}
- 260:../Conf.c     **** 		break;
- 1135              	 .loc 3 260 0
- 1136 0474 C046     	 mov r8,r8
- 1137              	.L17:
- 261:../Conf.c     **** 		}
- 262:../Conf.c     **** 	}
- 263:../Conf.c     **** }
- 1138              	 .loc 3 263 0
- 1139 0476 BD46     	 mov sp,r7
- 1140              	 
- 1141 0478 80BD     	 pop {r7,pc}
- 1142              	.L46:
- 1143 047a C046     	 .align 2
- 1144              	.L45:
- 1145 047c 00000000 	 .word DEBAUCE
- 1146 0480 00000000 	 .word CONF
- 1147 0484 00000000 	 .word ACTION
- 1148 0488 00000000 	 .word LED_CONF_5
- 1149 048c 00000000 	 .word LED_CONF_10
- 1150 0490 00000000 	 .word LED_CONF_15
- 1151 0494 DA000000 	 .word CONF+218
- 1152              	 .cfi_endproc
- 1153              	.LFE300:
- 1155              	 .section .text.IRQ6_Handler,"ax",%progbits
- 1156              	 .align 2
- 1157              	 .global IRQ6_Handler
- 1158              	 .code 16
- 1159              	 .thumb_func
- 1161              	IRQ6_Handler:
- 1162              	.LFB301:
- 264:../Conf.c     **** 
- 265:../Conf.c     **** void Handler_BOT_MAX (void){
- 1163              	 .loc 3 265 0
- 1164              	 .cfi_startproc
- 1165 0000 80B5     	 push {r7,lr}
- 1166              	.LCFI22:
- 1167              	 .cfi_def_cfa_offset 8
- 1168              	 .cfi_offset 7,-8
- 1169              	 .cfi_offset 14,-4
- 1170 0002 00AF     	 add r7,sp,#0
- 1171              	.LCFI23:
- 1172              	 .cfi_def_cfa_register 7
- 266:../Conf.c     **** 	CONF.ANGLE = true;
- 1173              	 .loc 3 266 0
- 1174 0004 024B     	 ldr r3,.L48
- 1175 0006 C622     	 mov r2,#198
- 1176 0008 0121     	 mov r1,#1
- 1177 000a 9954     	 strb r1,[r3,r2]
- 267:../Conf.c     **** }
- 1178              	 .loc 3 267 0
- 1179 000c BD46     	 mov sp,r7
- 1180              	 
- 1181 000e 80BD     	 pop {r7,pc}
- 1182              	.L49:
- 1183              	 .align 2
- 1184              	.L48:
- 1185 0010 00000000 	 .word CONF
- 1186              	 .cfi_endproc
- 1187              	.LFE301:
- 1189              	 .text
- 1190              	.Letext0:
- 1191              	 .file 4 "c:\\users\\victor.paschoal\\documents\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
- 1192              	 .file 5 "c:\\users\\victor.paschoal\\documents\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
- 1193              	 .file 6 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc/xmc1_gpio.h"
- 1194              	 .file 7 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc/xmc_usic.h"
- 1195              	 .file 8 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/I2C_MASTER/i2c_master.h"
- 1196              	 .file 9 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Action.h"
- 1197              	 .file 10 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Conf.h"
- 1198              	 .file 11 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Debauce.h"
- 1199              	 .file 12 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Infineon/XMC1400_series/Include/system_XMC1400.h"
- 1200              	 .file 13 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO/digital_io_extern.h"
+ 977 0344 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 219:../Conf.c     **** 				E_EEPROM_XMC1_Write(CONF_ANG_HIGH, &CONF.STATUS_CONF_ANG_HIGH[0]);
+ 978              	 .loc 3 219 0
+ 979 0348 104B     	 ldr r3,.L43+52
+ 980 034a 0420     	 mov r0,#4
+ 981 034c 191C     	 mov r1,r3
+ 982 034e FFF7FEFF 	 bl E_EEPROM_XMC1_Write
+ 220:../Conf.c     **** 			}
+ 221:../Conf.c     **** 
+ 222:../Conf.c     **** 		}
+ 223:../Conf.c     **** 		break;
+ 983              	 .loc 3 223 0
+ 984 0352 84E0     	 b .L17
+ 985              	.L38:
+ 986 0354 83E0     	 b .L17
+ 987              	.L44:
+ 988 0356 C046     	 .align 2
+ 989              	.L43:
+ 990 0358 00000000 	 .word BOT_MIN
+ 991 035c 00000000 	 .word CONF
+ 992 0360 00000000 	 .word DEBAUCE
+ 993 0364 00000000 	 .word LED_CONF_MIN_0
+ 994 0368 00000000 	 .word LED_CONF_MIN_5
+ 995 036c 00000000 	 .word ACTION
+ 996 0370 DC000000 	 .word CONF+220
+ 997 0374 0000A0C0 	 .word -1063256064
+ 998 0378 00000000 	 .word BOT_AUTO
+ 999 037c 00000000 	 .word BOT_MANUAL
+ 1000 0380 00000000 	 .word LED_CONF_5
+ 1001 0384 00000000 	 .word LED_CONF_10
+ 1002 0388 00000000 	 .word LED_CONF_15
+ 1003 038c DA000000 	 .word CONF+218
+ 1004              	.L35:
+ 224:../Conf.c     **** 
+ 225:../Conf.c     **** 		case CONF_ANG_2:
+ 226:../Conf.c     **** 		{
+ 227:../Conf.c     **** 			if(DEBAUCE.STATUS_DEBAUCE == true){
+ 1005              	 .loc 3 227 0
+ 1006 0390 344B     	 ldr r3,.L45
+ 1007 0392 DE22     	 mov r2,#222
+ 1008 0394 9B5C     	 ldrb r3,[r3,r2]
+ 1009 0396 002B     	 cmp r3,#0
+ 1010 0398 2DD0     	 beq .L39
+ 228:../Conf.c     **** 				CONF.ANG_MAX_INF = false;
+ 1011              	 .loc 3 228 0
+ 1012 039a 334B     	 ldr r3,.L45+4
+ 1013 039c E422     	 mov r2,#228
+ 1014 039e 0021     	 mov r1,#0
+ 1015 03a0 9954     	 strb r1,[r3,r2]
+ 229:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE = false;
+ 1016              	 .loc 3 229 0
+ 1017 03a2 304B     	 ldr r3,.L45
+ 1018 03a4 DE22     	 mov r2,#222
+ 1019 03a6 0021     	 mov r1,#0
+ 1020 03a8 9954     	 strb r1,[r3,r2]
+ 230:../Conf.c     **** 				CONF.STATUS_CONF_ANG_HIGH[0] = 2;
+ 1021              	 .loc 3 230 0
+ 1022 03aa 2F4B     	 ldr r3,.L45+4
+ 1023 03ac DA22     	 mov r2,#218
+ 1024 03ae 0221     	 mov r1,#2
+ 1025 03b0 9954     	 strb r1,[r3,r2]
+ 231:../Conf.c     **** 				ACTION.Ang_max = 5;						//valor teste prototipo
+ 1026              	 .loc 3 231 0
+ 1027 03b2 2E4B     	 ldr r3,.L45+8
+ 1028 03b4 BF22     	 mov r2,#191
+ 1029 03b6 0521     	 mov r1,#5
+ 1030 03b8 9954     	 strb r1,[r3,r2]
+ 232:../Conf.c     **** 				ACTION.VAL_Porcent = 50;
+ 1031              	 .loc 3 232 0
+ 1032 03ba 2C4B     	 ldr r3,.L45+8
+ 1033 03bc C522     	 mov r2,#197
+ 1034 03be 3221     	 mov r1,#50
+ 1035 03c0 9954     	 strb r1,[r3,r2]
+ 233:../Conf.c     **** 				CONF.Bot_Ang = CONF_ANG_3;
+ 1036              	 .loc 3 233 0
+ 1037 03c2 294B     	 ldr r3,.L45+4
+ 1038 03c4 C122     	 mov r2,#193
+ 1039 03c6 0221     	 mov r1,#2
+ 1040 03c8 9954     	 strb r1,[r3,r2]
+ 234:../Conf.c     **** 				taskSetState(TASK_DEBAUCE, TASK_GO);
+ 1041              	 .loc 3 234 0
+ 1042 03ca 0420     	 mov r0,#4
+ 1043 03cc 0121     	 mov r1,#1
+ 1044 03ce FFF7FEFF 	 bl taskSetState
+ 235:../Conf.c     **** 				DIGITAL_IO_SetOutputLow (&LED_CONF_5);
+ 1045              	 .loc 3 235 0
+ 1046 03d2 274B     	 ldr r3,.L45+12
+ 1047 03d4 181C     	 mov r0,r3
+ 1048 03d6 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 236:../Conf.c     **** 				DIGITAL_IO_SetOutputHigh(&LED_CONF_10);
+ 1049              	 .loc 3 236 0
+ 1050 03da 264B     	 ldr r3,.L45+16
+ 1051 03dc 181C     	 mov r0,r3
+ 1052 03de FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+ 237:../Conf.c     **** 				DIGITAL_IO_SetOutputLow (&LED_CONF_15);
+ 1053              	 .loc 3 237 0
+ 1054 03e2 254B     	 ldr r3,.L45+20
+ 1055 03e4 181C     	 mov r0,r3
+ 1056 03e6 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 238:../Conf.c     **** 				E_EEPROM_XMC1_Write(CONF_ANG_HIGH, &CONF.STATUS_CONF_ANG_HIGH[0]);
+ 1057              	 .loc 3 238 0
+ 1058 03ea 244B     	 ldr r3,.L45+24
+ 1059 03ec 0420     	 mov r0,#4
+ 1060 03ee 191C     	 mov r1,r3
+ 1061 03f0 FFF7FEFF 	 bl E_EEPROM_XMC1_Write
+ 239:../Conf.c     **** 			}
+ 240:../Conf.c     **** 
+ 241:../Conf.c     **** 		}
+ 242:../Conf.c     **** 		break;
+ 1062              	 .loc 3 242 0
+ 1063 03f4 33E0     	 b .L17
+ 1064              	.L39:
+ 1065 03f6 32E0     	 b .L17
+ 1066              	.L36:
+ 243:../Conf.c     **** 
+ 244:../Conf.c     **** 		case CONF_ANG_3:
+ 245:../Conf.c     **** 		{
+ 246:../Conf.c     **** 			if(DEBAUCE.STATUS_DEBAUCE == true){
+ 1067              	 .loc 3 246 0
+ 1068 03f8 1A4B     	 ldr r3,.L45
+ 1069 03fa DE22     	 mov r2,#222
+ 1070 03fc 9B5C     	 ldrb r3,[r3,r2]
+ 1071 03fe 002B     	 cmp r3,#0
+ 1072 0400 2CD0     	 beq .L40
+ 247:../Conf.c     **** 				CONF.ANG_MAX_INF = true;
+ 1073              	 .loc 3 247 0
+ 1074 0402 194B     	 ldr r3,.L45+4
+ 1075 0404 E422     	 mov r2,#228
+ 1076 0406 0121     	 mov r1,#1
+ 1077 0408 9954     	 strb r1,[r3,r2]
+ 248:../Conf.c     **** 				DEBAUCE.STATUS_DEBAUCE = false;
+ 1078              	 .loc 3 248 0
+ 1079 040a 164B     	 ldr r3,.L45
+ 1080 040c DE22     	 mov r2,#222
+ 1081 040e 0021     	 mov r1,#0
+ 1082 0410 9954     	 strb r1,[r3,r2]
+ 249:../Conf.c     **** 				CONF.STATUS_CONF_ANG_HIGH[0] = 3;
+ 1083              	 .loc 3 249 0
+ 1084 0412 154B     	 ldr r3,.L45+4
+ 1085 0414 DA22     	 mov r2,#218
+ 1086 0416 0321     	 mov r1,#3
+ 1087 0418 9954     	 strb r1,[r3,r2]
+ 250:../Conf.c     **** 				ACTION.Ang_max = 9;						//valor teste prototipo
+ 1088              	 .loc 3 250 0
+ 1089 041a 144B     	 ldr r3,.L45+8
+ 1090 041c BF22     	 mov r2,#191
+ 1091 041e 0921     	 mov r1,#9
+ 1092 0420 9954     	 strb r1,[r3,r2]
+ 251:../Conf.c     **** 				ACTION.VAL_Porcent = 10;
+ 1093              	 .loc 3 251 0
+ 1094 0422 124B     	 ldr r3,.L45+8
+ 1095 0424 C522     	 mov r2,#197
+ 1096 0426 0A21     	 mov r1,#10
+ 1097 0428 9954     	 strb r1,[r3,r2]
+ 252:../Conf.c     **** 				CONF.Bot_Ang = CONF_ANG_1;
+ 1098              	 .loc 3 252 0
+ 1099 042a 0F4B     	 ldr r3,.L45+4
+ 1100 042c C122     	 mov r2,#193
+ 1101 042e 0021     	 mov r1,#0
+ 1102 0430 9954     	 strb r1,[r3,r2]
+ 253:../Conf.c     **** 				taskSetState(TASK_DEBAUCE, TASK_GO);
+ 1103              	 .loc 3 253 0
+ 1104 0432 0420     	 mov r0,#4
+ 1105 0434 0121     	 mov r1,#1
+ 1106 0436 FFF7FEFF 	 bl taskSetState
+ 254:../Conf.c     **** 				DIGITAL_IO_SetOutputLow (&LED_CONF_5);
+ 1107              	 .loc 3 254 0
+ 1108 043a 0D4B     	 ldr r3,.L45+12
+ 1109 043c 181C     	 mov r0,r3
+ 1110 043e FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 255:../Conf.c     **** 				DIGITAL_IO_SetOutputLow (&LED_CONF_10);
+ 1111              	 .loc 3 255 0
+ 1112 0442 0C4B     	 ldr r3,.L45+16
+ 1113 0444 181C     	 mov r0,r3
+ 1114 0446 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 256:../Conf.c     **** 				DIGITAL_IO_SetOutputHigh(&LED_CONF_15);
+ 1115              	 .loc 3 256 0
+ 1116 044a 0B4B     	 ldr r3,.L45+20
+ 1117 044c 181C     	 mov r0,r3
+ 1118 044e FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+ 257:../Conf.c     **** 				E_EEPROM_XMC1_Write(CONF_ANG_HIGH, &CONF.STATUS_CONF_ANG_HIGH[0]);
+ 1119              	 .loc 3 257 0
+ 1120 0452 0A4B     	 ldr r3,.L45+24
+ 1121 0454 0420     	 mov r0,#4
+ 1122 0456 191C     	 mov r1,r3
+ 1123 0458 FFF7FEFF 	 bl E_EEPROM_XMC1_Write
+ 1124              	.L40:
+ 258:../Conf.c     **** 			}
+ 259:../Conf.c     **** 
+ 260:../Conf.c     **** 		}
+ 261:../Conf.c     **** 		break;
+ 1125              	 .loc 3 261 0
+ 1126 045c C046     	 mov r8,r8
+ 1127              	.L17:
+ 262:../Conf.c     **** 		}
+ 263:../Conf.c     **** 	}
+ 264:../Conf.c     **** }
+ 1128              	 .loc 3 264 0
+ 1129 045e BD46     	 mov sp,r7
+ 1130              	 
+ 1131 0460 80BD     	 pop {r7,pc}
+ 1132              	.L46:
+ 1133 0462 C046     	 .align 2
+ 1134              	.L45:
+ 1135 0464 00000000 	 .word DEBAUCE
+ 1136 0468 00000000 	 .word CONF
+ 1137 046c 00000000 	 .word ACTION
+ 1138 0470 00000000 	 .word LED_CONF_5
+ 1139 0474 00000000 	 .word LED_CONF_10
+ 1140 0478 00000000 	 .word LED_CONF_15
+ 1141 047c DA000000 	 .word CONF+218
+ 1142              	 .cfi_endproc
+ 1143              	.LFE300:
+ 1145              	 .section .text.IRQ6_Handler,"ax",%progbits
+ 1146              	 .align 2
+ 1147              	 .global IRQ6_Handler
+ 1148              	 .code 16
+ 1149              	 .thumb_func
+ 1151              	IRQ6_Handler:
+ 1152              	.LFB301:
+ 265:../Conf.c     **** 
+ 266:../Conf.c     **** void Handler_BOT_MAX (void){
+ 1153              	 .loc 3 266 0
+ 1154              	 .cfi_startproc
+ 1155 0000 80B5     	 push {r7,lr}
+ 1156              	.LCFI22:
+ 1157              	 .cfi_def_cfa_offset 8
+ 1158              	 .cfi_offset 7,-8
+ 1159              	 .cfi_offset 14,-4
+ 1160 0002 00AF     	 add r7,sp,#0
+ 1161              	.LCFI23:
+ 1162              	 .cfi_def_cfa_register 7
+ 267:../Conf.c     **** 	CONF.ANGLE = true;
+ 1163              	 .loc 3 267 0
+ 1164 0004 024B     	 ldr r3,.L48
+ 1165 0006 C622     	 mov r2,#198
+ 1166 0008 0121     	 mov r1,#1
+ 1167 000a 9954     	 strb r1,[r3,r2]
+ 268:../Conf.c     **** }
+ 1168              	 .loc 3 268 0
+ 1169 000c BD46     	 mov sp,r7
+ 1170              	 
+ 1171 000e 80BD     	 pop {r7,pc}
+ 1172              	.L49:
+ 1173              	 .align 2
+ 1174              	.L48:
+ 1175 0010 00000000 	 .word CONF
+ 1176              	 .cfi_endproc
+ 1177              	.LFE301:
+ 1179              	 .text
+ 1180              	.Letext0:
+ 1181              	 .file 4 "c:\\users\\victor.paschoal\\documents\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 1182              	 .file 5 "c:\\users\\victor.paschoal\\documents\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 1183              	 .file 6 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc/xmc1_gpio.h"
+ 1184              	 .file 7 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/XMCLib/inc/xmc_usic.h"
+ 1185              	 .file 8 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/I2C_MASTER/i2c_master.h"
+ 1186              	 .file 9 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Action.h"
+ 1187              	 .file 10 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Conf.h"
+ 1188              	 .file 11 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Debauce.h"
+ 1189              	 .file 12 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Libraries/CMSIS/Infineon/XMC1400_series/Include/system_XMC1400.h"
+ 1190              	 .file 13 "C:/Workspaces/DAVE-4.4.2-64Bit/MK2_TESTE_ACIONAMENTO2/Dave/Generated/DIGITAL_IO/digital_io_extern.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 Conf.c
     {standard input}:18     .text.XMC_GPIO_SetOutputHigh:00000000 $t
@@ -2230,12 +2221,12 @@ DEFINED SYMBOLS
     {standard input}:438    .text.ConfInit:0000011c $d
     {standard input}:452    .text.ConfTask:00000000 $t
     {standard input}:457    .text.ConfTask:00000000 ConfTask
-    {standard input}:998    .text.ConfTask:00000368 $d
-    {standard input}:1016   .text.ConfTask:000003a8 $t
-    {standard input}:1145   .text.ConfTask:0000047c $d
-    {standard input}:1156   .text.IRQ6_Handler:00000000 $t
-    {standard input}:1161   .text.IRQ6_Handler:00000000 IRQ6_Handler
-    {standard input}:1185   .text.IRQ6_Handler:00000010 $d
+    {standard input}:990    .text.ConfTask:00000358 $d
+    {standard input}:1006   .text.ConfTask:00000390 $t
+    {standard input}:1135   .text.ConfTask:00000464 $d
+    {standard input}:1146   .text.IRQ6_Handler:00000000 $t
+    {standard input}:1151   .text.IRQ6_Handler:00000000 IRQ6_Handler
+    {standard input}:1175   .text.IRQ6_Handler:00000010 $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
@@ -2251,6 +2242,4 @@ E_EEPROM_XMC1_Write
 BOT_MIN
 DEBAUCE
 BOT_AUTO
-LED1
-LED2
 BOT_MANUAL
